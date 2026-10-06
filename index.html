@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shama Deluxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar" id="home">
+            <div class="logo">Shama <span>Deluxe</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">Our Story</a>
+            </div>
+            <a href="tel:+919759100786" class="btn btn-primary nav-btn">Call for order</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-left">
+                    <span class="subtitle">MUGHLAI, NORTH INDIAN & CHINESE</span>
+                    <h1>The original taste<br>of <span>Shama Deluxe.</span></h1>
+                    <p>Traditional favorites, sourced locally and served with a lot of love & history.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#full-menu" class="btn btn-primary">Order now</a>
+                        <a href="#menu" class="btn btn-outline">View menu</a>
+                    </div>
+                    
+                    <div class="rating-badge">
+                        <div class="avatars">
+                            <div class="avatar" style="background-image: url('images/hero_image_1791102967343.jpg');"></div>
+                            <div class="avatar" style="background-image: url('images/dish_2_1791103040843.jpg');"></div>
+                        </div>
+                        <div class="rating-text">
+                            <strong>11.5K+</strong> Reviews
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="hero-image-wrapper">
+                        <img src="images/dish_1_1791103007768.jpg" alt="Signature Dish">
+                        
+                        <!-- CSS Steam/Smoke Effect -->
+                        <div class="smoke-container">
+                            <span class="smoke s1"></span>
+                            <span class="smoke s2"></span>
+                            <span class="smoke s3"></span>
+                            <span class="smoke s4"></span>
+                            <span class="smoke s5"></span>
+                        </div>
+                        
+                        <div class="floating-badge">
+                            <span class="dot"></span> Highly rated
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Right Now Section -->
+            <section class="popular" id="menu">
+                <h2>Popular right now</h2>
+                <div class="popular-grid">
+                    <!-- Dish 1 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Butter Chicken">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Butter Chicken</h3>
+                            <p>Rich and creamy tomato gravy.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹350</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 2 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Paneer Tikka">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Paneer Tikka</h3>
+                            <p>Spiced paneer roasted in tandoor.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹280</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 3 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Dal Makhani">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Dal Makhani</h3>
+                            <p>Slow-cooked black lentils.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹240</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 4 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Garlic Naan">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Garlic Naan</h3>
+                            <p>Soft bread with garlic and butter.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹50</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full Menu Section -->
+            <section class="full-menu" id="full-menu">
+                <div class="full-menu-header">
+                    <h2>Curated in every spice.</h2>
+                    <p>We use 100% natural ingredients. Enjoy the authentic taste of Shama Deluxe.</p>
+                    <div class="menu-categories">
+                        <button class="category-btn active"><span class="icon">🔥</span></button>
+                        <button class="category-btn">Curry</button>
+                        <button class="category-btn">Appetizer</button>
+                        <button class="category-btn">Dessert</button>
+                        <button class="category-btn">Beverages</button>
+                        <button class="category-btn">Thali</button>
+                    </div>
+                </div>
+                
+                <div class="full-menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Butter Chicken">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Butter Chicken</h4>
+                            <p>Rich and creamy tomato gravy.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹350</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Paneer Tikka">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Paneer Tikka</h4>
+                            <p>Spiced paneer roasted in tandoor.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹280</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 3 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Dal Makhani">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Dal Makhani</h4>
+                            <p>Slow-cooked black lentils.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹240</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 4 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Garlic Naan">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Garlic Naan</h4>
+                            <p>Soft bread with garlic and butter.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹50</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 5 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Chicken Biryani">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Chicken Biryani</h4>
+                            <p>Fragrant basmati rice and spices.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹320</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 6 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Samosa">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Samosa (2pcs)</h4>
+                            <p>Crispy pastry filled with spiced potatoes.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹60</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 7 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Palak Paneer">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Palak Paneer</h4>
+                            <p>Paneer in a creamy spinach gravy.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹260</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 8 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Gulab Jamun">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Gulab Jamun</h4>
+                            <p>Sweet milk dumplings in syrup.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹80</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="images/hero_image_1791102967343.jpg" alt="Restaurant Interior">
+                    </div>
+                    <div class="about-content">
+                        <span class="subtitle">OUR STORY</span>
+                        <h2>More than just a meal. <br>An <span>experience.</span></h2>
+                        <p>Founded in 1998, Shama Deluxe brings the authentic flavors of our heritage to your table. Every dish is crafted with passion, using recipes passed down through generations and locally sourced, fresh ingredients.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>25+</h3>
+                                <p>Years of Service</p>
+                            </div>
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Signature Dishes</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-outline mt-2">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials" id="reviews">
+                <div class="section-header text-center">
+                    <h2>What our guests say</h2>
+                    <p>Real stories from our beloved customers.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Absolutely the best dining experience I've had in years. The Butter Chicken is out of this world! Highly recommended."</p>
+                        <div class="author">
+                            <div class="avatar" style="background-image: url('images/dish_2_1791103040843.jpg');"></div>
+                            <div>
+                                <strong>Sarah Jenkins</strong>
+                                <span>Local Food Critic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The ambiance, the service, the food—everything is a solid 10/10. I will definitely be coming back here again."</p>
+                        <div class="author">
+                            <div class="avatar" style="background-image: url('images/dish_1_1791103007768.jpg');"></div>
+                            <div>
+                                <strong>David Miller</strong>
+                                <span>Regular Guest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="app-footer" id="contact">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Shama <span>Deluxe</span></div>
+                    <p>The original taste of authenticity, served with love and history.</p>
+                    <div class="social-links">
+                        <a href="#">Fb</a>
+                        <a href="#">Ig</a>
+                        <a href="#">Tw</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <a href="#home">Home</a>
+                    <a href="#full-menu">Our Menu</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>Bareilly Road, Near Navin Mandi,<br>Haldwani, Uttarakhand</p>
+                    <p class="mt-1"><strong>Phone:</strong> +91 97591 00786</p>
+                    <p><strong>Email:</strong> contact@shamadeluxe.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p>Mon - Thu: 11AM - 10PM</p>
+                    <p>Fri - Sat: 11AM - 11PM</p>
+                    <p>Sunday: 12PM - 9PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shama Deluxe. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Added to your order!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
