@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Shama Deluxe Restaurant</title>
+    <meta name="description" content="Explore the authentic Mughlai, North Indian, and Tandoori menu at Shama Deluxe. Freshly prepared with heritage spices and centuries-old recipes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="menu-page">
+
+    <div class="app-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar" id="top">
+            <a href="index.html" class="logo" style="text-decoration: none;">Shama <span>Deluxe</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html" class="active-nav">Menu</a>
+                <a href="index.html#about">Our Story</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="tel:+919759100786" class="btn btn-primary nav-btn">Call for order</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Royal Menu Header Banner -->
+            <section class="menu-hero-header">
+                <div class="royal-crest">⚜ ❖ ⚜</div>
+                <span class="subtitle">ESTABLISHED 1998 • AUTHENTIC TASTE</span>
+                <h1>Royal Dining <span>Menu</span></h1>
+                <p>Every dish is crafted with heritage royal recipes, hand-ground spices, and slow-cooked in traditional copper and brass handis.</p>
+                <div class="menu-header-divider">
+                    <span class="line"></span>
+                    <span class="diamond">◆</span>
+                    <span class="line"></span>
+                </div>
+            </section>
+
+            <!-- Search and Filter Controls -->
+            <section class="menu-controls-section">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="menu-search" placeholder="Search dish by name (e.g. Butter Chicken, Kheer, Naan)..." autocomplete="off">
+                    <button id="clear-search" class="clear-btn" style="display: none;">✕</button>
+                </div>
+
+                <div class="filter-controls-row">
+                    <!-- Dietary Filter -->
+                    <div class="dietary-filter">
+                        <button class="diet-btn active" data-diet="all">All Items</button>
+                        <button class="diet-btn" data-diet="veg"><span class="veg-dot"></span> Vegetarian</button>
+                        <button class="diet-btn" data-diet="non-veg"><span class="non-veg-dot"></span> Non-Veg</button>
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="menu-categories" id="category-pills">
+                        <button class="category-btn active" data-category="all"><span class="icon">✨</span> All</button>
+                        <button class="category-btn" data-category="mughlai">Mughlai Curries</button>
+                        <button class="category-btn" data-category="tandoori">Tandoor & Kebabs</button>
+                        <button class="category-btn" data-category="breads">Roti & Breads</button>
+                        <button class="category-btn" data-category="biryani">Royal Biryani</button>
+                        <button class="category-btn" data-category="desserts">Desserts & Drinks</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chef's Specials Banner (Inspired by Reference Menu) -->
+            <section class="specials-banner">
+                <div class="specials-header">
+                    <div class="banner-badge">Royal Heritage Signatures</div>
+                    <h3>Shama Deluxe Masterpiece Selection</h3>
+                    <p>Prepared in traditional brass cookware with slow simmered gravies</p>
+                </div>
+                <div class="specials-grid">
+                    <div class="special-card">
+                        <span class="special-tag">Chef's Pride</span>
+                        <div class="special-img">
+                            <img src="images/shama_butter_chicken.jpg" alt="Butter Chicken">
+                        </div>
+                        <div class="special-info">
+                            <h4>Butter Chicken Handi</h4>
+                            <p>Tender chicken simmered in creamy fenugreek tomato gravy.</p>
+                            <div class="special-bottom">
+                                <span class="price">₹250 / ₹500</span>
+                                <button class="add-btn add-to-cart-btn" data-name="Butter Chicken Handi" data-price="250">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-card">
+                        <span class="special-tag">Signature</span>
+                        <div class="special-img">
+                            <img src="images/shama_kali_mirch.jpg" alt="Kali Mirch Chicken">
+                        </div>
+                        <div class="special-info">
+                            <h4>Kali Mirch Chicken</h4>
+                            <p>Aromatic black peppercorn chicken in velvety cream gravy.</p>
+                            <div class="special-bottom">
+                                <span class="price">₹340 / ₹490</span>
+                                <button class="add-btn add-to-cart-btn" data-name="Kali Mirch Chicken" data-price="340">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-card">
+                        <span class="special-tag">Most Loved</span>
+                        <div class="special-img">
+                            <img src="images/shama_kheer.jpg" alt="Shama Special Kheer">
+                        </div>
+                        <div class="special-info">
+                            <h4>Shama Special Kheer</h4>
+                            <p>Rich almond, pistachio & saffron infused slow-cooked rice pudding.</p>
+                            <div class="special-bottom">
+                                <span class="price">₹30</span>
+                                <button class="add-btn add-to-cart-btn" data-name="Shama Special Kheer" data-price="30">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Menu Grid Section -->
+            <section class="menu-items-section">
+                <div class="section-title-wrap">
+                    <h2 id="menu-current-heading">All Menu Items</h2>
+                    <span id="items-count" class="count-badge">12 dishes available</span>
+                </div>
+
+                <div class="menu-items-grid" id="menu-container">
+                    
+                    <!-- Item 1: Butter Chicken -->
+                    <div class="menu-card" data-category="mughlai" data-diet="non-veg" data-name="butter chicken">
+                        <div class="menu-card-img">
+                            <img src="images/shama_butter_chicken.jpg" alt="Butter Chicken">
+                            <span class="diet-indicator non-veg" title="Non-Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Shama Special Butter Chicken</h3>
+                                <span class="badge-mini">Bestseller</span>
+                            </div>
+                            <p>Succulent chicken pieces cooked in rich buttery tomato puree with fresh cream and royal aromatic spices.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Half / Full</span>
+                                    <span class="price">₹250 / ₹500</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Butter Chicken" data-price="250">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Kali Mirch Chicken -->
+                    <div class="menu-card" data-category="mughlai" data-diet="non-veg" data-name="kali mirch chicken">
+                        <div class="menu-card-img">
+                            <img src="images/shama_kali_mirch.jpg" alt="Kali Mirch Chicken">
+                            <span class="diet-indicator non-veg" title="Non-Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Kali Mirch Chicken</h3>
+                                <span class="badge-mini">Special</span>
+                            </div>
+                            <p>Authentic two-handled brass handi preparation with freshly crushed black peppercorns and velvety cashew gravy.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Half / Full</span>
+                                    <span class="price">₹340 / ₹490</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Kali Mirch Chicken" data-price="340">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Chicken Malai Tikka -->
+                    <div class="menu-card" data-category="tandoori" data-diet="non-veg" data-name="chicken malai tikka">
+                        <div class="menu-card-img">
+                            <img src="images/shama_malai_tikka.jpg" alt="Chicken Malai Tikka">
+                            <span class="diet-indicator non-veg" title="Non-Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Chicken Malai Tikka</h3>
+                                <span class="badge-mini">Tandoori</span>
+                            </div>
+                            <p>Melt-in-mouth chicken chunks marinated in cream, cheese, cardamom, and gentle tandoor charred flavors.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Half / Full</span>
+                                    <span class="price">₹300 / ₹600</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Chicken Malai Tikka" data-price="300">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Rumali Roti -->
+                    <div class="menu-card" data-category="breads" data-diet="veg" data-name="rumali roti">
+                        <div class="menu-card-img">
+                            <img src="images/shama_rumali_roti.jpg" alt="Rumali Roti">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Rumali Roti</h3>
+                                <span class="badge-mini">Fresh</span>
+                            </div>
+                            <p>Paper-thin, ultra-soft traditional handkerchief bread tossed on an inverted kadhai. Pair best with rich gravies.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Per piece</span>
+                                    <span class="price">₹14</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Rumali Roti" data-price="14">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Shama Special Kheer -->
+                    <div class="menu-card" data-category="desserts" data-diet="veg" data-name="shama special kheer">
+                        <div class="menu-card-img">
+                            <img src="images/shama_kheer.jpg" alt="Shama Special Kheer">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Shama Special Kheer</h3>
+                                <span class="badge-mini">Royal Dessert</span>
+                            </div>
+                            <p>Slowly condensed whole milk and basmati rice topped generously with crushed almonds, pistachios, and Kashmiri saffron.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Per bowl</span>
+                                    <span class="price">₹30</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Shama Special Kheer" data-price="30">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Authentic Mughlai Handi -->
+                    <div class="menu-card" data-category="mughlai" data-diet="non-veg" data-name="authentic mughlai handi chicken">
+                        <div class="menu-card-img">
+                            <img src="images/shama_ceramic_butter_chicken.jpg" alt="Authentic Mughlai">
+                            <span class="diet-indicator non-veg" title="Non-Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Authentic Mughlai Handi</h3>
+                                <span class="badge-mini">Heritage</span>
+                            </div>
+                            <p>Slow-braised with whole cinnamon, mace, brown onions, and yogurt for an authentic, rich royal dining sensation.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Half / Full</span>
+                                    <span class="price">₹350 / ₹600</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Authentic Mughlai Handi" data-price="350">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Paneer Tikka Masala -->
+                    <div class="menu-card" data-category="mughlai" data-diet="veg" data-name="paneer tikka masala">
+                        <div class="menu-card-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Paneer Tikka Masala">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Paneer Tikka Masala</h3>
+                                <span class="badge-mini">Vegetarian Special</span>
+                            </div>
+                            <p>Fresh cottage cheese cubes char-grilled in tandoor and folded into a spiced onion-tomato gravy with bell peppers.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Full plate</span>
+                                    <span class="price">₹220</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Paneer Tikka Masala" data-price="220">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Dal Makhani -->
+                    <div class="menu-card" data-category="mughlai" data-diet="veg" data-name="dal makhani">
+                        <div class="menu-card-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Dal Makhani">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Shama Dal Makhani</h3>
+                                <span class="badge-mini">Slow Cooked</span>
+                            </div>
+                            <p>Black lentils and kidney beans simmered overnight over slow charcoal embers with homemade butter and fresh cream.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Full bowl</span>
+                                    <span class="price">₹140</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Dal Makhani" data-price="140">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: Shama Special Dum Biryani -->
+                    <div class="menu-card" data-category="biryani" data-diet="non-veg" data-name="chicken dum biryani">
+                        <div class="menu-card-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Chicken Dum Biryani">
+                            <span class="diet-indicator non-veg" title="Non-Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Shama Special Dum Biryani</h3>
+                                <span class="badge-mini">Royal Rice</span>
+                            </div>
+                            <p>Fragrant extra-long aged basmati rice layered with spiced marinated chicken, saffron milk, and sealed for dum.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Half / Full</span>
+                                    <span class="price">₹130 / ₹240</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Shama Dum Biryani" data-price="130">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 10: Butter Naan / Garlic Naan -->
+                    <div class="menu-card" data-category="breads" data-diet="veg" data-name="garlic naan butter naan">
+                        <div class="menu-card-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Garlic Naan">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Butter & Garlic Naan</h3>
+                                <span class="badge-mini">Tandoori Bread</span>
+                            </div>
+                            <p>Fluffy clay-oven baked bread glazed generously with melted butter, roasted garlic flakes, and fresh cilantro.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Per piece</span>
+                                    <span class="price">₹40 - ₹50</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Garlic Naan" data-price="50">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Crispy Manchow Soup -->
+                    <div class="menu-card" data-category="desserts" data-diet="veg" data-name="crispy manchow soup khow suey">
+                        <div class="menu-card-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Crispy Manchow">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Crispy Manchow Soup</h3>
+                                <span class="badge-mini">Starter</span>
+                            </div>
+                            <p>Hot, dark and spicy Chinese style broth infused with garlic, mushrooms, shredded veggies and crispy noodle toppings.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Per bowl</span>
+                                    <span class="price">₹46</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Crispy Manchow Soup" data-price="46">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: Gulab Jamun -->
+                    <div class="menu-card" data-category="desserts" data-diet="veg" data-name="gulab jamun">
+                        <div class="menu-card-img">
+                            <img src="images/shama_kheer.jpg" alt="Gulab Jamun">
+                            <span class="diet-indicator veg" title="Vegetarian"></span>
+                        </div>
+                        <div class="menu-card-body">
+                            <div class="card-title-row">
+                                <h3>Royal Gulab Jamun (2 pcs)</h3>
+                                <span class="badge-mini">Sweet Dish</span>
+                            </div>
+                            <p>Golden khoya dumplings fried to deep perfection, soaked in fragrant rose and green cardamom sugar syrup.</p>
+                            <div class="card-footer">
+                                <div class="price-wrap">
+                                    <span class="price-label">Portion (2pcs)</span>
+                                    <span class="price">₹80</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm add-to-cart-btn" data-name="Gulab Jamun" data-price="80">Add +</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Empty state for search -->
+                <div id="no-results" class="no-results" style="display: none;">
+                    <div class="no-results-icon">🍽️</div>
+                    <h3>No matching dishes found</h3>
+                    <p>Try searching for another dish or clear filters to see our full menu.</p>
+                    <button id="reset-filters-btn" class="btn btn-outline mt-2">Reset Filters</button>
+                </div>
+            </section>
+
+            <!-- Quick Call to Order Callout -->
+            <section class="order-callout-banner">
+                <div class="callout-content">
+                    <span class="subtitle">READY TO ORDER?</span>
+                    <h2>Dine-In, Takeaway & Home Delivery</h2>
+                    <p>Call our direct hotline for immediate takeaway or reserved dining tables.</p>
+                </div>
+                <div class="callout-actions">
+                    <a href="tel:+919759100786" class="btn btn-primary btn-lg">📞 Call +91 97591 00786</a>
+                    <a href="https://wa.me/919759100786?text=Hi%20Shama%20Deluxe%2C%20I%20want%20to%20place%20an%20order" target="_blank" class="btn btn-outline btn-lg">💬 WhatsApp Order</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer" id="contact">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Shama <span>Deluxe</span></div>
+                    <p>The original taste of authenticity, served with love and history since 1998.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Fb</a>
+                        <a href="#" aria-label="Instagram">Ig</a>
+                        <a href="#" aria-label="Twitter">Tw</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Our Menu</a>
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#reviews">Guest Reviews</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>Bareilly Road, Near Navin Mandi,<br>Haldwani, Uttarakhand</p>
+                    <p class="mt-1"><strong>Phone:</strong> +91 97591 00786</p>
+                    <p><strong>Email:</strong> contact@shamadeluxe.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Mon - Thu: 11:00 AM - 10:00 PM</p>
+                    <p>Fri - Sat: 11:00 AM - 11:00 PM</p>
+                    <p>Sunday: 12:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shama Deluxe Restaurant. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Order Bar -->
+    <div id="order-bar" class="floating-order-bar" style="display: none;">
+        <div class="order-bar-content">
+            <div class="order-summary-text">
+                <span class="order-count-badge" id="order-count">0 items</span>
+                <span class="order-total-price" id="order-total">₹0</span>
+            </div>
+            <a href="tel:+919759100786" class="btn btn-primary order-call-btn">Place Order (+91 97591 00786)</a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Added to your order!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
