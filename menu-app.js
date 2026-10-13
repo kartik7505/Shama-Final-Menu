@@ -1104,3 +1104,11 @@ window.switchHeroVideo = function(videoSrc, btnEl) {
   }, 220);
 };
 
+window.restartHeroVideo = function() {
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return;
+  video.currentTime = 0;
+  video.play().catch(() => {});
+};
+
+

@@ -78,9 +78,9 @@
                     loop 
                     playsinline 
                     preload="auto"
-                    poster="images/shama_butter_chicken.jpg"
+                    poster="images/shama_hero_poster.jpg"
                 >
-                    <source src="videos/butter-chicken.mp4" type="video/mp4">
+                    <source src="videos/1012.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-hero-overlay"></div>
@@ -113,7 +113,7 @@
                     </a>
                 </div>
 
-                <!-- Video Controls & Dish Switcher -->
+                <!-- Video Controls -->
                 <div class="video-hero-controls">
                     <button type="button" id="heroVideoMuteBtn" class="v-control-btn" onclick="toggleHeroVideoSound()" title="Toggle Video Audio">
                         <span id="heroMuteIcon">🔇</span> <span id="heroMuteLabel">Sound Off</span>
@@ -121,12 +121,9 @@
                     <button type="button" id="heroVideoPlayBtn" class="v-control-btn" onclick="toggleHeroVideoPlay()" title="Pause / Play Video">
                         <span id="heroPlayIcon">⏸️</span> <span>Pause</span>
                     </button>
-                    <div class="video-switcher-chips" aria-label="Switch hero food video">
-                        <button type="button" class="v-switch-chip active" onclick="switchHeroVideo('videos/butter-chicken.mp4', this)">Butter Chicken</button>
-                        <button type="button" class="v-switch-chip" onclick="switchHeroVideo('videos/mughlai-handi.mp4', this)">Mughlai Handi</button>
-                        <button type="button" class="v-switch-chip" onclick="switchHeroVideo('videos/dum-biryani.mp4', this)">Dum Biryani</button>
-                        <button type="button" class="v-switch-chip" onclick="switchHeroVideo('videos/malai-tikka.mp4', this)">Malai Tikka</button>
-                    </div>
+                    <button type="button" class="v-control-btn" onclick="restartHeroVideo()" title="Restart Video">
+                        <span>↺</span> <span>Replay</span>
+                    </button>
                 </div>
             </div>
         </section>
