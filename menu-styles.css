@@ -342,9 +342,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.02);
   transition: opacity 0.4s ease;
-  filter: brightness(0.82) contrast(1.05);
+  filter: brightness(1) contrast(1.02);
 }
 
 .video-hero-overlay {
@@ -355,12 +354,41 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(18, 12, 8, 0.6) 0%,
-    rgba(28, 18, 12, 0.45) 50%,
-    rgba(20, 13, 8, 0.92) 100%
+    rgba(0, 0, 0, 0.06) 0%,
+    transparent 70%,
+    rgba(18, 12, 8, 0.32) 100%
   );
-  backdrop-filter: blur(0.5px);
+  pointer-events: none;
   z-index: 2;
+}
+
+.hero-floating-sound-btn {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(26, 17, 11, 0.65);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.hero-floating-sound-btn:hover {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  color: #FFFFFF;
+  transform: scale(1.08);
 }
 
 .video-hero-container {

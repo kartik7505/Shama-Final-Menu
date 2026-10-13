@@ -86,52 +86,10 @@
                 <div class="video-hero-overlay"></div>
             </div>
 
-            <!-- Video Hero Content -->
-            <div class="video-hero-container">
-                <div class="video-hero-crest" aria-hidden="true">
-                    <span class="crest-line"></span>
-                    <span class="crest-symbol">⚜ ❖ ⚜</span>
-                    <span class="crest-line reverse"></span>
-                </div>
-                
-                <span class="video-hero-eyebrow">ESTABLISHED 1998 • HALDWANI</span>
-                <h1 class="video-hero-title">Shama <span>Deluxe</span></h1>
-                <p class="video-hero-tagline">Authentic Non-Veg Mughlai & Charcoal Tandoor Specialities</p>
-                
-                <div class="video-hero-badges">
-                    <span class="v-badge">🔥 Charcoal Tandoor</span>
-                    <span class="v-badge">🏺 Handi Slow-Cooked</span>
-                    <span class="v-badge">✨ Ancestral Mughlai Spices</span>
-                </div>
-
-                <div class="video-hero-actions">
-                    <a href="#menuStickyNav" class="btn-hero-primary">
-                        <span>📖</span> Explore Menu & Order
-                    </a>
-                    <a href="tel:+919759100786" class="btn-hero-secondary">
-                        <span>📞</span> Call: +91 97591 00786
-                    </a>
-                </div>
-
-                <!-- Video Controls -->
-                <div class="video-hero-controls">
-                    <button type="button" id="heroVideoMuteBtn" class="v-control-btn" onclick="toggleHeroVideoSound()" title="Toggle Video Audio">
-                        <span id="heroMuteIcon">🔇</span> <span id="heroMuteLabel">Sound Off</span>
-                    </button>
-                    <button type="button" id="heroVideoPlayBtn" class="v-control-btn" onclick="toggleHeroVideoPlay()" title="Pause / Play Video">
-                        <span id="heroPlayIcon">⏸️</span> <span>Pause</span>
-                    </button>
-                    <button type="button" class="v-control-btn" onclick="restartHeroVideo()" title="Restart Video">
-                        <span>↺</span> <span>Replay</span>
-                    </button>
-                </div>
-
-                <!-- Scroll Down Hint -->
-                <a href="#menuStickyNav" class="hero-scroll-cue" aria-label="Scroll down to browse menu">
-                    <span>Scroll to Browse Menu</span>
-                    <span class="cue-arrow" aria-hidden="true">↓</span>
-                </a>
-            </div>
+            <!-- Floating Sound Control in Corner -->
+            <button type="button" id="heroVideoMuteBtn" class="hero-floating-sound-btn" onclick="toggleHeroVideoSound()" aria-label="Toggle Sound" title="Toggle Sound">
+                <span id="heroMuteIcon">🔇</span>
+            </button>
         </section>
 
         <!-- ==========================================================================
