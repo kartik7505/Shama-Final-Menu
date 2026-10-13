@@ -275,6 +275,34 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   background-color: var(--bg-gold-soft);
 }
 
+/* WhatsApp Inquire Button in Header */
+.header-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.45rem 0.85rem;
+  background-color: #25D366;
+  color: #FFFFFF !important;
+  border: 1px solid #1EBE5D;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.32);
+  min-height: 38px;
+  transition: all var(--transition-fast);
+}
+
+.header-whatsapp-btn:hover {
+  background-color: #1EBE5D;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.46);
+  transform: translateY(-1px);
+}
+
+.header-whatsapp-btn svg {
+  flex-shrink: 0;
+}
+
 /* Cart Button in Header */
 .header-cart-btn {
   position: relative;
@@ -2379,6 +2407,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 
   .header-call-btn,
+  .header-whatsapp-btn,
   .header-qr-btn,
   .header-cart-btn {
     padding: 0.35rem 0.55rem;
@@ -2699,6 +2728,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 
   .header-call-btn span:last-child,
+  .header-whatsapp-btn span:last-child,
   .header-qr-btn span:last-child {
     display: none;
   }
