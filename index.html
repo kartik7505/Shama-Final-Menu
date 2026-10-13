@@ -73,11 +73,15 @@
     <main id="main-content">
 
         <!-- ==========================================================================
-             2. LUXURY VIDEO HERO HEADER
+             2. LUXURY VIDEO HERO HEADER (9:16 FORMAT)
              ========================================================================== -->
         <section class="video-hero-header" id="videoHeroHeader" aria-label="Restaurant Video Header">
-            <!-- Background Video Element -->
-            <div class="video-hero-bg">
+            <!-- Ambient Cinema Backdrop for Desktop -->
+            <div class="video-hero-ambient-backdrop" aria-hidden="true" style="background-image: url('images/shama_hero_poster.jpg');"></div>
+            <div class="video-hero-ambient-overlay" aria-hidden="true"></div>
+
+            <!-- Centered 9:16 Video Frame -->
+            <div class="video-hero-frame">
                 <video 
                     id="heroBgVideo" 
                     class="hero-video-media" 
@@ -92,12 +96,12 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-hero-overlay"></div>
-            </div>
 
-            <!-- Floating Sound Control in Corner -->
-            <button type="button" id="heroVideoMuteBtn" class="hero-floating-sound-btn" onclick="toggleHeroVideoSound()" aria-label="Toggle Sound" title="Toggle Sound">
-                <span id="heroMuteIcon">🔇</span>
-            </button>
+                <!-- Floating Sound Control in Corner of 9:16 Video Frame -->
+                <button type="button" id="heroVideoMuteBtn" class="hero-floating-sound-btn" onclick="toggleHeroVideoSound()" aria-label="Toggle Sound" title="Toggle Sound">
+                    <span id="heroMuteIcon">🔇</span>
+                </button>
+            </div>
         </section>
 
     </main>
