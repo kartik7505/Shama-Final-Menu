@@ -2008,21 +2008,62 @@ body {
 }
 
 @media (max-width: 768px) {
-    .royal-placemat-section {
-        padding: 2rem 1.2rem;
+    body {
+        padding: 0;
+        display: block;
+        min-height: 100vh;
+        overflow-x: hidden;
     }
-    .placemat-brand {
-        font-size: 3.2rem;
+    .app-wrapper {
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: 1rem 0.85rem 2rem;
+        max-width: 100%;
     }
-    .placemat-board {
+    .navbar {
+        padding: 0.5rem 0 1.25rem;
+        margin-bottom: 1.25rem;
+        gap: 0.5rem;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.82rem;
+    }
+    .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+        padding: 0 0 2rem;
+    }
+    .hero-left h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+    .hero-actions {
+        gap: 0.6rem;
+    }
+    .popular-grid,
+    .full-menu-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
-    .board-specials-box {
-        grid-column: 1;
-    }
-    .specials-list {
+    .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .app-footer {
+        padding: 1.75rem 0 1rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
     }
 }
+
 
 
