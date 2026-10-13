@@ -316,9 +316,9 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .video-hero-header {
   position: relative;
   width: 100%;
-  min-height: 480px;
-  height: 64vh;
-  max-height: 620px;
+  min-height: calc(100vh - 58px);
+  height: calc(100vh - 58px);
+  height: calc(100dvh - 58px);
   display: flex;
   align-items: center;
   justify-content: center;
