@@ -1044,3 +1044,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ==========================================================================
+// 8. HERO BACKGROUND VIDEO CONTROLS
+// ==========================================================================
+window.toggleHeroVideoSound = function() {
+  const video = document.getElementById('heroBgVideo');
+  const icon = document.getElementById('heroMuteIcon');
+  const label = document.getElementById('heroMuteLabel');
+  if (!video) return;
+
+  video.muted = !video.muted;
+  if (video.muted) {
+    if (icon) icon.textContent = '🔇';
+    if (label) label.textContent = 'Sound Off';
+  } else {
+    if (icon) icon.textContent = '🔊';
+    if (label) label.textContent = 'Sound On';
+    video.play().catch(() => {});
+  }
+};
+
+window.toggleHeroVideoPlay = function() {
+  const video = document.getElementById('heroBgVideo');
+  const icon = document.getElementById('heroPlayIcon');
+  const btn = document.getElementById('heroVideoPlayBtn');
+  if (!video) return;
+
+  if (video.paused) {
+    video.play();
+    if (icon) icon.textContent = '⏸️';
+    if (btn) {
+      const textSpan = btn.querySelector('span:last-child');
+      if (textSpan) textSpan.textContent = 'Pause';
+    }
+  } else {
+    video.pause();
+    if (icon) icon.textContent = '▶️';
+    if (btn) {
+      const textSpan = btn.querySelector('span:last-child');
+      if (textSpan) textSpan.textContent = 'Play';
+    }
+  }
+};
+
+window.switchHeroVideo = function(videoSrc, btnEl) {
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return;
+
+  document.querySelectorAll('.v-switch-chip').forEach(c => c.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  video.style.opacity = '0.25';
+  setTimeout(() => {
+    video.src = videoSrc;
+    video.load();
+    video.play().catch(() => {});
+    video.style.opacity = '1';
+  }, 220);
+};
+
