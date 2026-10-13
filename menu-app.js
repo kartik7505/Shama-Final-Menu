@@ -890,6 +890,10 @@ function showToast(text) {
 window.openQrModal = function() {
   const overlay = document.getElementById('qrModalOverlay');
   if (overlay) {
+    const input = document.getElementById('customQrUrlInput');
+    if (input && window.location.href) {
+      input.value = window.location.origin + window.location.pathname;
+    }
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
