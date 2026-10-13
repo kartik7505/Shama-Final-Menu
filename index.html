@@ -3,288 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shama Deluxe | 3D Luxury Digital Menu & Dining Experience</title>
-    <meta name="description" content="Experience the 3D Digital Menu of Shama Deluxe Restaurant. Authentic Mughlai Handi, Charcoal Tandoor, Awadhi Biryani, and Royal Desserts. Established 1998.">
+    <title>Shama Deluxe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="menu-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="menu-app-container">
-        
-        <!-- Digital Concierge Header -->
-        <header class="digital-header">
-            <div class="brand-crest-wrap">
-                <div class="brand-crest-badge">⚜</div>
-                <div class="brand-info">
-                    <h1>Shama <span>Deluxe</span></h1>
-                    <div class="brand-status-tag">
-                        <span class="status-pulse-dot"></span> Kitchen Active • Estd 1998
-                    </div>
-                </div>
+    <div class="app-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar" id="home">
+            <a href="#home" class="logo" style="text-decoration: none; color: inherit;">Shama <span>Deluxe</span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="#about">Our Story</a>
             </div>
-
-            <div class="header-action-group">
-                <!-- Dining Mode Pill -->
-                <div class="dining-mode-selector">
-                    <button class="dining-mode-btn active" data-mode="Dine-In">Dine-In</button>
-                    <button class="dining-mode-btn" data-mode="Takeaway">Takeaway</button>
-                    <button class="dining-mode-btn" data-mode="Delivery">Delivery</button>
-                </div>
-
-                <!-- Table Selector -->
-                <button class="table-badge-btn" id="tableSelectorBtn" title="Click to Change Table / Location">
-                    <span>🛎️</span>
-                    <span id="tableBadgeText">Table #4</span>
-                </button>
-
-                <!-- Hotline -->
-                <a href="tel:+919759100786" class="direct-call-btn" title="Call Restaurant Directly">
-                    <span>📞</span> Call
-                </a>
-            </div>
-        </header>
-
-        <!-- 3D Dish Spotlight Hero Banner -->
-        <section class="hero-3d-spotlight">
-            <div class="spotlight-content">
-                <div class="spotlight-badge">
-                    <span>👑</span> Masterpiece of the Day
-                </div>
-                <h2 class="spotlight-title">Butter Chicken <span>Handi</span></h2>
-                <p class="spotlight-desc">
-                    Tender chicken simmered in stone-ground Kashmiri tomato puree, churned white butter, and aromatic fenugreek. Slow-cooked in ancestral brass cookware.
-                </p>
-                <div class="spotlight-stats">
-                    <div class="stat-item">
-                        <span class="stat-value">₹250 / ₹500</span>
-                        <span class="stat-label">Half / Full Handi</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">15-20 Mins</span>
-                        <span class="stat-label">Fresh Prep Time</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">4.9 ★</span>
-                        <span class="stat-label">12,000+ Orders</span>
-                    </div>
-                </div>
-                <div class="spotlight-actions">
-                    <button class="btn-luxury-gold" onclick="addToCart('butter-chicken', 'half', 250)">
-                        <span>+</span> Add Half (₹250)
-                    </button>
-                    <button class="btn-luxury-gold" onclick="addToCart('butter-chicken', 'full', 500)">
-                        <span>+</span> Add Full (₹500)
-                    </button>
-                    <button class="btn-luxury-glass" onclick="openDishModal('butter-chicken')">
-                        <span>📖</span> Secret Recipe
-                    </button>
-                </div>
-            </div>
-
-            <!-- 3D Visual Stage with Orbit Effect -->
-            <div class="spotlight-visual-3d">
-                <div class="visual-orbit-ring"></div>
-                <div class="dish-3d-stage" onclick="openDishModal('butter-chicken')">
-                    <img src="images/shama_butter_chicken.jpg" alt="Signature Butter Chicken Handi">
-                </div>
-                <div class="floating-3d-badge">
-                    <span>✨</span> Heritage Recipe #1
-                </div>
-            </div>
-        </section>
-
-        <!-- Sticky Interactive Search & Filter Deck -->
-        <nav class="menu-interactive-panel">
-            <div class="controls-top-row">
-                <!-- Search Box -->
-                <div class="luxury-search-box">
-                    <span class="search-icon-3d">🔍</span>
-                    <input type="text" id="menuSearchInput" class="luxury-search-input" placeholder="Search dishes by name or ingredients (e.g. Butter Chicken, Kheer, Naan, Biryani)..." autocomplete="off">
-                    <button id="searchClearBtn" class="search-clear-btn">✕</button>
-                </div>
-
-                <!-- Dietary Switches -->
-                <div class="dietary-selector-group">
-                    <button class="diet-pill-btn active" data-diet="all">
-                        <span class="diet-indicator-dot dot-all"></span> All Items
-                    </button>
-                    <button class="diet-pill-btn" data-diet="veg">
-                        <span class="diet-indicator-dot dot-veg"></span> Pure Veg
-                    </button>
-                    <button class="diet-pill-btn" data-diet="non-veg">
-                        <span class="diet-indicator-dot dot-nonveg"></span> Non-Veg
-                    </button>
-                </div>
-            </div>
-
-            <!-- Category Scroller -->
-            <div class="category-scroller-wrap" id="categoryChips">
-                <button class="category-chip-btn active" data-category="all">
-                    <span>✨</span> All Curations
-                </button>
-                <button class="category-chip-btn" data-category="mughlai">
-                    <span>🥘</span> Mughlai Handi Curries
-                </button>
-                <button class="category-chip-btn" data-category="tandoori">
-                    <span>🔥</span> Tandoor & Charcoal Kebabs
-                </button>
-                <button class="category-chip-btn" data-category="biryani">
-                    <span>🍚</span> Awadhi Dum Biryani
-                </button>
-                <button class="category-chip-btn" data-category="breads">
-                    <span>🫓</span> Roti & Tandoori Breads
-                </button>
-                <button class="category-chip-btn" data-category="desserts">
-                    <span>🍮</span> Shahi Desserts & Starters
-                </button>
-            </div>
+            <a href="tel:+919759100786" class="btn btn-primary nav-btn">Call for order</a>
         </nav>
 
-        <!-- Catalog Header Bar -->
-        <div class="catalog-header-bar">
-            <h2 class="catalog-title" id="activeCategoryTitle">All Royal Curations</h2>
-            <span class="dish-counter-badge" id="catalogCounter">12 Dishes Ready</span>
-        </div>
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-left">
+                    <span class="subtitle">MUGHLAI, NORTH INDIAN & CHINESE</span>
+                    <h1>The original taste<br>of <span>Shama Deluxe.</span></h1>
+                    <p>Traditional favorites, sourced locally and served with a lot of love & history.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="menu.html" class="btn btn-primary">Order now</a>
+                        <a href="menu.html" class="btn btn-outline">View menu</a>
+                    </div>
+                    
+                    <div class="rating-badge">
+                        <div class="avatars">
+                            <div class="avatar" style="background-image: url('images/hero_image_1791102967343.jpg');"></div>
+                            <div class="avatar" style="background-image: url('images/dish_2_1791103040843.jpg');"></div>
+                        </div>
+                        <div class="rating-text">
+                            <strong>11.5K+</strong> Reviews
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="hero-image-wrapper">
+                        <img src="images/shama_butter_chicken.jpg" alt="Signature Butter Chicken Handi">
+                        
+                        <!-- CSS Steam/Smoke Effect -->
+                        <div class="smoke-container">
+                            <span class="smoke s1"></span>
+                            <span class="smoke s2"></span>
+                            <span class="smoke s3"></span>
+                            <span class="smoke s4"></span>
+                            <span class="smoke s5"></span>
+                        </div>
+                        
+                        <div class="floating-badge">
+                            <span class="dot"></span> Highly rated
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Dynamic 3D Dish Grid -->
-        <main class="dishes-3d-grid" id="dishesGrid">
-            <!-- Injected dynamically via menu-app.js with 3D tilt physics -->
+            <!-- Popular Right Now Section -->
+            <section class="popular" id="menu">
+                <h2>Popular right now</h2>
+                <div class="popular-grid">
+                    <!-- Dish 1 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/shama_ceramic_butter_chicken.jpg" alt="Butter Chicken">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Butter Chicken</h3>
+                            <p>Rich and creamy slow-cooked tomato gravy.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹250</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 2 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/shama_kali_mirch.jpg" alt="Kali Mirch Chicken">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Kali Mirch Chicken</h3>
+                            <p>Crushed black peppercorn in cashew gravy.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹340</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 3 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/shama_kheer.jpg" alt="Shama Special Kheer">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Shama Kheer</h3>
+                            <p>Saffron, almond & pistachio rice pudding.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹30</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 4 -->
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="images/shama_rumali_roti.jpg" alt="Rumali Roti">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Rumali Roti</h3>
+                            <p>Hand-stretched thin soft royal bread.</p>
+                            <div class="dish-bottom">
+                                <span class="price">₹14</span>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full Menu Section -->
+            <section class="full-menu" id="full-menu">
+                <div class="full-menu-header">
+                    <h2>Curated in every spice.</h2>
+                    <p>We use 100% natural ingredients. Enjoy the authentic taste of Shama Deluxe.</p>
+                    <div class="menu-categories">
+                        <button class="category-btn active"><span class="icon">🔥</span></button>
+                        <button class="category-btn">Curry</button>
+                        <button class="category-btn">Appetizer</button>
+                        <button class="category-btn">Dessert</button>
+                        <button class="category-btn">Beverages</button>
+                        <button class="category-btn">Thali</button>
+                    </div>
+                </div>
+                
+                <div class="full-menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Butter Chicken">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Butter Chicken</h4>
+                            <p>Rich and creamy tomato gravy.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹350</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Paneer Tikka">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Paneer Tikka</h4>
+                            <p>Spiced paneer roasted in tandoor.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹280</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 3 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Dal Makhani">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Dal Makhani</h4>
+                            <p>Slow-cooked black lentils.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹240</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 4 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Garlic Naan">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Garlic Naan</h4>
+                            <p>Soft bread with garlic and butter.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹50</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 5 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_2_1791103040843.jpg" alt="Chicken Biryani">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Chicken Biryani</h4>
+                            <p>Fragrant basmati rice and spices.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹320</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 6 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_3_1791103054248.jpg" alt="Samosa">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Samosa (2pcs)</h4>
+                            <p>Crispy pastry filled with spiced potatoes.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹60</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 7 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/hero_image_1791102967343.jpg" alt="Palak Paneer">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Palak Paneer</h4>
+                            <p>Paneer in a creamy spinach gravy.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹260</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 8 -->
+                    <div class="menu-list-item">
+                        <div class="list-item-img">
+                            <img src="images/dish_1_1791103007768.jpg" alt="Gulab Jamun">
+                        </div>
+                        <div class="list-item-info">
+                            <h4>Gulab Jamun</h4>
+                            <p>Sweet milk dumplings in syrup.</p>
+                        </div>
+                        <div class="list-item-action">
+                            <span class="price">₹80</span>
+                            <button class="add-btn-small">+</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="images/hero_image_1791102967343.jpg" alt="Restaurant Interior">
+                    </div>
+                    <div class="about-content">
+                        <span class="subtitle">OUR STORY</span>
+                        <h2>More than just a meal. <br>An <span>experience.</span></h2>
+                        <p>Founded in 1998, Shama Deluxe brings the authentic flavors of our heritage to your table. Every dish is crafted with passion, using recipes passed down through generations and locally sourced, fresh ingredients.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>25+</h3>
+                                <p>Years of Service</p>
+                            </div>
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Signature Dishes</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-outline mt-2">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials" id="reviews">
+                <div class="section-header text-center">
+                    <h2>What our guests say</h2>
+                    <p>Real stories from our beloved customers.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Absolutely the best dining experience I've had in years. The Butter Chicken is out of this world! Highly recommended."</p>
+                        <div class="author">
+                            <div class="avatar" style="background-image: url('images/dish_2_1791103040843.jpg');"></div>
+                            <div>
+                                <strong>Sarah Jenkins</strong>
+                                <span>Local Food Critic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The ambiance, the service, the food—everything is a solid 10/10. I will definitely be coming back here again."</p>
+                        <div class="author">
+                            <div class="avatar" style="background-image: url('images/dish_1_1791103007768.jpg');"></div>
+                            <div>
+                                <strong>David Miller</strong>
+                                <span>Regular Guest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
-
-        <!-- Empty State -->
-        <div class="catalog-empty-state" id="catalogEmpty">
-            <div class="empty-icon">🍽️</div>
-            <h3>No matching dishes found</h3>
-            <p>Try searching for another dish or clear dietary filters to view our full royal menu.</p>
-            <button class="btn-luxury-gold" onclick="document.getElementById('menuSearchInput').value=''; document.querySelector('.diet-pill-btn[data-diet=all]').click();">
-                Reset All Filters
-            </button>
-        </div>
-
-        <!-- Standalone Luxury Footer -->
-        <footer class="standalone-menu-footer">
-            <div class="footer-crest">⚜ ❖ ⚜</div>
-            <div class="footer-brand-title">Shama <span>Deluxe</span></div>
-            <p class="footer-tagline">Royal Mughlai & Charcoal Grill Dining • Since 1998</p>
-            
-            <div class="footer-hotline-pills">
-                <a href="tel:+919759100786" class="hotline-pill">
-                    <span>📞</span> Hotline: +91 97591 00786
-                </a>
-                <a href="https://wa.me/919759100786" target="_blank" class="hotline-pill">
-                    <span>💬</span> WhatsApp Orders
-                </a>
-                <span class="hotline-pill">
-                    <span>📍</span> Bareilly Road, Near Navin Mandi, Haldwani
-                </span>
-                <span class="hotline-pill">
-                    <span>⏰</span> 11:00 AM – 11:00 PM Daily
-                </span>
+        
+        <!-- Footer -->
+        <footer class="app-footer" id="contact">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Shama <span>Deluxe</span></div>
+                    <p>The original taste of authenticity, served with love and history.</p>
+                    <div class="social-links">
+                        <a href="#">Fb</a>
+                        <a href="#">Ig</a>
+                        <a href="#">Tw</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <a href="#home">Home</a>
+                    <a href="menu.html">Our Menu</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>Bareilly Road, Near Navin Mandi,<br>Haldwani, Uttarakhand</p>
+                    <p class="mt-1"><strong>Phone:</strong> +91 97591 00786</p>
+                    <p><strong>Email:</strong> contact@shamadeluxe.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p>Mon - Thu: 11AM - 10PM</p>
+                    <p>Fri - Sat: 11AM - 11PM</p>
+                    <p>Sunday: 12PM - 9PM</p>
+                </div>
             </div>
-            
-            <p class="footer-copyright">
-                &copy; 2026 Shama Deluxe Restaurant. All Rights Reserved. Pure Heritage Taste.
-            </p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shama Deluxe. All rights reserved.</p>
+            </div>
         </footer>
-
     </div>
-
-    <!-- Floating Interactive Order Dock -->
-    <div class="floating-order-dock" id="floatingOrderDock">
-        <div class="dock-cart-summary" onclick="toggleCartDrawer(true)">
-            <div class="dock-badge-counter" id="dockBadgeCount">0</div>
-            <div class="dock-text-meta">
-                <span class="dock-count-text" id="dockCountText">0 dishes selected</span>
-                <span class="dock-total-price" id="dockTotalPrice">₹0</span>
-            </div>
-        </div>
-        <div class="dock-actions-group">
-            <button class="view-cart-btn" onclick="toggleCartDrawer(true)">
-                Review Order ↗
-            </button>
-            <button class="dock-quick-order-btn" onclick="dispatchWhatsAppOrder()">
-                <span>💬</span> Order via WhatsApp
-            </button>
-        </div>
-    </div>
-
-    <!-- Slide-out Cart & Order Drawer -->
-    <div class="cart-drawer-overlay" id="cartDrawerOverlay">
-        <div class="cart-drawer-container">
-            <div class="cart-drawer-header">
-                <h3>Your Royal Order</h3>
-                <button class="close-drawer-btn" onclick="toggleCartDrawer(false)">✕</button>
-            </div>
-
-            <!-- Cart Items -->
-            <div class="cart-items-list" id="cartItemsList">
-                <!-- Dynamically populated via menu-app.js -->
-            </div>
-
-            <!-- Drawer Footer -->
-            <div class="cart-drawer-footer">
-                <div class="order-inputs-group">
-                    <input type="text" id="orderTableInput" class="order-input-field" placeholder="Table Number (e.g. Table #4) or Delivery Address" value="Table #4">
-                    <input type="text" id="orderNotesInput" class="order-input-field" placeholder="Chef Instructions (e.g. Less spicy, extra salad, extra hot)">
-                </div>
-
-                <div class="cart-calc-row">
-                    <span>Subtotal</span>
-                    <span id="cartSubtotal">₹0</span>
-                </div>
-                <div class="cart-calc-row">
-                    <span>Restaurant GST (5%)</span>
-                    <span id="cartGst">₹0</span>
-                </div>
-                <div class="cart-total-row">
-                    <span>Total Amount</span>
-                    <span id="cartTotal">₹0</span>
-                </div>
-
-                <div class="cart-actions-stack">
-                    <button class="btn-whatsapp-order" onclick="dispatchWhatsAppOrder()">
-                        <span>💬</span> Send Order via WhatsApp (+91 97591 00786)
-                    </button>
-                    <a href="tel:+919759100786" class="btn-direct-phone-call">
-                        <span>📞</span> Call Kitchen to Confirm
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dish Detail Modal -->
-    <div class="dish-modal-overlay" id="dishModalOverlay">
-        <div class="dish-modal-card">
-            <button class="modal-close-icon" onclick="closeDishModal()">✕</button>
-            <div class="modal-hero-img">
-                <img id="modalHeroImg" src="" alt="Dish Detail">
-            </div>
-            <div class="modal-content-body">
-                <h3 class="modal-dish-title" id="modalDishTitle"></h3>
-                <div class="modal-tags-row" id="modalTagsRow"></div>
-                <div class="modal-story-box" id="modalStoryBox"></div>
-                <div class="modal-pairing-recommendation">
-                    <span>💡 <strong>Chef's Pairing:</strong></span>
-                    <span id="modalPairingText"></span>
-                </div>
-                <div class="modal-bottom-actions">
-                    <button class="btn-luxury-glass" onclick="closeDishModal()">Close</button>
-                    <button class="btn-luxury-gold" id="modalAddOrderBtn">+ Add to Order</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Toast Notification -->
-    <div class="luxury-toast" id="luxuryToast">
-        <span>✨</span>
-        <span id="toastMessageText">Added to your order!</span>
-    </div>
+    <div id="toast" class="toast">Added to your order!</div>
 
-    <script src="menu-app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1745,3 +1745,284 @@ body {
     }
 }
 
+/* =========================================
+   ROYAL PLACEMAT BOARD - TOP MAIN VIEW
+   Exact recreation of the reference menu
+   ========================================= */
+.royal-placemat-section {
+    margin: 1rem 0 4.5rem;
+    position: relative;
+    background: #FAF3E6;
+    background-image: 
+        radial-gradient(circle at 50% 120px, rgba(255, 255, 255, 0.9) 0%, rgba(248, 239, 224, 0.6) 80%),
+        url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0 C70 30, 90 50, 120 60 C90 70, 70 90, 60 120 C50 90, 30 70, 0 60 C30 50, 50 30, 60 0 Z' fill='%23C5A059' fill-opacity='0.035'/%3E%3C/svg%3E");
+    border: 2px solid var(--color-gold-border-solid);
+    border-radius: 26px;
+    box-shadow: 
+        0 0 0 5px #FAF5EB,
+        0 0 0 7px var(--color-gold-border-solid),
+        0 25px 60px rgba(60, 38, 15, 0.12);
+    padding: 3rem 2.5rem 3.5rem;
+    overflow: hidden;
+}
+
+/* Mughal Arch Watermark in Background */
+.royal-placemat-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 420px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.16) 0%, transparent 72%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Top Branding of Placemat */
+.placemat-header {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+}
+
+.placemat-crest {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    letter-spacing: 6px;
+    margin-bottom: 0.4rem;
+}
+
+.placemat-brand {
+    font-family: var(--font-heading);
+    font-size: 4.6rem;
+    color: var(--text-heading);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.placemat-subbrand {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.8rem;
+}
+
+.placemat-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 280px;
+    margin: 0 auto;
+    color: var(--color-accent);
+}
+
+.placemat-divider::before, .placemat-divider::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--color-gold-border-solid), transparent);
+}
+
+/* Placemat Grid Layout */
+.placemat-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.2rem 1.6rem;
+    position: relative;
+    z-index: 1;
+    align-items: start;
+}
+
+/* Individual Placemat Dish Item */
+.board-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.board-item:hover {
+    transform: translateY(-5px);
+}
+
+.board-dish-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+    border: 3.5px solid #D8BF8A;
+    box-shadow: 0 12px 28px rgba(60, 38, 15, 0.2);
+    position: relative;
+    background: #FFFFFF;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board-item:hover .board-dish-img {
+    border-color: var(--color-accent);
+    box-shadow: 0 16px 36px rgba(184, 134, 11, 0.32);
+    transform: scale(1.06);
+}
+
+.board-dish-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.board-item-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.25;
+}
+
+.board-item-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    margin-bottom: 0.55rem;
+}
+
+.board-add-btn {
+    background: linear-gradient(135deg, #B8860B 0%, #9E7008 100%);
+    color: white;
+    border: none;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(184, 134, 11, 0.32);
+}
+
+.board-item:hover .board-add-btn {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #9E7008 0%, #825B03 100%);
+}
+
+/* Framed #6 Specials Box (Bottom Center) */
+.board-specials-box {
+    grid-column: 2 / span 2;
+    background: #FFFDF8;
+    border: 1.5px solid var(--color-gold-border-solid);
+    border-radius: 18px;
+    padding: 1.6rem 2rem;
+    box-shadow: 
+        0 0 0 3px #FAF5EB,
+        0 0 0 4px var(--color-gold-border-solid),
+        var(--shadow-card);
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.specials-box-header {
+    text-align: center;
+    border-bottom: 1px dashed var(--color-gold-border);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.specials-box-header span {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.specials-box-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    color: var(--text-heading);
+}
+
+.specials-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1.8rem;
+}
+
+.special-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.9rem;
+    border-bottom: 1px dotted rgba(197, 160, 89, 0.45);
+    padding-bottom: 0.35rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.special-list-item:hover {
+    color: var(--color-accent);
+    padding-left: 3px;
+}
+
+.special-list-item .item-title {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.special-list-item .item-cost {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+}
+
+.placemat-cta-bar {
+    text-align: center;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .placemat-board {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .board-specials-box {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .royal-placemat-section {
+        padding: 2rem 1.2rem;
+    }
+    .placemat-brand {
+        font-size: 3.2rem;
+    }
+    .placemat-board {
+        grid-template-columns: 1fr;
+    }
+    .board-specials-box {
+        grid-column: 1;
+    }
+    .specials-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
