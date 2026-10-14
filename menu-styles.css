@@ -1808,6 +1808,40 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   transform: translateY(0) scale(1);
 }
 
+@media (min-width: 769px) {
+  .dish-modal-container {
+    max-width: 860px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    max-height: 88vh;
+    overflow: hidden;
+  }
+
+  .modal-drag-handle {
+    display: none;
+  }
+
+  .modal-media-frame {
+    width: 350px;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    min-height: 580px;
+    flex-shrink: 0;
+    border-radius: var(--radius-card) 0 0 var(--radius-card);
+    margin: 0;
+  }
+
+  .modal-content-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
 .modal-close-btn {
   position: absolute;
   top: 1rem;
@@ -1836,14 +1870,18 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .modal-media-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  background-color: var(--bg-secondary);
+  aspect-ratio: 9 / 16;
+  background-color: #12100e;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-media-img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
 }
@@ -1851,6 +1889,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .modal-media-video {
   width: 100%;
   height: 100%;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
   background-color: #12100e;
@@ -2150,11 +2189,12 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   background-color: var(--bg-card);
   border: 1px solid var(--gold-accent);
   border-radius: var(--radius-card);
-  max-width: 720px;
+  max-width: 420px;
   width: 100%;
   overflow: hidden;
   box-shadow: var(--shadow-modal);
   position: relative;
+  margin: 0 auto;
 }
 
 .video-modal-header {
@@ -2180,12 +2220,15 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   width: 100%;
   background: #000000;
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
 }
 
 .video-element {
   width: 100%;
   height: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
   display: block;
 }
 
@@ -3040,7 +3083,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 
   .dish-modal-container {
-    max-height: 85vh;
+    max-height: 92vh;
     border-radius: 20px 20px 0 0;
     border-left: none;
     border-right: none;
@@ -3049,7 +3092,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {
     flex-direction: column;
     transform: translateY(100%);
     box-shadow: 0 -10px 40px rgba(81, 57, 41, 0.25);
-    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .modal-drag-handle {
@@ -3063,15 +3107,19 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 
   .modal-media-frame {
-    aspect-ratio: 16 / 10;
-    max-height: 190px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    max-height: none;
     flex-shrink: 0;
+    border-radius: 16px 16px 0 0;
   }
 
   .modal-content-body {
-    padding: 0.85rem 1rem 1rem;
+    padding: 1rem 1.15rem 1.25rem;
     flex: 1;
-    overflow-y: auto;
   }
 
   .modal-dish-title {
@@ -3102,12 +3150,13 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
   /* Modal Action Bar - Integrated Footer, Zero Empty Space */
   .modal-actions-row {
-    position: relative;
+    position: sticky;
+    bottom: 0;
     padding: 0.75rem 1rem;
-    margin: 0;
+    margin: 0.85rem -1.15rem -1.25rem -1.15rem;
     background: var(--bg-card);
     border-top: 1px solid var(--gold-border);
-    box-shadow: 0 -4px 12px rgba(81, 57, 41, 0.05);
+    box-shadow: 0 -4px 14px rgba(81, 57, 41, 0.08);
     flex-shrink: 0;
     z-index: 10;
   }
