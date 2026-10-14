@@ -27,19 +27,19 @@ const CATEGORIES = [
     "icon": "🍢"
   },
   {
-    "id": "chicken-gravy",
-    "name": "Chicken Gravy",
-    "icon": "🍲"
+    "id": "rice",
+    "name": "Rice Specialities",
+    "icon": "🍚"
   },
   {
-    "id": "mutton-gravy",
-    "name": "Mutton Gravy",
-    "icon": "🍖"
+    "id": "mocktails",
+    "name": "Mocktails",
+    "icon": "🍹"
   },
   {
-    "id": "chinese",
-    "name": "Chinese",
-    "icon": "🥢"
+    "id": "shakes",
+    "name": "Shakes",
+    "icon": "🧋"
   },
   {
     "id": "paneer",
@@ -57,34 +57,9 @@ const CATEGORIES = [
     "icon": "🥣"
   },
   {
-    "id": "breads",
-    "name": "Roti & Naan",
-    "icon": "🫓"
-  },
-  {
-    "id": "rice",
-    "name": "Rice Specialities",
-    "icon": "🍚"
-  },
-  {
-    "id": "salad-raita",
-    "name": "Salad & Raita",
-    "icon": "🥒"
-  },
-  {
     "id": "beverages",
     "name": "Beverages",
     "icon": "🥤"
-  },
-  {
-    "id": "mocktails",
-    "name": "Mocktails",
-    "icon": "🍹"
-  },
-  {
-    "id": "shakes",
-    "name": "Shakes",
-    "icon": "🧋"
   },
   {
     "id": "sundaes",
@@ -95,6 +70,31 @@ const CATEGORIES = [
     "id": "sweets",
     "name": "Sweets",
     "icon": "🍮"
+  },
+  {
+    "id": "chicken-gravy",
+    "name": "Chicken Gravy",
+    "icon": "🍲"
+  },
+  {
+    "id": "mutton-gravy",
+    "name": "Mutton Gravy",
+    "icon": "🍖"
+  },
+  {
+    "id": "chinese",
+    "name": "Chinese",
+    "icon": "🥢"
+  },
+  {
+    "id": "breads",
+    "name": "Roti & Naan",
+    "icon": "🫓"
+  },
+  {
+    "id": "salad-raita",
+    "name": "Salad & Raita",
+    "icon": "🥒"
   }
 ];
 
@@ -3020,17 +3020,120 @@ function renderCategoryTabs() {
       <span class="category-count-badge">${count}</span>
     `;
     
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', activeCategory === cat.id ? 'true' : 'false');
+
     btn.addEventListener('click', () => {
       activeCategory = cat.id;
-      renderCategoryTabs();
+      const allTabs = container.querySelectorAll('.category-tab-btn');
+      allTabs.forEach(t => {
+        const isActive = t.dataset.category === cat.id;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
       renderMenu();
       
-      // Smooth scroll the clicked button into view on mobile
+      // Smooth scroll the clicked button into view
       btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      if (typeof updateCatSliderButtons === 'function') {
+        setTimeout(updateCatSliderButtons, 350);
+      }
     });
     
     container.appendChild(btn);
   });
+
+  if (typeof updateCatSliderButtons === 'function') {
+    updateCatSliderButtons();
+  }
+}
+
+// Category Slider Interactive Controls (Arrow Buttons, Drag & Mouse Wheel)
+function updateCatSliderButtons() {
+  const scroller = document.getElementById('categoryTabsContainer');
+  const prevBtn = document.getElementById('catSliderPrevBtn');
+  const nextBtn = document.getElementById('catSliderNextBtn');
+  if (!scroller) return;
+  
+  const maxScrollLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+  if (prevBtn) {
+    prevBtn.disabled = scroller.scrollLeft <= 4;
+  }
+  if (nextBtn) {
+    nextBtn.disabled = scroller.scrollLeft >= maxScrollLeft - 4;
+  }
+}
+
+function initCategorySliderControls() {
+  const scroller = document.getElementById('categoryTabsContainer');
+  const prevBtn = document.getElementById('catSliderPrevBtn');
+  const nextBtn = document.getElementById('catSliderNextBtn');
+  if (!scroller) return;
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      scroller.scrollBy({ left: -260, behavior: 'smooth' });
+      setTimeout(updateCatSliderButtons, 320);
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      scroller.scrollBy({ left: 260, behavior: 'smooth' });
+      setTimeout(updateCatSliderButtons, 320);
+    });
+  }
+  
+  // Mouse drag-to-scroll on desktop
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let dragThresholdPassed = false;
+  
+  scroller.addEventListener('mousedown', (e) => {
+    isDown = true;
+    dragThresholdPassed = false;
+    startX = e.pageX - scroller.offsetLeft;
+    scrollStart = scroller.scrollLeft;
+  });
+  
+  window.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  
+  scroller.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX - scroller.offsetLeft;
+    const walk = x - startX;
+    if (Math.abs(walk) > 6) {
+      dragThresholdPassed = true;
+    }
+    scroller.scrollLeft = scrollStart - walk;
+    updateCatSliderButtons();
+  });
+  
+  // Prevent category click if the user was dragging
+  scroller.addEventListener('click', (e) => {
+    if (dragThresholdPassed) {
+      e.preventDefault();
+      e.stopPropagation();
+      dragThresholdPassed = false;
+    }
+  }, true);
+  
+  // Horizontal scroll on mouse wheel
+  scroller.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      scroller.scrollLeft += e.deltaY;
+      updateCatSliderButtons();
+    }
+  }, { passive: false });
+  
+  scroller.addEventListener('scroll', updateCatSliderButtons, { passive: true });
+  window.addEventListener('resize', updateCatSliderButtons);
+  
+  setTimeout(updateCatSliderButtons, 150);
 }
 
 function renderMenu() {
@@ -3744,6 +3847,7 @@ window.copyMenuLink = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCategoryTabs();
+  initCategorySliderControls();
   renderMenu();
   updateCartUI();
   

@@ -1286,7 +1286,63 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   background: var(--diet-nonveg);
 }
 
-/* Category Navigation Tabs */
+/* Category Navigation Tabs & Slider Wrapper */
+.category-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.45rem;
+}
+
+.category-slider-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--gold-border);
+  color: var(--text-heading);
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(81, 57, 41, 0.08);
+  transition: all var(--transition-fast);
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 2;
+  padding: 0;
+}
+
+.category-slider-btn:hover:not(:disabled) {
+  background-color: var(--gold-accent);
+  color: #FFFFFF;
+  border-color: var(--gold-accent);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(181, 138, 69, 0.32);
+}
+
+.category-slider-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.category-slider-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .category-slider-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.25rem;
+  }
+}
+
 .category-tabs-scroller {
   display: flex;
   align-items: center;
@@ -1296,7 +1352,15 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  flex: 1;
+}
+
+.category-tabs-scroller:active {
+  cursor: grabbing;
 }
 
 .category-tabs-scroller::-webkit-scrollbar {

@@ -126,14 +126,18 @@
                     </button>
                 </div>
 
-                <!-- Horizontally Scrollable Category Tabs -->
-                <div 
-                    class="category-tabs-scroller" 
-                    id="categoryTabsContainer" 
-                    role="tablist" 
-                    aria-label="Dish categories"
-                >
-                    <!-- Generated dynamically from actual menu data -->
+                <!-- Horizontally Scrollable Category Tabs with Slider Controls -->
+                <div class="category-slider-wrapper">
+                    <button type="button" class="category-slider-btn prev" id="catSliderPrevBtn" aria-label="Scroll categories left">‹</button>
+                    <div 
+                        class="category-tabs-scroller" 
+                        id="categoryTabsContainer" 
+                        role="tablist" 
+                        aria-label="Dish categories"
+                    >
+                        <!-- Generated dynamically from actual menu data -->
+                    </div>
+                    <button type="button" class="category-slider-btn next" id="catSliderNextBtn" aria-label="Scroll categories right">›</button>
                 </div>
             </div>
         </div>
