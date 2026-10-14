@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- Premium Light Cream, Soft Gold & Warm Brown Theme Stylesheet -->
-    <link rel="stylesheet" href="menu-styles.css?v=8">
+    <link rel="stylesheet" href="menu-styles.css?v=9">
 </head>
 <body>
 
@@ -35,6 +35,7 @@
             <!-- Compact Navigation & Actions -->
             <div class="header-actions">
                 <nav class="header-nav" aria-label="Primary Navigation">
+                    <a href="#menuStickyNav" class="nav-link active-menu-pill">Menu</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </nav>
 
@@ -66,6 +67,13 @@
                     <span aria-hidden="true">📱</span>
                     <span>QR Code</span>
                 </button>
+
+                <!-- Order Cart Pill -->
+                <button type="button" class="header-cart-btn" onclick="toggleCartDrawer(true)" aria-label="Open your order cart">
+                    <span aria-hidden="true">🛒</span>
+                    <span>Order</span>
+                    <span class="cart-pill-count" id="headerCartCount">0</span>
+                </button>
             </div>
         </div>
     </header>
@@ -74,81 +82,265 @@
     <main id="main-content">
 
         <!-- ==========================================================================
-             2. LUXURY VIDEO HERO HEADER (9:16 FORMAT WITH SCROLL ANIMATION)
+             2. COMPACT MENU INTRODUCTION
              ========================================================================== -->
-        <section class="video-hero-header" id="videoHeroHeader" aria-label="Restaurant Video Header">
-            <!-- Ambient Cinema Backdrop for Desktop -->
-            <div class="video-hero-ambient-backdrop" aria-hidden="true" style="background-image: url('images/shama_hero_poster.jpg');"></div>
-            <div class="video-hero-ambient-overlay" aria-hidden="true"></div>
-
-            <!-- Centered 9:16 Video Frame with Interactive Scroll Animation -->
-            <div class="video-hero-frame" id="videoHeroFrame" tabindex="0" role="region" aria-label="Interactive 9:16 Video Menu Scroll">
-                <video 
-                    id="heroBgVideo" 
-                    class="hero-video-media" 
-                    muted 
-                    playsinline 
-                    preload="auto"
-                    poster="images/shama_hero_poster.jpg"
-                >
-                    <source src="videos/1012.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-hero-overlay"></div>
-                <div class="video-page-turn-flash" id="videoPageTurnFlash" aria-hidden="true"></div>
-
-                <!-- Top Floating Dish Badge & Counter HUD -->
-                <div class="video-dish-badge-hud" id="videoDishBadgeHud">
-                    <div class="dish-hud-pill">
-                        <span class="hud-crest" aria-hidden="true">⚜</span>
-                        <span id="dishCounterLabel">Item 1 of 32</span>
-                    </div>
-                    <div class="dish-hud-title-chip" id="dishHudTitleChip">
-                        <span id="dishTitleLabel">Chicken Biryani</span>
-                        <span class="dish-hud-sep">•</span>
-                        <span id="dishPriceLabel" class="dish-hud-price">₹120 / ₹240</span>
-                    </div>
-                </div>
-
-                <!-- Subtle Interactive Navigation Arrows (Prev / Next) -->
-                <button type="button" class="video-nav-arrow prev" id="videoNavPrevBtn" onclick="scrollFoodItem(-1)" aria-label="Previous Food Item" title="Previous Food Item (Scroll Right)">
-                    <span aria-hidden="true">‹</span>
-                </button>
-                <button type="button" class="video-nav-arrow next" id="videoNavNextBtn" onclick="scrollFoodItem(1)" aria-label="Next Food Item" title="Next Food Item (Scroll Left)">
-                    <span aria-hidden="true">›</span>
-                </button>
-
-                <!-- Initial Scroll / Swipe Left Hint -->
-                <div class="video-scroll-hint" id="videoScrollHint" aria-hidden="true">
-                    <span class="hint-chevron">‹</span>
-                    <span>Scroll or Swipe Left for Next Food Item</span>
-                    <span class="hint-chevron">›</span>
-                </div>
-
-                <!-- Replay Dish Animation Button (Shown when product animation has stopped) -->
-                <button type="button" id="videoReplayBtn" class="video-replay-badge-btn" onclick="replayCurrentFoodItem()" aria-label="Replay Dish Animation" title="Replay food reveal animation">
-                    <span aria-hidden="true">↺</span>
-                    <span>Replay</span>
-                </button>
-
-                <!-- Bottom Dish Progress Scrubber & Dots -->
-                <div class="video-dish-scrubber" id="videoDishScrubber" aria-label="Dishes Timeline">
-                    <div class="scrubber-bar-track">
-                        <div class="scrubber-bar-fill" id="scrubberBarFill"></div>
-                    </div>
-                    <div class="scrubber-dots-row" id="scrubberDotsRow" role="tablist">
-                        <!-- Populated by menu-app.js -->
-                    </div>
-                </div>
-
-                <!-- Floating Sound Control in Corner of 9:16 Video Frame -->
-                <button type="button" id="heroVideoMuteBtn" class="hero-floating-sound-btn" onclick="toggleHeroVideoSound()" aria-label="Toggle Sound" title="Toggle Sound">
-                    <span id="heroMuteIcon">🔇</span>
-                </button>
+        <section class="menu-intro-section" aria-labelledby="menu-main-heading">
+            <div class="ornate-gold-divider" aria-hidden="true">
+                <span class="ornate-line"></span>
+                <span class="ornate-crest">⚜ ❖ ⚜</span>
+                <span class="ornate-line reverse"></span>
             </div>
+            <h1 class="menu-intro-title" id="menu-main-heading">Our Menu</h1>
+            <p class="menu-intro-subtitle">Explore your favourites, freshly prepared.</p>
         </section>
 
+        <!-- ==========================================================================
+             3. SEARCH AND CATEGORY NAVIGATION (STICKY & ACCESSIBLE)
+             ========================================================================== -->
+        <div class="menu-nav-sticky-wrapper" id="menuStickyNav">
+            <div class="nav-controls-container">
+                <!-- Search Input Bar -->
+                <div class="search-bar-row">
+                    <div class="search-input-box">
+                        <span class="search-icon-decor" aria-hidden="true">🔍</span>
+                        <input 
+                            type="search" 
+                            id="dishSearchInput" 
+                            class="search-input-field" 
+                            placeholder="Search for a dish…" 
+                            autocomplete="off"
+                            aria-label="Search dishes"
+                        />
+                        <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search input">✕</button>
+                    </div>
+                </div>
+
+                <!-- Dietary Filter Chips -->
+                <div class="diet-filter-chips" role="group" aria-label="Filter by dietary preference">
+                    <button type="button" class="diet-pill active" data-diet="all">All Items</button>
+                    <button type="button" class="diet-pill" data-diet="veg">
+                        <span class="dot-indicator veg" aria-hidden="true"></span> Vegetarian
+                    </button>
+                    <button type="button" class="diet-pill" data-diet="non-veg">
+                        <span class="dot-indicator nonveg" aria-hidden="true"></span> Non-Veg
+                    </button>
+                </div>
+
+                <!-- Horizontally Scrollable Category Tabs -->
+                <div 
+                    class="category-tabs-scroller" 
+                    id="categoryTabsContainer" 
+                    role="tablist" 
+                    aria-label="Dish categories"
+                >
+                    <!-- Generated dynamically from actual menu data -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================================
+             4. FOOD MENU SECTION & EMPTY STATE
+             ========================================================================== -->
+        <div class="menu-main-content">
+            <!-- Empty state when no dishes match search or filters -->
+            <div id="emptyStateNotice" class="catalog-empty-state" style="display: none;">
+                <div class="empty-state-icon" aria-hidden="true">🍽️</div>
+                <h3 class="empty-state-title">No matching dishes found</h3>
+                <p class="empty-state-desc">Try searching for a different dish or clear your filters to explore our full menu.</p>
+                <button type="button" id="clearFiltersBtn" class="btn-clear-filters">
+                    <span>↺</span> Clear Filters
+                </button>
+            </div>
+
+            <!-- Dynamic Category-Grouped Menu Container -->
+            <div id="menuCatalogContainer">
+                <!-- Grouped categories & cards rendered by menu-app.js -->
+            </div>
+        </div>
+
     </main>
+
+    <!-- ==========================================================================
+         5. DISH DETAILS MODAL / MOBILE BOTTOM SHEET
+         ========================================================================== -->
+    <div 
+        id="dishModalOverlay" 
+        class="modal-overlay" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-hidden="true" 
+        aria-labelledby="modalTitle"
+        onclick="if(event.target === this) closeDishModal()"
+    >
+        <div class="dish-modal-container">
+            <div class="modal-drag-handle" aria-hidden="true"></div>
+            <!-- Close Button -->
+            <button type="button" class="modal-close-btn" onclick="closeDishModal()" aria-label="Close dish details modal">✕</button>
+
+            <!-- Media Visual -->
+            <div class="modal-media-frame">
+                <img id="modalHeroImg" src="" alt="Dish visual" class="modal-media-img">
+            </div>
+
+            <div class="modal-content-body">
+                <!-- Badges & Tags -->
+                <div class="modal-tags-row" id="modalTagsRow"></div>
+
+                <!-- Title & Description -->
+                <h2 class="modal-dish-title" id="modalTitle"></h2>
+                <p class="modal-dish-desc" id="modalDesc"></p>
+
+                <!-- Food Reveal Video Button (Only shown if video exists) -->
+                <div id="modalVideoRow" class="modal-video-action-row" style="display: none;"></div>
+
+                <!-- Heritage Recipe Story -->
+                <div class="modal-story-panel" id="modalStoryBox" style="display: none;"></div>
+
+                <!-- Pairing Advice -->
+                <div class="modal-pairing-note" id="modalPairingNote" style="display: none;"></div>
+
+                <!-- Portion Options -->
+                <div id="modalPortionsSection"></div>
+
+                <!-- Modal Action Row -->
+                <div class="modal-actions-row">
+                    <div>
+                        <span style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;display:block;">Selected Price</span>
+                        <span class="modal-total-price" id="modalTotalPrice">₹0</span>
+                    </div>
+                    <button type="button" class="modal-add-btn" onclick="handleAddModalToCart()">
+                        <span>+</span> Add to Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         6. FOOD REVEAL VIDEO PLAYER MODAL
+         ========================================================================== -->
+    <div 
+        id="videoModalOverlay" 
+        class="video-modal-overlay" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-hidden="true" 
+        aria-labelledby="videoModalTitle"
+        onclick="if(event.target === this) closeFoodRevealVideo()"
+    >
+        <div class="video-modal-container">
+            <div class="video-modal-header">
+                <h3 class="video-modal-title" id="videoModalTitle">Food Reveal Video</h3>
+                <button type="button" class="modal-close-btn" onclick="closeFoodRevealVideo()" aria-label="Close video player">✕</button>
+            </div>
+            <div class="video-frame-box">
+                <video 
+                    id="foodRevealVideoPlayer" 
+                    class="video-element" 
+                    controls 
+                    playsinline 
+                    preload="metadata"
+                >
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         7. FLOATING ORDER DOCK & CART DRAWER
+         ========================================================================== -->
+    <!-- Floating Dock -->
+    <aside 
+        id="floatingOrderDock" 
+        class="floating-order-dock" 
+        onclick="toggleCartDrawer(true)" 
+        aria-label="View current order summary"
+    >
+        <span class="dock-badge-pill" id="dockBadgeCount">0</span>
+        <div class="dock-text-group">
+            <span class="dock-total-price" id="dockTotalPrice">₹0</span>
+            <span class="dock-meta-text" id="dockCountMeta">0 dishes</span>
+        </div>
+        <span class="dock-action-btn">
+            <span>View Order</span>
+            <span aria-hidden="true">→</span>
+        </span>
+    </aside>
+
+    <!-- Cart Drawer Overlay -->
+    <div 
+        id="cartDrawerOverlay" 
+        class="cart-drawer-overlay" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-hidden="true" 
+        aria-labelledby="cartDrawerHeading"
+        onclick="if(event.target === this) toggleCartDrawer(false)"
+    >
+        <div class="cart-drawer-panel">
+            <div class="modal-drag-handle" aria-hidden="true"></div>
+            <div class="cart-drawer-header">
+                <h3 class="cart-drawer-title" id="cartDrawerHeading">
+                    <span>⚜</span> Your Royal Order
+                </h3>
+                <button type="button" class="cart-drawer-close" onclick="toggleCartDrawer(false)" aria-label="Close cart drawer">✕</button>
+            </div>
+
+            <!-- Items List -->
+            <div class="cart-items-scrollable" id="cartItemsList"></div>
+
+            <!-- Cart Drawer Footer -->
+            <div class="cart-drawer-footer">
+                <!-- Dining Mode Selector -->
+                <div class="dining-mode-tabs" role="group" aria-label="Select dining mode">
+                    <button type="button" class="dining-mode-chip active" data-mode="Dine-In">Dine-In</button>
+                    <button type="button" class="dining-mode-chip" data-mode="Takeaway">Takeaway</button>
+                    <button type="button" class="dining-mode-chip" data-mode="Delivery">Delivery</button>
+                </div>
+
+                <!-- Location / Table Input -->
+                <input 
+                    type="text" 
+                    id="orderLocationInput" 
+                    class="cart-input-field" 
+                    placeholder="Enter Table Number (e.g. Table #4)" 
+                    value="Table #4"
+                    aria-label="Dining location or table number"
+                />
+
+                <!-- Special Cooking Requests -->
+                <input 
+                    type="text" 
+                    id="orderNotesInput" 
+                    class="cart-input-field" 
+                    placeholder="Special requests (e.g. Less spicy, extra onions)" 
+                    aria-label="Special cooking instructions"
+                />
+
+                <!-- Price Summary -->
+                <div class="cart-summary-lines">
+                    <div class="summary-row">
+                        <span>Dishes Subtotal</span>
+                        <span id="cartSubtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>GST (5%)</span>
+                        <span id="cartGst">₹0</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total Payable</span>
+                        <span id="cartTotal">₹0</span>
+                    </div>
+                </div>
+
+                <!-- Send Order via WhatsApp -->
+                <button type="button" class="btn-whatsapp-order" onclick="dispatchWhatsAppOrder()">
+                    <span>💬</span> Send Order via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- ==========================================================================
          7B. TABLE MENU QR STAND & SCAN MODAL
@@ -216,7 +408,8 @@
                 <div>
                     <h4 class="footer-column-title">Explore</h4>
                     <ul class="footer-links-list">
-                        <li><a href="#main-content">Back to Top</a></li>
+                        <li><a href="#main-content">Top of Menu</a></li>
+                        <li><a href="#dishSearchInput">Search Dishes</a></li>
                         <li><a href="#contact">Contact & Location</a></li>
                         <li><a href="tel:+919759100786">Call Restaurant</a></li>
                     </ul>
@@ -269,6 +462,6 @@
     </footer>
 
     <!-- Menu Application Script -->
-    <script src="menu-app.js?v=8"></script>
+    <script src="menu-app.js?v=9"></script>
 </body>
 </html>
