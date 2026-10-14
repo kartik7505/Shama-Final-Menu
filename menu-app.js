@@ -120,7 +120,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/afghani_chicken.jpg",
     "description": "Tender chicken marinated in rich cashew cream, mild royal spices, and char-grilled to perfection.",
     "story": "Prepared in traditional charcoal clay tandoor using ancient Mughal-Afghan techniques.",
-    "pairing": "Pairs best with Green Mint Chutney and Rumali Roti."
+    "pairing": "Pairs best with Green Mint Chutney and Rumali Roti.",
+    "video": "seperate videos/afghani chicken.mp4"
   },
   {
     "id": "chicken-tandoori",
@@ -143,7 +144,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_tandoori.jpg",
     "description": "Classic bone-in chicken marinated in Kashmiri red chilies, thick curd, mustard oil, and roasted tandoori spices.",
     "story": "A Shama Deluxe favorite since 1998, smoked over slow red charcoal.",
-    "pairing": "Enjoy with Onion Salad and fresh Butter Naan."
+    "pairing": "Enjoy with Onion Salad and fresh Butter Naan.",
+    "video": "seperate videos/chicken tandoori.mp4"
   },
   {
     "id": "chicken-fry",
@@ -166,7 +168,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_fry.jpg",
     "description": "Golden crisp fried chicken seasoned with zesty house spices and chaat masala.",
     "story": "Double-fried for a crackling outer crust while keeping the meat juicy and tender.",
-    "pairing": "Complements cold beverages and tangy mint dip."
+    "pairing": "Complements cold beverages and tangy mint dip.",
+    "video": "seperate videos/chicken fry.mp4"
   },
   {
     "id": "chicken-tikka",
@@ -189,7 +192,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_tikka.jpg",
     "description": "Boneless chicken chunks marinated in spiced hung yogurt, skewered and roasted smoky in tandoor.",
     "story": "Hand-cut supreme chicken cubes infused with ginger-garlic essence.",
-    "pairing": "Pairs wonderfully with Rumali Roti and lemon rings."
+    "pairing": "Pairs wonderfully with Rumali Roti and lemon rings.",
+    "video": "seperate videos/chicken tikka.mp4"
   },
   {
     "id": "chicken-malai-tikka",
@@ -212,7 +216,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_malai_tikka.jpg",
     "description": "Creamy, silky chicken bites marinated in malai, cheese, cardamom, and subtle white spices.",
     "story": "A velvety delicacy adored by lovers of mild, aromatic Mughlai tandoor flavors.",
-    "pairing": "Best paired with Butter Naan."
+    "pairing": "Best paired with Butter Naan.",
+    "video": "seperate videos/chicken malai tikka.mp4"
   },
   {
     "id": "chicken-butter-dip",
@@ -235,7 +240,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_butter_dip.jpg",
     "description": "Succulent charcoal-grilled chicken skewers soaked in a sizzling dip of pure churned melted butter.",
     "story": "A legendary indulgence showcasing North Indian passion for pure desi makhan.",
-    "pairing": "Superb with fresh Roomali Roti."
+    "pairing": "Superb with fresh Roomali Roti.",
+    "video": "seperate videos/chicken butter dip.mp4"
   },
   {
     "id": "chicken-malai-roasted",
@@ -258,7 +264,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_masala_roasted.jpg",
     "description": "Roasted tandoori chicken glazed with aromatic malai masala and slow-fired to golden perfection.",
     "story": "Combines the smoky roast of tandoor with rich clotted cream glaze.",
-    "pairing": "Delicious with Garlic Naan."
+    "pairing": "Delicious with Garlic Naan.",
+    "video": "seperate videos/chicken masala roasted.mp4"
   },
   {
     "id": "drums-of-heaven",
@@ -281,7 +288,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/drums_of_heaven.jpg",
     "description": "Crisp chicken wingettes tossed in sweet, spicy, and tangy Indo-Chinese garlic sauce.",
     "story": "An irresistible starter with bold crunch and vibrant oriental glazes.",
-    "pairing": "Great companion to cold drinks and fried rice."
+    "pairing": "Great companion to cold drinks and fried rice.",
+    "video": "seperate videos/drums of heaven.mp4"
   },
   {
     "id": "mutton-burrah",
@@ -304,7 +312,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_burrah.jpg",
     "description": "Tender mutton ribs and chops double-marinated in malt vinegar and royal garam masala, flame-grilled on coal.",
     "story": "Ancestral Mughlai recipe handed down over generations for authentic smokiness.",
-    "pairing": "Pairs exquisitely with Rumali Roti."
+    "pairing": "Pairs exquisitely with Rumali Roti.",
+    "video": "seperate videos/mutton burrah.mp4"
   },
   {
     "id": "chicken-stick",
@@ -321,7 +330,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_fry.jpg",
     "description": "Hand-threaded spiced chicken skewer fried crisp with golden breading.",
     "story": "Quick bite favorite popular for on-the-go Mughlai snacking.",
-    "pairing": "Serve with spicy chutney."
+    "pairing": "Serve with spicy chutney.",
+    "video": "seperate videos/chicken stick.mp4"
   },
   {
     "id": "pota-stick",
@@ -338,7 +348,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/pota_stick.jpg",
     "description": "Seasoned and spiced pota skewers flash-fried with aromatic herbs.",
     "story": "Traditional countryside street starter loved for its distinctive texture and spices.",
-    "pairing": "Goes with raw onion and lime."
+    "pairing": "Goes with raw onion and lime.",
+    "video": "seperate videos/pota stick.mp4"
   },
   {
     "id": "chicken-roll",
@@ -355,7 +366,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_roll.jpg",
     "description": "Juicy shredded spiced chicken and crisp onions rolled inside a warm flatbread.",
     "story": "Street-style Kolkata & Mughlai roll wrapped hot with tangy sauces.",
-    "pairing": "Perfect with fresh mint dip."
+    "pairing": "Perfect with fresh mint dip.",
+    "video": "seperate videos/chicken roll.mp4"
   },
   {
     "id": "chicken-lollipop-wings",
@@ -378,7 +390,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_lollipop.jpg",
     "description": "Frenched chicken winglets tossed in fiery ginger-garlic sauce with crisp outer batter.",
     "story": "A restaurant best-seller loved by both young and old for its flavor punch.",
-    "pairing": "Enjoy with Schezwan dip."
+    "pairing": "Enjoy with Schezwan dip.",
+    "video": "seperate videos/chicken lolipop.mp4"
   },
   {
     "id": "fish-fry",
@@ -442,7 +455,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_raan.jpg",
     "description": "Whole leg of tender mutton marinated for 24 hours in saffron, papaya and spices, slow-roasted to fall-off-the-bone tenderness.",
     "story": "An imperial Mughal banquet showstopper prepared on advance order for royal gatherings.",
-    "pairing": "Best savored with Shama Special Naan and Biryani."
+    "pairing": "Best savored with Shama Special Naan and Biryani.",
+    "video": "seperate videos/mutton raan.mp4"
   },
   {
     "id": "chicken-kabab-roll",
@@ -459,7 +473,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_kabab_roll.jpg",
     "description": "Tender chicken seekh kabab wrapped in soft paratha with zesty mint chutney and rings of onion.",
     "story": "Crafted on live tawa for an authentic, smoky handheld roll.",
-    "pairing": "Serve with extra mint sauce."
+    "pairing": "Serve with extra mint sauce.",
+    "video": "seperate videos/chicken kabab roll.mp4"
   },
   {
     "id": "chicken-seekh-kabab",
@@ -477,7 +492,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_seekh_kabab.jpg",
     "description": "Finely minced chicken spiced with coriander, cumin, ginger, and green chilies, roasted on long metal skewers.",
     "story": "Clay tandoor smoked to retain all juices inside the minced meat.",
-    "pairing": "Best with Butter Roti."
+    "pairing": "Best with Butter Roti.",
+    "video": "seperate videos/chicken seekh kabab.mp4"
   },
   {
     "id": "mutton-kabab-roll",
@@ -494,7 +510,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_kabab_roll.jpg",
     "description": "Charcoal grilled mutton seekh kabab nestled in warm bread with lemon-spiced sliced onions.",
     "story": "Rich in flavor with juicy mutton textures in every single bite.",
-    "pairing": "Great on the go."
+    "pairing": "Great on the go.",
+    "video": "seperate videos/mutton kabab roll.mp4"
   },
   {
     "id": "mutton-seekh-kabab",
@@ -512,7 +529,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_seekh_kabab.jpg",
     "description": "Premium minced mutton blended with ancestral Shama potli spices and charred to tender succulence.",
     "story": "A staple Mughlai recipe that has delighted guests in Haldwani since 1998.",
-    "pairing": "Pairs with Rumali Roti."
+    "pairing": "Pairs with Rumali Roti.",
+    "video": "seperate videos/mutton seekh kabab.mp4"
   },
   {
     "id": "chicken-malai-kabab",
@@ -530,7 +548,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_malai_kabab.jpg",
     "description": "Silken minced chicken patties infused with clotted dairy cream, mild cheese, and fragrant mace.",
     "story": "Designed for a delicate palate where creaminess and meat harmony take center stage.",
-    "pairing": "Delicious with Garlic Naan."
+    "pairing": "Delicious with Garlic Naan.",
+    "video": "seperate videos/chicken malai kabab.mp4"
   },
   {
     "id": "mutton-malai-kabab",
@@ -548,7 +567,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_malai_kabab.jpg",
     "description": "Ultra-fine minced mutton whipped with rich malai and saffron, char-grilled with utmost precision.",
     "story": "Melts softly on the tongue leaving notes of cardamom and ghee.",
-    "pairing": "Enjoy with Shama Spl. Naan."
+    "pairing": "Enjoy with Shama Spl. Naan.",
+    "video": "seperate videos/mutton malai kabab.mp4"
   },
   {
     "id": "shaami-kabab",
@@ -565,7 +585,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/shaami_kabab.jpg",
     "description": "Traditional Awadhi pan-fried patty made with silky minced meat and chana dal simmered with whole spices.",
     "story": "Slow cooked till fiber-soft and browned on a flat heavy tawa.",
-    "pairing": "Classic tea-time or starter companion."
+    "pairing": "Classic tea-time or starter companion.",
+    "video": "seperate videos/shaami kabab.mp4"
   },
   {
     "id": "kali-mirch-chicken",
@@ -588,7 +609,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/kali_mirch_chicken.jpg",
     "description": "Chicken steeped in freshly crushed Malabar black pepper, cashew paste, and aromatic light gravy.",
     "story": "A legendary dish famed for bold pepper warmth balanced by thick dairy cream.",
-    "pairing": "Best with Butter Naan or Steamed Rice."
+    "pairing": "Best with Butter Naan or Steamed Rice.",
+    "video": "seperate videos/kali mirch chicken.mp4"
   },
   {
     "id": "butter-chicken",
@@ -611,7 +633,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/butter_chicken.jpg",
     "description": "Tandoori chicken pieces simmered in silky tomato-butter gravy scented with kasuri methi and honey.",
     "story": "The iconic North Indian masterpiece, perfected over 25+ years in heavy copper handis.",
-    "pairing": "Perfect with hot Garlic Naan or Rumali Roti."
+    "pairing": "Perfect with hot Garlic Naan or Rumali Roti.",
+    "video": "seperate videos/butter chicken.mp4"
   },
   {
     "id": "changezi-chicken",
@@ -634,7 +657,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/changezi_chicken.jpg",
     "description": "Roast chicken braised in a robust, tangy, and rich gravy of roasted onions, tomatoes, and milk curd.",
     "story": "Named after historic warrior tradition, loved for its deep crimson hue and intense spice aroma.",
-    "pairing": "Pairs brilliantly with Tandoori Roti."
+    "pairing": "Pairs brilliantly with Tandoori Roti.",
+    "video": "seperate videos/changezi chicken.mp4"
   },
   {
     "id": "akbari-chicken",
@@ -657,7 +681,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/akbari_chicken.jpg",
     "description": "Royal Mughal gravy prepared with almonds, golden fried onions, saffron, and tender chicken morsels.",
     "story": "Refined court cuisine honoring Akbar the Great's grand feast kitchens.",
-    "pairing": "Enjoy with Shama Spl. Naan."
+    "pairing": "Enjoy with Shama Spl. Naan.",
+    "video": "seperate videos/akbari chicken.mp4"
   },
   {
     "id": "kadahi-chicken",
@@ -680,7 +705,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/kadahi_chicken.jpg",
     "description": "Chicken wok-cooked with crunchy bell peppers, whole coriander seeds, dried red chilies, and onion cubes.",
     "story": "Sizzled in heavy cast iron kadhais to lock in smoky masala flavors.",
-    "pairing": "Superb with Lacha Paratha."
+    "pairing": "Superb with Lacha Paratha.",
+    "video": "seperate videos/kadhai chicken.mp4"
   },
   {
     "id": "chicken-aflatoon",
@@ -703,7 +729,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_aflatoon.jpg",
     "description": "Fiery, robust chicken curry cooked with special crushed aromatic spices and thick roasted gravy.",
     "story": "A house creation designed for connoisseurs of deep, punchy northern flavors.",
-    "pairing": "Pairs with Butter Roti."
+    "pairing": "Pairs with Butter Roti.",
+    "video": "seperate videos/chicken afatoon.mp4"
   },
   {
     "id": "chicken-badami",
@@ -726,7 +753,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_badami.jpg",
     "description": "Chicken simmered in rich sweet-savory almond puree, brown onions, and aromatic cardamom broth.",
     "story": "A luxurious nut-rich gravy traditionally reserved for festive gatherings.",
-    "pairing": "Accompanies Plain Pulao or Naan."
+    "pairing": "Accompanies Plain Pulao or Naan.",
+    "video": "seperate videos/chicken badami.mp4"
   },
   {
     "id": "chicken-korma",
@@ -749,7 +777,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_korma.jpg",
     "description": "Authentic slow-dum chicken korma with browned onions, whole spices, and fragrant kewra water.",
     "story": "Traditional Lucknowi and Rampuri style korma prepared with time-honored slow reduction.",
-    "pairing": "Divine with Rumali Roti."
+    "pairing": "Divine with Rumali Roti.",
+    "video": "seperate videos/chicken korma.mp4"
   },
   {
     "id": "chicken-tikka-masala",
@@ -772,7 +801,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_tikka_masala.jpg",
     "description": "Smoky char-grilled chicken tikka pieces folded into a spiced onion-tomato masala with fresh coriander.",
     "story": "The worldwide champion of British-Indian culinary crossover, done the royal way.",
-    "pairing": "Delightful with Garlic Naan."
+    "pairing": "Delightful with Garlic Naan.",
+    "video": "seperate videos/chicken tikka masala.mp4"
   },
   {
     "id": "chicken-palak",
@@ -795,7 +825,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_palak.jpg",
     "description": "Fresh tender chicken simmered slowly in pureed garden spinach, garlic, and home-ground spices.",
     "story": "Nutritious and comforting, cooked with generous dollops of pure ghee.",
-    "pairing": "Best paired with Missi Roti."
+    "pairing": "Best paired with Missi Roti.",
+    "video": "seperate videos/chicken palak.mp4"
   },
   {
     "id": "chicken-maharaja",
@@ -818,7 +849,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_maharaja.jpg",
     "description": "Extravagant royal curry enriched with dried nuts, saffron, boiled egg, and succulent chicken cuts.",
     "story": "A feast dish crafted to make any dinner feel like a royal coronation.",
-    "pairing": "Pairs with Stuff Naan."
+    "pairing": "Pairs with Stuff Naan.",
+    "video": "seperate videos/chicken maharaja.mp4"
   },
   {
     "id": "chicken-be-nazeer",
@@ -841,7 +873,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_be_nazeer.jpg",
     "description": "True to its name ('Without Equal'), an exquisite chicken dish prepared with rare heritage spices.",
     "story": "An exclusive chef's creation blending sweet, tangy, and smoky spice layers.",
-    "pairing": "Enjoy with Butter Naan."
+    "pairing": "Enjoy with Butter Naan.",
+    "video": "seperate videos/chicken be nazeer.mp4"
   },
   {
     "id": "special-tawa-chicken",
@@ -864,7 +897,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/special_tawa_chicken.jpg",
     "description": "Juicy chicken roasted live on a heavy concave tawa with crushed green chilies, tomatoes, and ginger juliennes.",
     "story": "Cooked at high heat to concentrate natural flavors into a semi-dry, clinging masala.",
-    "pairing": "Best with Rumali Roti."
+    "pairing": "Best with Rumali Roti.",
+    "video": "seperate videos/special tawa chicken.mp4"
   },
   {
     "id": "murg-musallam",
@@ -882,7 +916,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/murg_musallam.jpg",
     "description": "Whole chicken stuffed with spiced boiled eggs and minced meat, slow-simmered in royal saffron-almond gravy.",
     "story": "Crown jewel of medieval Awadhi royal banquets, cooked on slow 'dum' over embers.",
-    "pairing": "Serves an entire family with Biryani and Naans."
+    "pairing": "Serves an entire family with Biryani and Naans.",
+    "video": "seperate videos/murg musallam.mp4"
   },
   {
     "id": "mutton-stew",
@@ -905,7 +940,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_stew.jpg",
     "description": "Tender goat meat slow braised with whole black pepper, cloves, dried red chilies, and sweet sliced onions.",
     "story": "Cooked without ground powders to let whole whole-spice botanicals perfume the meat naturally.",
-    "pairing": "Outstanding with hot Rumali Roti."
+    "pairing": "Outstanding with hot Rumali Roti.",
+    "video": "seperate videos/mutton stew.mp4"
   },
   {
     "id": "mutton-korma",
@@ -928,7 +964,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_korma.jpg",
     "description": "Slow-simmered mutton pieces in aromatic brown onion gravy with yogurt, mace, and green cardamom.",
     "story": "Our flagship mutton curry, prepared since 1998 in heavy traditional handis.",
-    "pairing": "Heavenly with Butter Naan or Khamiri Roti."
+    "pairing": "Heavenly with Butter Naan or Khamiri Roti.",
+    "video": "seperate videos/mutton korma.mp4"
   },
   {
     "id": "mutton-keema",
@@ -951,7 +988,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_keema.jpg",
     "description": "Hand-minced mutton simmered with onions, green peas, garlic, and robust Mughlai masalas.",
     "story": "A comforting northern classic cooked till the oil separates and glistens.",
-    "pairing": "Delicious with Tandoori Roti or Pav."
+    "pairing": "Delicious with Tandoori Roti or Pav.",
+    "video": "seperate videos/mutton keema.mp4"
   },
   {
     "id": "mutton-palak-gosht",
@@ -974,7 +1012,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_palak_gosht.jpg",
     "description": "Tender mutton chunks slow-cooked with fresh puréed spinach, garlic, ginger, and aromatic desi ghee.",
     "story": "A nutritious, time-honored winter preparation that warms the soul.",
-    "pairing": "Best paired with Missi Roti or Rice."
+    "pairing": "Best paired with Missi Roti or Rice.",
+    "video": "seperate videos/mutton palak gosht.mp4"
   },
   {
     "id": "mutton-rara",
@@ -997,7 +1036,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_rara.jpg",
     "description": "Tender bone-in mutton pieces cooked in a rich, spicy gravy made with seasoned minced mutton (keema).",
     "story": "Famous Punjabi-Mughlai marriage offering two distinct mutton textures in every spoonful.",
-    "pairing": "Goes wonderfully with Garlic Naan."
+    "pairing": "Goes wonderfully with Garlic Naan.",
+    "video": "seperate videos/mutton rara.mp4"
   },
   {
     "id": "mutton-kadai",
@@ -1020,7 +1060,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_kadai.jpg",
     "description": "Mutton cooked with crushed coriander seeds, capsicum, tomatoes, and fiery red chili flakes in an iron wok.",
     "story": "Tossed over raging flames to produce a thick, coating masala.",
-    "pairing": "Pairs with Lacha Paratha."
+    "pairing": "Pairs with Lacha Paratha.",
+    "video": "seperate videos/mutton kadai.mp4"
   },
   {
     "id": "mutton-kaleji",
@@ -1043,7 +1084,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_kaleji.jpg",
     "description": "Tender mutton liver pieces sautéed with roasted spices, green chilies, and onion-tomato gravy.",
     "story": "Flash-cooked at high heat so the liver remains buttery soft and tender.",
-    "pairing": "Best with hot Rumali Roti."
+    "pairing": "Best with hot Rumali Roti.",
+    "video": "seperate videos/mutton kalezi.mp4"
   },
   {
     "id": "mutton-keema-kaleji",
@@ -1066,7 +1108,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_keema_kaleji.jpg",
     "description": "A harmonious combination of minced mutton and succulent liver cubes braised with ground spices.",
     "story": "A beloved Old Delhi delicacy made famous by royal bazaar street stalls.",
-    "pairing": "Enjoy with Tandoori Butter Roti."
+    "pairing": "Enjoy with Tandoori Butter Roti.",
+    "video": "seperate videos/mutton keema kalezi.mp4"
   },
   {
     "id": "chilly-paneer",
@@ -1083,7 +1126,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chilly_paneer.jpg",
     "description": "Crispy fried cottage cheese cubes tossed with bell peppers, onions, soy sauce, and green chilies.",
     "story": "A vibrant Indo-Chinese classic made with fresh dairy paneer.",
-    "pairing": "Great with Veg Fried Rice."
+    "pairing": "Great with Veg Fried Rice.",
+    "video": "seperate videos/chilly paneer.mp4"
   },
   {
     "id": "veg-fried-rice",
@@ -1100,7 +1144,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/veg_fried_rice.jpg",
     "description": "Wok-tossed long grain basmati rice with finely chopped carrots, beans, spring onions, and oriental spices.",
     "story": "Prepared on high fire with smoky wok hei flavor.",
-    "pairing": "Pairs with Chilly Paneer or Manchurian."
+    "pairing": "Pairs with Chilly Paneer or Manchurian.",
+    "video": "seperate videos/veg fried rice.mp4"
   },
   {
     "id": "chilly-chicken",
@@ -1123,7 +1168,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chilly_chicken.jpg",
     "description": "Golden fried chicken chunks tossed in dark soy sauce, hot green chilies, garlic, and crisp bell peppers.",
     "story": "The quintessential Indian-Chinese fusion staple with an irresistible umami kick.",
-    "pairing": "Best with Chicken Fried Rice."
+    "pairing": "Best with Chicken Fried Rice.",
+    "video": "seperate videos/chilly chicken.mp4"
   },
   {
     "id": "chicken-fried-rice",
@@ -1140,7 +1186,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_fried_rice.jpg",
     "description": "Fragrant basmati rice wok-tossed with egg, shredded chicken pieces, and scallions in light seasoning.",
     "story": "A balanced, satisfying meal with aromatic grains and tender chicken.",
-    "pairing": "Accompanies Chilly Chicken."
+    "pairing": "Accompanies Chilly Chicken.",
+    "video": "seperate videos/chicken fried rice.mp4"
   },
   {
     "id": "shahi-paneer",
@@ -1158,7 +1205,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/shahi_paneer.jpg",
     "description": "Soft cottage cheese cubes cooked in a velvety tomato, cashew, and cream gravy with gentle spices.",
     "story": "A regal vegetarian centerpiece beloved across North Indian homes.",
-    "pairing": "Superb with Butter Naan."
+    "pairing": "Superb with Butter Naan.",
+    "video": "seperate videos/shahi paneer.mp4"
   },
   {
     "id": "kadhai-paneer",
@@ -1176,7 +1224,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/kadhai_paneer.jpg",
     "description": "Cottage cheese wok-tossed with freshly pounded kadhai masala, capsicum, and thick onion gravy.",
     "story": "Packed with crunchy bell peppers and aromatic roasted coriander seeds.",
-    "pairing": "Pairs with Lacha Paratha."
+    "pairing": "Pairs with Lacha Paratha.",
+    "video": "seperate videos/kadhai paneer.mp4"
   },
   {
     "id": "handi-paneer",
@@ -1194,7 +1243,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/handi_paneer.jpg",
     "description": "Fresh paneer slow-cooked in a sealed earthen handi with rich onion-tomato sauce and royal herbs.",
     "story": "The earthen pot imparts an authentic rustic aroma to the rich dairy gravy.",
-    "pairing": "Best with Rumali Roti."
+    "pairing": "Best with Rumali Roti.",
+    "video": "seperate videos/handi paneer.mp4"
   },
   {
     "id": "matar-paneer",
@@ -1211,7 +1261,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/matar_paneer.jpg",
     "description": "Tender green peas and soft paneer cubes cooked in a homestyle spiced tomato-onion curry.",
     "story": "Timeless North Indian comfort food cooked with warmth and simple spices.",
-    "pairing": "Great with Tandoori Roti or Zeera Rice."
+    "pairing": "Great with Tandoori Roti or Zeera Rice.",
+    "video": "seperate videos/matar paneer.mp4"
   },
   {
     "id": "palak-paneer",
@@ -1228,7 +1279,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/palak_paneer.jpg",
     "description": "Fresh cottage cheese bathed in vibrant green spinach purée tempered with garlic, ginger, and cumin.",
     "story": "Nutritious and delicious, finished with a hint of fresh dairy cream.",
-    "pairing": "Pairs with Missi Roti."
+    "pairing": "Pairs with Missi Roti.",
+    "video": "seperate videos/palak paneer.mp4"
   },
   {
     "id": "khoya-paneer",
@@ -1246,7 +1298,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/khoya_paneer.jpg",
     "description": "Soft paneer in a luxurious gravy made with reduced mawa (khoya), cashew cream, and cardamom.",
     "story": "A celebratory Awadhi wedding feast creation with subtle sweetness and unmatched richness.",
-    "pairing": "Delicious with Shama Spl. Naan."
+    "pairing": "Delicious with Shama Spl. Naan.",
+    "video": "seperate videos/khoya paneer.mp4"
   },
   {
     "id": "paneer-lababdar",
@@ -1264,7 +1317,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_lababdar.jpg",
     "description": "Paneer cubes and grated paneer folded into a luscious tomato-onion gravy seasoned with kasuri methi.",
     "story": "The double texture of grated and cubed paneer gives it a signature rich mouthfeel.",
-    "pairing": "Pairs with Garlic Naan."
+    "pairing": "Pairs with Garlic Naan.",
+    "video": "seperate videos/paneer lababdar.mp4"
   },
   {
     "id": "paneer-bhujia",
@@ -1281,7 +1335,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_bhujia.jpg",
     "description": "Freshly crumbled cottage cheese tossed on tawa with onions, green chilies, tomatoes, and cumin.",
     "story": "Quick, savory, and homestyle scrambled paneer cooked in pure desi ghee.",
-    "pairing": "Enjoy with hot Butter Roti."
+    "pairing": "Enjoy with hot Butter Roti.",
+    "video": "seperate videos/paneer bhujiya.mp4"
   },
   {
     "id": "shama-spl-stuff-paneer",
@@ -1299,7 +1354,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/shama_spl_stuff_paneer.jpg",
     "description": "Handcrafted paneer sandwiches stuffed with spiced nuts and khoya, simmered in a royal saffron sauce.",
     "story": "Our chef's signature vegetarian masterpiece developed exclusively for Shama Deluxe.",
-    "pairing": "Best paired with Butter Naan."
+    "pairing": "Best paired with Butter Naan.",
+    "video": "seperate videos/shama spl. stuff paneer.mp4"
   },
   {
     "id": "mushroom-paneer",
@@ -1316,7 +1372,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mushroom_paneer.jpg",
     "description": "Fresh button mushrooms and soft paneer cooked together in an aromatic spiced gravy.",
     "story": "Combines earthy mushrooms with tender dairy paneer for deep savory flavor.",
-    "pairing": "Pairs with Lacha Paratha."
+    "pairing": "Pairs with Lacha Paratha.",
+    "video": "seperate videos/mushroom paneer.mp4"
   },
   {
     "id": "paneer-tikka-dry",
@@ -1334,7 +1391,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_tikka_dry.jpg",
     "description": "Chunky paneer cubes skewered with bell peppers and onions, marinated in tandoori masala and charred smoky.",
     "story": "The indisputable king of vegetarian tandoori starters.",
-    "pairing": "Serve with Green Chutney and Onion rings."
+    "pairing": "Serve with Green Chutney and Onion rings.",
+    "video": "seperate videos/paneer tikka dry.mp4"
   },
   {
     "id": "paneer-tikka-masala",
@@ -1352,7 +1410,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_tikka_masala.jpg",
     "description": "Charcoal grilled paneer tikka cubes bathed in a flavorful, spiced onion-tomato butter gravy.",
     "story": "Smoky edges of grilled paneer infused with velvety rich gravy.",
-    "pairing": "Superb with Garlic Naan."
+    "pairing": "Superb with Garlic Naan.",
+    "video": "seperate videos/paneer tikka masala.mp4"
   },
   {
     "id": "kali-mirch-paneer",
@@ -1370,7 +1429,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/kali_mirch_paneer.jpg",
     "description": "Cottage cheese pieces in a velvety white cashew-cream sauce seasoned with freshly cracked black peppercorns.",
     "story": "An elegant, aromatic curry where black pepper gives a tingling aromatic kick without chili fire.",
-    "pairing": "Pairs with Butter Roti."
+    "pairing": "Pairs with Butter Roti.",
+    "video": "seperate videos/kali mirch paneer.mp4"
   },
   {
     "id": "paneer-butter-masala",
@@ -1388,7 +1448,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_butter_masala.jpg",
     "description": "Paneer cubes bathed in a mild, buttery, sweet and creamy tomato gravy with fenugreek leaves.",
     "story": "A beloved staple throughout India with silky texture and gentle warmth.",
-    "pairing": "Delightful with Butter Naan."
+    "pairing": "Delightful with Butter Naan.",
+    "video": "seperate videos/paneer butter masala.mp4"
   },
   {
     "id": "paneer-angara",
@@ -1406,7 +1467,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_angara.jpg",
     "description": "Smoky, spicy paneer curry infused with live coal smoke (dhungar) and coarse red spices.",
     "story": "Prepared with traditional smoke-infusion to give an authentic campfire aroma.",
-    "pairing": "Best with Tandoori Roti."
+    "pairing": "Best with Tandoori Roti.",
+    "video": "seperate videos/paneer angara.mp4"
   },
   {
     "id": "mix-vegetable",
@@ -1423,7 +1485,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mix_vegetable.jpg",
     "description": "Medley of seasonal cauliflower, carrots, beans, peas, and potatoes cooked in fragrant masala.",
     "story": "Homestyle vegetable curry packed with color, nutrition, and vibrant spices.",
-    "pairing": "Enjoy with hot Tandoori Roti."
+    "pairing": "Enjoy with hot Tandoori Roti.",
+    "video": "seperate videos/mix vegetable.mp4"
   },
   {
     "id": "aloo-gobhi",
@@ -1440,7 +1503,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/aloo_gobhi.jpg",
     "description": "Golden potatoes and cauliflower florets sautéed with ginger, turmeric, and roasted cumin.",
     "story": "The quintessential North Indian home favorite cooked till fork-tender.",
-    "pairing": "Pairs with Butter Roti."
+    "pairing": "Pairs with Butter Roti.",
+    "video": "seperate videos/aaloo gobhi.mp4"
   },
   {
     "id": "navrattan-korma",
@@ -1458,7 +1522,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/navrattan_korma.jpg",
     "description": "Nine vegetable gems and dry fruits simmered in a mildly sweet, rich cashew and cream gravy.",
     "story": "An imperial Mughal creation representing Emperor Akbar's nine royal courtiers (Navratnas).",
-    "pairing": "Delicious with Butter Naan."
+    "pairing": "Delicious with Butter Naan.",
+    "video": "seperate videos/navrattan korma.mp4"
   },
   {
     "id": "mushroom-masala",
@@ -1475,7 +1540,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mushroom_masala.jpg",
     "description": "Plump button mushrooms cooked in a semi-dry onion, tomato, and ground garam masala gravy.",
     "story": "Earthy mushrooms absorb the deep flavors of slow-roasted spices.",
-    "pairing": "Superb with Lacha Paratha."
+    "pairing": "Superb with Lacha Paratha.",
+    "video": "seperate videos/mushroom masala.mp4"
   },
   {
     "id": "matar-mushroom",
@@ -1492,7 +1558,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/matar_mushroom.jpg",
     "description": "Green peas and fresh mushrooms in a hearty spiced gravy finished with coriander and ginger.",
     "story": "A classic North Indian pairing offering sweet pea burst and savory mushroom bite.",
-    "pairing": "Great with Plain Naan."
+    "pairing": "Great with Plain Naan.",
+    "video": "seperate videos/matar mushroom.mp4"
   },
   {
     "id": "aloo-matar",
@@ -1509,7 +1576,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/aloo_matar.jpg",
     "description": "Tender potatoes and sweet green peas simmered in a spiced cumin and tomato curry broth.",
     "story": "Comfort food that evokes warm memories of home kitchens across Uttarakhand.",
-    "pairing": "Best with Tandoori Roti."
+    "pairing": "Best with Tandoori Roti.",
+    "video": "seperate videos/aloo matar.mp4"
   },
   {
     "id": "aloo-palak",
@@ -1526,7 +1594,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/aloo_palak.jpg",
     "description": "Cubed potatoes gently braised in a pureed fresh spinach gravy with roasted garlic cloves.",
     "story": "Nutritious and wholesome, rich in iron and aromatic desi spices.",
-    "pairing": "Pairs with Missi Roti."
+    "pairing": "Pairs with Missi Roti.",
+    "video": "seperate videos/aloo palak.mp4"
   },
   {
     "id": "aloo-zeera",
@@ -1543,7 +1612,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/aloo_zeera.jpg",
     "description": "Baby potatoes sautéed with toasted cumin seeds, fresh coriander, turmeric, and dry mango powder.",
     "story": "Crisp outer crust with soft potato core, bursting with cumin aroma.",
-    "pairing": "Ideal side with Dal Tadka and Roti."
+    "pairing": "Ideal side with Dal Tadka and Roti.",
+    "video": "seperate videos/aloo zeera.mp4"
   },
   {
     "id": "chana-masala",
@@ -1561,7 +1631,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chana_masala.jpg",
     "description": "Chickpeas simmered in an aromatic dark tea-spice broth with pomegranate seeds and ginger juliennes.",
     "story": "Authentic Punjabi style chole with deep flavor, tangy notes, and rich masala gravy.",
-    "pairing": "Pairs with Stuff Naan or Rice."
+    "pairing": "Pairs with Stuff Naan or Rice.",
+    "video": "seperate videos/chana masala.mp4"
   },
   {
     "id": "malai-kofta",
@@ -1579,7 +1650,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/malai_kofta.jpg",
     "description": "Crispy fried dumplings of paneer and khoya stuffed with raisins, served in a rich cashew-cream sauce.",
     "story": "Royalty on a platter: the koftas dissolve instantly on the tongue.",
-    "pairing": "Pairs exquisitely with Butter Naan."
+    "pairing": "Pairs exquisitely with Butter Naan.",
+    "video": "seperate videos/malai kofta.mp4"
   },
   {
     "id": "dal-ghee",
@@ -1597,7 +1669,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/dal_ghee.jpg",
     "description": "Yellow lentils tempered generously with sizzling pure desi cow ghee, cumin, garlic, and red chilies.",
     "story": "Simple, nourishing, and rich with the unmistakable aroma of hot clarified butter.",
-    "pairing": "Divine with Plain Rice and Papad."
+    "pairing": "Divine with Plain Rice and Papad.",
+    "video": "seperate videos/dal ghee.mp4"
   },
   {
     "id": "dal-makhni",
@@ -1615,7 +1688,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/dal_makhni.jpg",
     "description": "Whole black urad lentils and kidney beans slow-simmered overnight over charcoal with butter and cream.",
     "story": "Slow cooked for 12+ hours to achieve an incomparably creamy, velvety texture.",
-    "pairing": "Best paired with Garlic Naan or Jeera Rice."
+    "pairing": "Best paired with Garlic Naan or Jeera Rice.",
+    "video": "seperate videos/dal makhni.mp4"
   },
   {
     "id": "dal-fry",
@@ -1632,7 +1706,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/dal_fry.jpg",
     "description": "Golden toor dal fried with onions, tomatoes, green chilies, and fresh coriander leaves.",
     "story": "Dhaba style comforting yellow dal with punchy tadka flavors.",
-    "pairing": "Perfect with Tandoori Roti."
+    "pairing": "Perfect with Tandoori Roti.",
+    "video": "seperate videos/dal fry.mp4"
   },
   {
     "id": "dal-tadka",
@@ -1650,7 +1725,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/dal_tadka.jpg",
     "description": "Creamy yellow dal topped with an aromatic sizzle of roasted garlic, cumin, and Kashmiri dry red chilies.",
     "story": "Tempered right before serving so the crackling spices release maximum aroma.",
-    "pairing": "Complements Zeera Rice and Butter Roti."
+    "pairing": "Complements Zeera Rice and Butter Roti.",
+    "video": "seperate videos/dal tadka.mp4"
   },
   {
     "id": "rumali-roti",
@@ -1668,7 +1744,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/rumali_roti.jpg",
     "description": "Ultra-thin, soft, and handkerchief-like flatbread tossed in the air and baked on an inverted heated dome.",
     "story": "Mughal court specialty crafted by master bakers with dexterous aerial hand tosses.",
-    "pairing": "The quintessential bread for Korma, Kebabs, and Handi gravies."
+    "pairing": "The quintessential bread for Korma, Kebabs, and Handi gravies.",
+    "video": "seperate videos/rumali roti.mp4"
   },
   {
     "id": "tandoori-roti",
@@ -1685,7 +1762,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/tandoori_roti.jpg",
     "description": "Wholesome whole wheat flatbread baked crisp inside the clay tandoor oven.",
     "story": "Earthy, wholesome, and baked fresh against hot clay walls.",
-    "pairing": "Goes with any curry."
+    "pairing": "Goes with any curry.",
+    "video": "seperate videos/tandoori roti.mp4"
   },
   {
     "id": "butter-roti",
@@ -1702,7 +1780,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/butter_roti.jpg",
     "description": "Freshly baked clay oven whole-wheat roti brushed generously with pure butter.",
     "story": "Soft, flaky, and rich with molten butter gloss.",
-    "pairing": "Pairs with Dal Makhni and gravies."
+    "pairing": "Pairs with Dal Makhni and gravies.",
+    "video": "seperate videos/butter roti.mp4"
   },
   {
     "id": "missi-roti",
@@ -1719,7 +1798,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/missi_roti.jpg",
     "description": "Gram flour (besan) and wheat bread spiced with ajwain, onions, and kasuri methi, roasted in tandoor.",
     "story": "Traditional Rajasthani-Punjabi flatbread known for its nutty flavor and wholesome crunch.",
-    "pairing": "Superb with Palak dishes and Dal Ghee."
+    "pairing": "Superb with Palak dishes and Dal Ghee.",
+    "video": "seperate videos/missi roti.mp4"
   },
   {
     "id": "butter-naan",
@@ -1737,7 +1817,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/butter_naan.jpg",
     "description": "Pillowy soft leavened refined flour bread baked in tandoor and slathered with melted butter.",
     "story": "Light, stretchy, and baked to golden blistering in charcoal heat.",
-    "pairing": "Ideal partner for Butter Chicken and Shahi Paneer."
+    "pairing": "Ideal partner for Butter Chicken and Shahi Paneer.",
+    "video": "seperate videos/butter naan.mp4"
   },
   {
     "id": "stuff-naan",
@@ -1754,7 +1835,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/stuff_naan.jpg",
     "description": "Naan stuffed with a savory filling of spiced mashed potatoes, onions, and herbs.",
     "story": "Hearty and flavorful enough to enjoy on its own or with raita.",
-    "pairing": "Enjoy with Chana Masala."
+    "pairing": "Enjoy with Chana Masala.",
+    "video": "seperate videos/stuff naan.mp4"
   },
   {
     "id": "plain-naan",
@@ -1771,7 +1853,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/plain_naan.jpg",
     "description": "Classic soft tandoori naan baked without butter for a lighter bite.",
     "story": "Golden blistered on the outside, fluffy and tender within.",
-    "pairing": "Great with rich curries."
+    "pairing": "Great with rich curries.",
+    "video": "seperate videos/plain naan.mp4"
   },
   {
     "id": "shama-spl-naan",
@@ -1789,7 +1872,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/shama_spl_naan.jpg",
     "description": "Gourmet naan stuffed with cottage cheese, dry fruits, and aromatic herbs, glazed with butter.",
     "story": "A lavish celebration bread made to elevate your dining experience.",
-    "pairing": "Pairs with Akbari Chicken or Navrattan Korma."
+    "pairing": "Pairs with Akbari Chicken or Navrattan Korma.",
+    "video": "seperate videos/shama spl. naan.mp4"
   },
   {
     "id": "lacha-paratha",
@@ -1807,7 +1891,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/lacha_paratha.jpg",
     "description": "Multi-layered spiraled whole wheat bread cooked in tandoor with crispy, flaky rings.",
     "story": "Folded and rolled repeatedly to create distinct buttery layers.",
-    "pairing": "Superb with Kadhai dishes."
+    "pairing": "Superb with Kadhai dishes.",
+    "video": "seperate videos/lacha paratha.mp4"
   },
   {
     "id": "stuff-paratha",
@@ -1824,7 +1909,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/stuff_paratha.jpg",
     "description": "Crispy tandoori paratha loaded with spiced seasonal vegetable stuffing.",
     "story": "Wholesome, filling, and packed with traditional herbs.",
-    "pairing": "Serve with curd or pickle."
+    "pairing": "Serve with curd or pickle.",
+    "video": "seperate videos/stuff paratha.mp4"
   },
   {
     "id": "garlic-naan",
@@ -1842,7 +1928,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/garlic_naan.jpg",
     "description": "Soft naan topped with minced fresh garlic, coriander leaves, and brushed with hot butter.",
     "story": "The fragrant roasted garlic aroma wafts as soon as it exits the tandoor.",
-    "pairing": "The ultimate pairing for Butter Chicken & Dal Makhni."
+    "pairing": "The ultimate pairing for Butter Chicken & Dal Makhni.",
+    "video": "seperate videos/garlic naan.mp4"
   },
   {
     "id": "paneer-paratha",
@@ -1860,7 +1947,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_paratha.jpg",
     "description": "Golden tandoori paratha stuffed generously with seasoned grated cottage cheese and green chilies.",
     "story": "A royal breakfast and dinner bread beloved for its luscious paneer interior.",
-    "pairing": "Tastes great with Mix Raita."
+    "pairing": "Tastes great with Mix Raita.",
+    "video": "seperate videos/paneer paratha.mp4"
   },
   {
     "id": "green-salad",
@@ -2037,7 +2125,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/veg_biryani.jpg",
     "description": "Fragrant basmati rice layered with seasonal vegetables, fried onions, mint, saffron, and slow dum cooked in handi.",
     "story": "A fragrant vegetarian royal delicacy sealed with dough to trap the aromatics.",
-    "pairing": "Best savored with Boondi Raita."
+    "pairing": "Best savored with Boondi Raita.",
+    "video": "seperate videos/veg biryani.mp4"
   },
   {
     "id": "chicken-biryani",
@@ -2060,7 +2149,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/chicken_biryani.jpg",
     "description": "Aged long-grain basmati rice and marinated chicken slow cooked with saffron, whole spices, and caramelized onions.",
     "story": "Our most celebrated royal rice recipe since 1998, infused with natural rose and kewra essence.",
-    "pairing": "Served with spiced gravy (salan) and chilled raita."
+    "pairing": "Served with spiced gravy (salan) and chilled raita.",
+    "video": "seperate videos/chicken biryani.mp4"
   },
   {
     "id": "mutton-biryani",
@@ -2083,7 +2173,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mutton_biryani.jpg",
     "description": "Tender goat meat layered with saffron basmati rice, mint leaves, and desi ghee, sealed and dum-cooked.",
     "story": "The crown jewel of Awadhi cuisine, simmered until meat falls off the bone.",
-    "pairing": "Incredible with Green Salad and Raita."
+    "pairing": "Incredible with Green Salad and Raita.",
+    "video": "seperate videos/mutton biryani.mp4"
   },
   {
     "id": "paneer-pulao",
@@ -2105,7 +2196,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/paneer_pulao.jpg",
     "description": "Aromatic basmati rice cooked with golden fried paneer cubes, whole spices, and green peas.",
     "story": "Light, fragrant, and gentle on the palate.",
-    "pairing": "Enjoy with Dal Makhni."
+    "pairing": "Enjoy with Dal Makhni.",
+    "video": "seperate videos/paneer pulao.mp4"
   },
   {
     "id": "zeera-rice",
@@ -2127,7 +2219,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/zeera_rice.jpg",
     "description": "Fluffy steamed long-grain basmati rice tempered with crackling roasted cumin seeds and desi ghee.",
     "story": "A fragrant classic that pairs effortlessly with all North Indian curries.",
-    "pairing": "Perfect with Dal Tadka and gravies."
+    "pairing": "Perfect with Dal Tadka and gravies.",
+    "video": "seperate videos/zeerra rice.mp4"
   },
   {
     "id": "plain-rice",
@@ -2149,7 +2242,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/plain_rice.jpg",
     "description": "Steamed fluffy long-grain basmati rice, tender and separate grains.",
     "story": "Pure basmati grains cooked to airy perfection.",
-    "pairing": "Accompanies all gravies."
+    "pairing": "Accompanies all gravies.",
+    "video": "seperate videos/plain rice.mp4"
   },
   {
     "id": "plain-pulao",
@@ -2171,7 +2265,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/plain_pulao.jpg",
     "description": "Basmati rice mildly scented with whole cloves, bay leaves, and cardamom.",
     "story": "Traditional light pulao cooked with royal aromatics.",
-    "pairing": "Pairs with Chicken Korma."
+    "pairing": "Pairs with Chicken Korma.",
+    "video": "seperate videos/plain pulao.mp4"
   },
   {
     "id": "chicken-raan-biryani",
@@ -3103,6 +3198,10 @@ window.openDishModal = function(dishId) {
   
   const overlay = document.getElementById('dishModalOverlay');
   const heroImg = document.getElementById('modalHeroImg');
+  const heroVideo = document.getElementById('modalHeroVideo');
+  const videoOverlayBar = document.getElementById('modalVideoOverlayBar');
+  const soundBtn = document.getElementById('modalVideoSoundBtn');
+  const soundIcon = document.getElementById('modalVideoSoundIcon');
   const titleEl = document.getElementById('modalTitle');
   const tagsRow = document.getElementById('modalTagsRow');
   const descEl = document.getElementById('modalDesc');
@@ -3112,10 +3211,50 @@ window.openDishModal = function(dishId) {
   const portionSection = document.getElementById('modalPortionsSection');
   const totalPriceEl = document.getElementById('modalTotalPrice');
   
-  if (heroImg) {
-    heroImg.src = dish.image;
-    heroImg.onerror = function() { heroImg.src = PLACEHOLDER_SVG; };
+  // Media Visual: Video vs Image
+  if (dish.video) {
+    if (heroImg) {
+      heroImg.style.display = 'none';
+      heroImg.src = dish.image;
+    }
+    if (heroVideo) {
+      heroVideo.style.display = 'block';
+      heroVideo.src = encodeURI(dish.video);
+      heroVideo.muted = true;
+      heroVideo.currentTime = 0;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.log('Video autoplay prevented or awaiting interaction:', err);
+        });
+      }
+    }
+    if (videoOverlayBar) {
+      videoOverlayBar.style.display = 'flex';
+    }
+    if (soundBtn) {
+      soundBtn.classList.remove('sound-active');
+    }
+    if (soundIcon) {
+      soundIcon.innerHTML = '🔇 Unmute';
+    }
+  } else {
+    if (heroVideo) {
+      heroVideo.pause();
+      heroVideo.removeAttribute('src');
+      heroVideo.load();
+      heroVideo.style.display = 'none';
+    }
+    if (videoOverlayBar) {
+      videoOverlayBar.style.display = 'none';
+    }
+    if (heroImg) {
+      heroImg.style.display = 'block';
+      heroImg.src = dish.image;
+      heroImg.onerror = function() { heroImg.src = PLACEHOLDER_SVG; };
+    }
   }
+
   if (titleEl) titleEl.innerText = dish.name;
   if (descEl) descEl.innerText = dish.description || '';
   
@@ -3156,18 +3295,9 @@ window.openDishModal = function(dishId) {
     }
   }
   
-  // Food Reveal Video Button
+  // Interior video button hidden as video plays directly in the header media frame
   if (videoRow) {
-    if (dish.video) {
-      videoRow.style.display = 'block';
-      videoRow.innerHTML = `
-        <button type="button" class="btn-watch-video" onclick="openFoodRevealVideo('${dish.id}')">
-          <span>🎬</span> Watch Food Reveal Video
-        </button>
-      `;
-    } else {
-      videoRow.style.display = 'none';
-    }
+    videoRow.style.display = 'none';
   }
   
   // Portions
@@ -3228,6 +3358,19 @@ window.handleModalPortionSelect = function(portionId) {
 
 window.closeDishModal = function() {
   const overlay = document.getElementById('dishModalOverlay');
+  const heroVideo = document.getElementById('modalHeroVideo');
+  const videoOverlayBar = document.getElementById('modalVideoOverlayBar');
+  
+  if (heroVideo) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('src');
+    heroVideo.load();
+    heroVideo.style.display = 'none';
+  }
+  if (videoOverlayBar) {
+    videoOverlayBar.style.display = 'none';
+  }
+
   if (overlay) {
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
@@ -3237,13 +3380,40 @@ window.closeDishModal = function() {
   currentModalPortion = null;
 };
 
+window.toggleModalVideoAudio = function(e) {
+  if (e) e.stopPropagation();
+  const heroVideo = document.getElementById('modalHeroVideo');
+  const soundIcon = document.getElementById('modalVideoSoundIcon');
+  const soundBtn = document.getElementById('modalVideoSoundBtn');
+  if (!heroVideo) return;
+
+  heroVideo.muted = !heroVideo.muted;
+  if (heroVideo.muted) {
+    if (soundIcon) soundIcon.innerHTML = '🔇 Unmute';
+    if (soundBtn) soundBtn.classList.remove('sound-active');
+  } else {
+    if (soundIcon) soundIcon.innerHTML = '🔊 Sound On';
+    if (soundBtn) soundBtn.classList.add('sound-active');
+  }
+};
+
+window.toggleModalVideoPlay = function() {
+  const heroVideo = document.getElementById('modalHeroVideo');
+  if (!heroVideo) return;
+  if (heroVideo.paused) {
+    heroVideo.play().catch(() => {});
+  } else {
+    heroVideo.pause();
+  }
+};
+
 window.handleAddModalToCart = function() {
   if (!currentModalDish || !currentModalPortion) return;
   addItemToCart(currentModalDish, currentModalPortion);
   closeDishModal();
 };
 
-// Food Reveal Video Modal
+// Food Reveal Video Modal (Optional Fullscreen)
 window.openFoodRevealVideo = function(dishId) {
   const dish = DISH_CATALOG.find(d => d.id === dishId);
   if (!dish || !dish.video) return;
@@ -3255,7 +3425,7 @@ window.openFoodRevealVideo = function(dishId) {
   if (videoTitle) videoTitle.innerText = `${dish.name} • Food Reveal`;
   
   if (videoEl) {
-    videoEl.src = dish.video;
+    videoEl.src = encodeURI(dish.video);
     videoEl.load();
   }
   

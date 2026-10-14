@@ -177,9 +177,28 @@
             <!-- Close Button -->
             <button type="button" class="modal-close-btn" onclick="closeDishModal()" aria-label="Close dish details modal">✕</button>
 
-            <!-- Media Visual -->
-            <div class="modal-media-frame">
+            <!-- Media Visual (Image / Live Food Video) -->
+            <div class="modal-media-frame" id="modalMediaFrame">
                 <img id="modalHeroImg" src="" alt="Dish visual" class="modal-media-img">
+                <video 
+                    id="modalHeroVideo" 
+                    class="modal-media-video" 
+                    playsinline 
+                    webkit-playsinline
+                    muted 
+                    loop 
+                    preload="auto"
+                    onclick="toggleModalVideoPlay()"
+                    style="display: none;"
+                ></video>
+                <div class="modal-video-overlay-bar" id="modalVideoOverlayBar" style="display: none;">
+                    <div class="modal-video-status-badge">
+                        <span class="pulse-dot"></span> In Motion
+                    </div>
+                    <button type="button" id="modalVideoSoundBtn" class="modal-sound-toggle-btn" onclick="toggleModalVideoAudio(event)" aria-label="Toggle video sound">
+                        <span id="modalVideoSoundIcon">🔇 Unmute</span>
+                    </button>
+                </div>
             </div>
 
             <div class="modal-content-body">
