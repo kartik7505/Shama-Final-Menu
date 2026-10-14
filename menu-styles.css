@@ -1874,12 +1874,13 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 @media (min-width: 769px) {
   .dish-modal-container {
-    max-width: 860px;
+    max-width: 480px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
-    max-height: 88vh;
-    overflow: hidden;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .modal-drag-handle {
@@ -1887,19 +1888,18 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 
   .modal-media-frame {
-    width: 350px;
+    width: 100%;
     aspect-ratio: 9 / 16;
     height: auto;
-    min-height: 580px;
     flex-shrink: 0;
-    border-radius: var(--radius-card) 0 0 var(--radius-card);
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
     margin: 0;
   }
 
   .modal-content-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 2rem 2.2rem;
+    flex: none;
+    overflow-y: visible;
+    padding: 1.75rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
