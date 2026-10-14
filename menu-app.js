@@ -1965,7 +1965,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Crisp sliced cucumbers, red onions, tomatoes, and carrots served with fresh lemon wedges.",
     "story": "Fresh garden produce sliced fresh to cleanse the palate between rich bites.",
-    "pairing": "Essential companion to biryanis and kebabs."
+    "pairing": "Essential companion to biryanis and kebabs.",
+    "video": "seperate videos/green salad.mp4"
   },
   {
     "id": "boondi-raita",
@@ -1982,7 +1983,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Whipped chilled curd blended with crispy chickpea flour boondi pearls, roasted cumin, and black salt.",
     "story": "Cooling and refreshing, providing the perfect counterpoint to spicy gravies.",
-    "pairing": "Pairs with Biryani and Pulao."
+    "pairing": "Pairs with Biryani and Pulao.",
+    "video": "seperate videos/boondi raita.mp4"
   },
   {
     "id": "mix-raita",
@@ -1999,7 +2001,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Chilled yogurt mixed with finely diced onions, cucumbers, tomatoes, and roasted spices.",
     "story": "Crisp vegetable crunch combined with smooth, creamy yogurt.",
-    "pairing": "Complements rich mutton curries."
+    "pairing": "Complements rich mutton curries.",
+    "video": "seperate videos/mix raita.mp4"
   },
   {
     "id": "fruit-cocktail-raita",
@@ -2017,7 +2020,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Creamy sweetened yogurt infused with diced seasonal fruits, pineapple, and pomegranate seeds.",
     "story": "A royal banquet side that doubles up as a delightful palate refresher.",
-    "pairing": "Great with spicy tandoori starters."
+    "pairing": "Great with spicy tandoori starters.",
+    "video": "seperate videos/fruit cocktail raita.mp4"
   },
   {
     "id": "pineapple-raita",
@@ -2034,7 +2038,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Succulent pineapple tidbits folded in chilled sweet and mildly spiced curd.",
     "story": "Tropical sweetness meets traditional probiotic yogurt.",
-    "pairing": "Pairs with Royal Biryani."
+    "pairing": "Pairs with Royal Biryani.",
+    "video": "seperate videos/pineapple raita.mp4"
   },
   {
     "id": "plain-curd",
@@ -2051,7 +2056,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Freshly set, wholesome thick dairy yogurt served chilled.",
     "story": "Natural probiotic nourishment to complete your meal.",
-    "pairing": "Pairs with stuffed parathas."
+    "pairing": "Pairs with stuffed parathas.",
+    "video": "seperate videos/plain curd.mp4"
   },
   {
     "id": "papad-fry",
@@ -2068,7 +2074,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Crisp golden deep-fried spiced urad dal papad.",
     "story": "Delivers that essential crunch to every Indian dining spread.",
-    "pairing": "Great with Dal Chawal."
+    "pairing": "Great with Dal Chawal.",
+    "video": "seperate videos/papad fry.mp4"
   },
   {
     "id": "papad-dry",
@@ -2085,7 +2092,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Lightly fire-roasted dry papad with smoky blisters and no oil.",
     "story": "Guilt-free crunch roasted directly over live coals.",
-    "pairing": "Goes with any meal."
+    "pairing": "Goes with any meal.",
+    "video": "seperate videos/papad dry.mp4"
   },
   {
     "id": "masala-papad",
@@ -2102,7 +2110,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/masala_papad.jpg",
     "description": "Crispy roasted papad loaded with tangy diced onions, tomatoes, green chilies, chaat masala, and fresh coriander.",
     "story": "The ultimate restaurant appetizer before your meal arrives.",
-    "pairing": "Pairs with cold drinks and mocktails."
+    "pairing": "Pairs with cold drinks and mocktails.",
+    "video": "seperate videos/masala papad.mp4"
   },
   {
     "id": "veg-biryani",
@@ -2320,7 +2329,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Fresh garden mint muddled with lime chunks, sugar syrup, and fizzy sparkling soda over crushed ice.",
     "story": "The ultimate thirst quencher and palate reviver.",
-    "pairing": "Superb alongside spicy tandoori starters."
+    "pairing": "Superb alongside spicy tandoori starters.",
+    "video": "seperate videos/mint mojito.mp4"
   },
   {
     "id": "blue-sky",
@@ -2338,7 +2348,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Blue curacao syrup shaken with lemon juice, sprite, and chilled crushed ice.",
     "story": "A dazzling azure mocktail with citrus notes.",
-    "pairing": "Great with Chicken Tikka."
+    "pairing": "Great with Chicken Tikka.",
+    "video": "seperate videos/bluw sky.mp4"
   },
   {
     "id": "midnight-beauty",
@@ -2355,7 +2366,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Deep berry and blackcurrant syrup blended with lime and carbonated soda.",
     "story": "Mysterious dark hues with rich sweet-tart berry bursts.",
-    "pairing": "Enjoy before your meal."
+    "pairing": "Enjoy before your meal.",
+    "video": "seperate videos/midnight beauty.mp4"
   },
   {
     "id": "lichi-lemonade",
@@ -2372,7 +2384,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Sweet exotic litchi nectar paired with freshly squeezed lemon and fizz.",
     "story": "Fruity, fragrant, and gentle on the palate.",
-    "pairing": "Complements spicy Chinese starters."
+    "pairing": "Complements spicy Chinese starters.",
+    "video": "seperate videos/lichi lemonade.mp4"
   },
   {
     "id": "orange-mojito",
@@ -2389,7 +2402,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Fresh orange segments muddled with mint leaves, citrus syrup, and soda.",
     "story": "Packed with vitamin C and refreshing summer energy.",
-    "pairing": "Pairs with Kebabs."
+    "pairing": "Pairs with Kebabs.",
+    "video": "seperate videos/orange mojito.mp4"
   },
   {
     "id": "pina-colada",
@@ -2407,7 +2421,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Creamy blend of rich coconut milk, pineapple juice, and crushed ice.",
     "story": "Classic tropical mocktail offering smooth, creamy dessert-like bliss.",
-    "pairing": "Great after rich curries."
+    "pairing": "Great after rich curries.",
+    "video": "seperate videos/pina colada.mp4"
   },
   {
     "id": "masala-lemonade",
@@ -2424,7 +2439,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Zesty lemon drink spiced with roasted cumin, black salt, and chaat spices.",
     "story": "Desi street lemonade crafted to aid digestion after rich feasts.",
-    "pairing": "Best companion to Mutton gravies."
+    "pairing": "Best companion to Mutton gravies.",
+    "video": "seperate videos/masala lemonade.mp4"
   },
   {
     "id": "watermelon-mojito",
@@ -2441,7 +2457,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Sweet watermelon syrup muddled with mint, lemon, and chilled soda.",
     "story": "Hydrating, sweet, and bursting with watermelon flavor.",
-    "pairing": "Pairs with Chicken Fry."
+    "pairing": "Pairs with Chicken Fry.",
+    "video": "seperate videos/masala lemonade red.mp4"
   },
   {
     "id": "masala-coke",
@@ -2458,7 +2475,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Chilled cola charged with fresh lime juice, black salt, and roasted cumin.",
     "story": "An Indian street-side favorite that turns ordinary soda into an irresistible digestive treat.",
-    "pairing": "Classic pair with Biryani."
+    "pairing": "Classic pair with Biryani.",
+    "video": "seperate videos/masala coke.mp4"
   },
   {
     "id": "mojito-tower",
@@ -2476,7 +2494,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mint_mojito.jpg",
     "description": "Giant party table tower filled with sparkling mint mojito, ice, and lime slices for the entire group.",
     "story": "Perfect centerpiece for family celebrations and gathering tables.",
-    "pairing": "Shared by the whole table."
+    "pairing": "Shared by the whole table.",
+    "video": "seperate videos/mojito tower.mp4"
   },
   {
     "id": "vanilla-shake",
@@ -2493,7 +2512,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Creamy whole milk blended with pure Madagascar vanilla extract and sweet cream.",
     "story": "Simple, timeless, and soothingly sweet.",
-    "pairing": "Add extra ice cream scoop for ₹30."
+    "pairing": "Add extra ice cream scoop for ₹30.",
+    "video": "seperate videos/vanilla shake.mp4"
   },
   {
     "id": "strawberry-shake",
@@ -2510,7 +2530,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Chilled milk blended with sweet strawberry puree and velvety dairy ice cream.",
     "story": "Vibrant pink indulgence loved by all ages.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/strawberry shake.mp4"
   },
   {
     "id": "butter-scotch-shake",
@@ -2527,7 +2548,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Rich shake with crunchy butterscotch praline and golden caramel swirl.",
     "story": "Buttery crunch meets thick chilled shake.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/butter scotch shake.mp4"
   },
   {
     "id": "blue-berry-shake",
@@ -2544,7 +2566,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Sweet and tangy wild blueberry pulp whipped with chilled creamy milk.",
     "story": "Exotic berry delight with a rich purple hue.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/blue berry shake.mp4"
   },
   {
     "id": "banana-mango-shake",
@@ -2561,7 +2584,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Tropical blend of sweet ripe mangoes and nourishing bananas with cold milk.",
     "story": "A thick, energy-packed fruit shake rich in natural sweetness.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/banana shake.mp4"
   },
   {
     "id": "oreo-shake",
@@ -2579,7 +2603,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Crushed chocolate Oreo cookies blended with rich milk and chocolate sauce.",
     "story": "Thick, crunchy, and chocolatey in every single sip.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/oreo shake.mp4"
   },
   {
     "id": "kitkat-shake",
@@ -2596,7 +2621,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Crispy KitKat wafer chocolate fingers crushed into a thick chocolate milkshake.",
     "story": "Crisp wafer crunch mixed with velvety chocolate cream.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/kitkat shake.mp4"
   },
   {
     "id": "cold-coffee",
@@ -2614,7 +2640,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/oreo_shake.jpg",
     "description": "Strong roasted Arabica coffee whipped with chilled milk and chocolate drizzle.",
     "story": "The quintessential energizing creamy coffee shake.",
-    "pairing": "Add ice cream scoop for ₹30."
+    "pairing": "Add ice cream scoop for ₹30.",
+    "video": "seperate videos/cold coffee.mp4"
   },
   {
     "id": "assorted-cold-drink",
@@ -2631,7 +2658,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Choice of chilled bottled carbonated soft drinks served fresh.",
     "story": "Classic dining accompaniment.",
-    "pairing": "Goes with everything."
+    "pairing": "Goes with everything.",
+    "video": "seperate videos/assorted cold drink.mp4"
   },
   {
     "id": "fresh-lime-soda",
@@ -2649,7 +2677,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Freshly squeezed lemon juice topped with sparkling carbonated soda, served sweet, salted, or mixed.",
     "story": "The classic restaurant refresher that pairs seamlessly with North Indian cuisine.",
-    "pairing": "Essential companion to spicy kebabs and curries."
+    "pairing": "Essential companion to spicy kebabs and curries.",
+    "video": "seperate videos/fresh lime soda.mp4"
   },
   {
     "id": "fresh-lime-water",
@@ -2666,7 +2695,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Chilled fresh lime juice with purified water, choice of sweet or salt.",
     "story": "Light, healthy, and hydrating citrus refresher.",
-    "pairing": "Enjoy throughout the meal."
+    "pairing": "Enjoy throughout the meal.",
+    "video": "seperate videos/fresh lime water.mp4"
   },
   {
     "id": "lassi-sweet-salted",
@@ -2684,7 +2714,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/punjabi_lassi.jpg",
     "description": "Traditional Punjabi yogurt churned thick and frothy, served sweet or lightly salted with roasted cumin.",
     "story": "Hand-churned in wooden mathanis to yield thick clotted froth.",
-    "pairing": "Divine with spicy Mughlai handis."
+    "pairing": "Divine with spicy Mughlai handis.",
+    "video": "seperate videos/lassi sweet or salted.mp4"
   },
   {
     "id": "fresh-juice",
@@ -2701,7 +2732,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/fresh_lime_soda.jpg",
     "description": "Freshly pressed seasonal fruit juice served pure without artificial preservatives.",
     "story": "Pure vitamins and vitality straight from the season's fruit basket.",
-    "pairing": "Refreshing start or finish."
+    "pairing": "Refreshing start or finish.",
+    "video": "seperate videos/fresh juice.mp4"
   },
   {
     "id": "hawaiian-fantasy",
@@ -2719,7 +2751,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Tropical sundae with assorted ice creams, fruit cocktail, pineapple glaze, nuts, and whipped cream.",
     "story": "An extravagant multi-scoop creation designed to celebrate special occasions.",
-    "pairing": "Perfect group dessert."
+    "pairing": "Perfect group dessert.",
+    "video": "seperate videos/hawaiian fantasy.mp4"
   },
   {
     "id": "hot-chocolate-fudge",
@@ -2737,7 +2770,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Creamy vanilla ice cream scoops smothered in hot, rich molten chocolate fudge and roasted peanuts.",
     "story": "The iconic hot-meets-cold dessert combination with deep cocoa luxury.",
-    "pairing": "Sweet ending to any dinner."
+    "pairing": "Sweet ending to any dinner.",
+    "video": "seperate videos/hot chocolate frog.mp4"
   },
   {
     "id": "americano-banana-split",
@@ -2754,7 +2788,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Fresh split banana nestled with vanilla, strawberry, and chocolate scoops, dressed in sauces and cherries.",
     "story": "A vintage American diner classic perfected with gourmet ice creams.",
-    "pairing": "Feeds two comfortably."
+    "pairing": "Feeds two comfortably.",
+    "video": "seperate videos/american banana split.mp4"
   },
   {
     "id": "tooti-frooti",
@@ -2771,7 +2806,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Colorful sundae loaded with glazed candied fruits, fruity syrups, and rich dairy ice cream.",
     "story": "Nostalgic sweet fruit gems bursting with retro flavor.",
-    "pairing": "Delightful for dessert lovers."
+    "pairing": "Delightful for dessert lovers.",
+    "video": "seperate videos/tooti-frooti.mp4"
   },
   {
     "id": "kesar-pista",
@@ -2789,7 +2825,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Pure Kashmiri saffron-infused ice cream loaded with crunchy Iranian pistachios.",
     "story": "Traditional royal dessert aroma carrying the scent of saffron fields.",
-    "pairing": "Follows Mughlai banquets effortlessly."
+    "pairing": "Follows Mughlai banquets effortlessly.",
+    "video": "seperate videos/kesar pista.mp4"
   },
   {
     "id": "butter-scotch",
@@ -2806,7 +2843,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Golden butterscotch ice cream studded with crunchy roasted caramel praline bits.",
     "story": "Sweet, crunchy, and buttery classic.",
-    "pairing": "Light after-dinner treat."
+    "pairing": "Light after-dinner treat.",
+    "video": "seperate videos/butter scotch.mp4"
   },
   {
     "id": "vanilla",
@@ -2823,7 +2861,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Smooth, velvety ice cream crafted with real fragrant vanilla beans.",
     "story": "The pure standard of ice cream excellence.",
-    "pairing": "Pairs with Hot Gulab Jamun."
+    "pairing": "Pairs with Hot Gulab Jamun.",
+    "video": "seperate videos/vanilla.mp4"
   },
   {
     "id": "strawberry",
@@ -2840,7 +2879,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Chilled fruity strawberry ice cream made with sweet berry puree.",
     "story": "Sweet, fragrant, and refreshingly cold.",
-    "pairing": "Enjoy anytime."
+    "pairing": "Enjoy anytime.",
+    "video": "seperate videos/strawberry.mp4"
   },
   {
     "id": "mango-ice-cream",
@@ -2857,7 +2897,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Rich Alphonso mango ice cream carrying the glorious sunshine taste of the king of fruits.",
     "story": "Captures natural mango pulp in creamy frozen perfection.",
-    "pairing": "Summer dining favorite."
+    "pairing": "Summer dining favorite.",
+    "video": "seperate videos/mango ice cream.mp4"
   },
   {
     "id": "sundae-ice-cream",
@@ -2874,7 +2915,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/mango_ice_cream.jpg",
     "description": "Assorted ice cream scoops topped with mixed berry syrup, chocolate drizzle, and nuts.",
     "story": "A balanced sundae bowl offering a bit of every favorite flavor.",
-    "pairing": "Great finish to your meal."
+    "pairing": "Great finish to your meal.",
+    "video": "seperate videos/sundae ice cream.mp4"
   },
   {
     "id": "shama-special-kheer",
@@ -2892,7 +2934,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/shama_special_kheer.jpg",
     "description": "Slow-simmered basmati rice pudding cooked with full-cream milk, saffron, cardamom, and sliced almonds in earthen bowls.",
     "story": "Prepared every morning since 1998, chilled in earthen pottery to absorb subtle clay aroma.",
-    "pairing": "The quintessential Mughlai dining climax."
+    "pairing": "The quintessential Mughlai dining climax.",
+    "video": "seperate videos/special shama kheer.mp4"
   },
   {
     "id": "gulab-jamun",
@@ -2910,7 +2953,8 @@ const DISH_CATALOG = [
     "image": "images/dish_models_3d/gulab_jamun.jpg",
     "description": "Golden khoya dumplings fried in pure ghee and soaked in warm cardamom-rose sugar syrup.",
     "story": "Prepared hot exclusively during winter months to provide soothing sweet warmth.",
-    "pairing": "Sensational with a scoop of Vanilla Ice Cream."
+    "pairing": "Sensational with a scoop of Vanilla Ice Cream.",
+    "video": "seperate videos/gullab jamun.mp4"
   }
 ];
 
