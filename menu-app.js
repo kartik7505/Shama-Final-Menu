@@ -1051,38 +1051,38 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================================================
 
 const VIDEO_FOOD_ITEMS = [
-  { id: 0, time: 0.0, endTime: 7.93, name: "Royal Menu Book", price: "Authentic Mughlai" },
-  { id: 1, time: 7.93, endTime: 13.90, name: "Chicken Be Nazeer", price: "₹120 / ₹240" },
-  { id: 2, time: 13.90, endTime: 20.57, name: "Chicken Kabab Roll", price: "₹100" },
-  { id: 3, time: 20.57, endTime: 26.57, name: "Mutton Seekh Kabab", price: "₹250 / ₹500" },
-  { id: 4, time: 26.57, endTime: 33.70, name: "Shaami Kabab", price: "₹40 / pc" },
-  { id: 5, time: 33.70, endTime: 40.10, name: "Mughlai Chicken Tikka", price: "₹250 / ₹500" },
-  { id: 6, time: 40.10, endTime: 47.23, name: "Chicken Masala Roasted", price: "₹300 / ₹600" },
-  { id: 7, time: 47.23, endTime: 54.53, name: "Chicken Stick", price: "₹70" },
-  { id: 8, time: 54.53, endTime: 65.07, name: "Chicken Lollipop", price: "₹250 / ₹500" },
-  { id: 9, time: 65.07, endTime: 73.67, name: "Paneer Pulao", price: "₹100 / ₹200" },
-  { id: 10, time: 73.67, endTime: 78.90, name: "Changezi Chicken", price: "₹340 / ₹680" },
-  { id: 11, time: 78.90, endTime: 85.97, name: "Chicken Afatoon", price: "₹350 / ₹700" },
-  { id: 12, time: 85.97, endTime: 92.83, name: "Chicken Tikka Masala", price: "₹350 / ₹700" },
-  { id: 13, time: 92.83, endTime: 98.90, name: "Chicken Be Nazeer (Special)", price: "₹300 / ₹600" },
-  { id: 14, time: 98.90, endTime: 106.13, name: "Mutton Stew", price: "₹250 / ₹500" },
-  { id: 15, time: 106.13, endTime: 115.17, name: "Mutton Palak Gosht", price: "₹300 / ₹600" },
-  { id: 16, time: 115.17, endTime: 122.00, name: "Mutton Kaleji", price: "₹250 / ₹500" },
-  { id: 17, time: 122.00, endTime: 130.50, name: "Chilly Paneer", price: "₹250" },
-  { id: 18, time: 130.50, endTime: 136.70, name: "Plain Rice", price: "₹60 / ₹120" },
-  { id: 19, time: 136.70, endTime: 145.80, name: "Shahi Paneer", price: "₹250" },
-  { id: 20, time: 145.80, endTime: 154.93, name: "Matar Paneer", price: "₹250" },
-  { id: 21, time: 154.93, endTime: 164.17, name: "Paneer Lababdar", price: "₹250" },
-  { id: 22, time: 164.17, endTime: 173.40, name: "Mushroom Paneer", price: "₹250" },
-  { id: 23, time: 173.40, endTime: 182.60, name: "Kali Mirch Paneer", price: "₹280" },
-  { id: 24, time: 182.60, endTime: 189.80, name: "Special Dish Handi", price: "Chef's Pride" },
-  { id: 25, time: 189.80, endTime: 199.00, name: "Mushroom Masala", price: "₹250" },
-  { id: 26, time: 199.00, endTime: 208.20, name: "Aloo Palak", price: "₹200" },
-  { id: 27, time: 208.20, endTime: 215.10, name: "Mughlai Open Handi", price: "Royal Delight" },
-  { id: 28, time: 215.10, endTime: 224.37, name: "Dal Ghee", price: "₹200" },
-  { id: 29, time: 224.37, endTime: 233.57, name: "Rumali Roti", price: "₹14" },
-  { id: 30, time: 233.57, endTime: 242.83, name: "Missi Roti", price: "₹30" },
-  { id: 31, time: 242.83, endTime: 261.00, name: "Stuff Paratha", price: "₹70" }
+  { id: 0, time: 0.0, settledTime: 7.33, name: "Chicken Biryani", price: "₹120 / ₹240", desc: "Aromatic Basmati Rice, Spiced Chicken Delights" },
+  { id: 1, time: 7.93, settledTime: 13.30, name: "Chicken Lollipop", price: "₹250 / ₹500", desc: "Crispy Spiced Chicken, Bold and Irresistible" },
+  { id: 2, time: 13.90, settledTime: 19.97, name: "Mutton Kabab Roll", price: "₹120", desc: "Rich Spiced Mutton Wrapped in Soft Flatbread" },
+  { id: 3, time: 20.57, settledTime: 25.97, name: "Mutton Malai Kabab", price: "₹300", desc: "Creamy Marinated Mutton, Rich, Tender and Aromatic" },
+  { id: 4, time: 26.57, settledTime: 33.10, name: "Chicken Fry", price: "₹200 / ₹400", desc: "Crispy Golden Chicken, Perfectly Spiced" },
+  { id: 5, time: 33.70, settledTime: 39.50, name: "Chicken Butter Dip", price: "₹300 / ₹600", desc: "Chicken Skewers Served with Rich Buttery Flavor" },
+  { id: 6, time: 40.10, settledTime: 46.63, name: "Mutton Burrah", price: "₹350 / ₹700", desc: "Smoky Grilled Mutton Chops, Rich Mughlai Flavor" },
+  { id: 7, time: 47.23, settledTime: 53.93, name: "Chicken Roll", price: "₹70", desc: "Juicy Spiced Chicken Wrapped in Soft Flatbread" },
+  { id: 8, time: 54.53, settledTime: 64.47, name: "Paneer Pulao", price: "₹100 / ₹200", desc: "Fluffy Aromatic Rice with Soft Paneer" },
+  { id: 9, time: 65.07, settledTime: 73.07, name: "Plain Pulao", price: "₹60 / ₹120", desc: "Lightly Spiced Aromatic Basmati Rice" },
+  { id: 10, time: 73.67, settledTime: 78.30, name: "Kadahi Chicken", price: "₹350 / ₹700", desc: "Rich Mughlai Chicken in Spiced Wok Gravy" },
+  { id: 11, time: 78.90, settledTime: 85.37, name: "Chicken Korma", price: "₹150 / ₹300", desc: "Traditional Mughlai Chicken in Rich Korma Gravy" },
+  { id: 12, time: 85.97, settledTime: 92.23, name: "Chicken Maharaja", price: "₹380 / ₹660", desc: "Royal Mughlai Chicken, Rich and Flavorful" },
+  { id: 13, time: 92.83, settledTime: 98.30, name: "Murg Musallam", price: "₹1400", desc: "Whole Roasted Chicken in Rich Mughlai Gravy" },
+  { id: 14, time: 98.90, settledTime: 105.53, name: "Mutton Keema", price: "₹250 / ₹500", desc: "Richly Spiced Minced Mutton, Mughlai Style" },
+  { id: 15, time: 106.13, settledTime: 114.57, name: "Mutton Kadai", price: "₹320 / ₹640", desc: "Spiced Mutton Cooked in Rich Kadai Masala" },
+  { id: 16, time: 115.17, settledTime: 121.40, name: "Mutton Keema Kaleji", price: "₹250 / ₹500", desc: "Spiced Minced Mutton with Tender Liver" },
+  { id: 17, time: 122.00, settledTime: 129.90, name: "Chilly Chicken", price: "₹250 / ₹500", desc: "Juicy Chicken Tossed in Spicy Indo-Chinese Sauce" },
+  { id: 18, time: 130.50, settledTime: 136.10, name: "Chicken Fried Rice", price: "₹250", desc: "Wok-Tossed Rice with Tender Spiced Chicken" },
+  { id: 19, time: 136.70, settledTime: 145.20, name: "Handi Paneer", price: "₹250 / ₹500", desc: "Traditional Paneer in Rich Handi Gravy" },
+  { id: 20, time: 145.80, settledTime: 154.33, name: "Khoya Paneer", price: "₹250", desc: "Rich Creamy Paneer with Traditional Khoya" },
+  { id: 21, time: 154.93, settledTime: 163.57, name: "Shama Spl. Stuff Paneer", price: "₹250", desc: "Special Stuffed Paneer with Rich Spices" },
+  { id: 22, time: 164.17, settledTime: 172.80, name: "Paneer Tikka Masala", price: "₹280", desc: "Grilled Paneer in Rich Creamy Spiced Gravy" },
+  { id: 23, time: 173.40, settledTime: 182.00, name: "Paneer Angara", price: "₹280", desc: "Smoky Spiced Paneer, Rich and Fiery" },
+  { id: 24, time: 182.60, settledTime: 189.20, name: "Navrattan Korma", price: "₹250", desc: "Nine-Gem Medley in Royal Sweet-Spicy Cashew Gravy" },
+  { id: 25, time: 189.80, settledTime: 198.40, name: "Aloo Matar", price: "₹200", desc: "Tender Potatoes and Green Peas in Spiced Gravy" },
+  { id: 26, time: 199.00, settledTime: 207.60, name: "Chana Masala", price: "₹150", desc: "Traditional Chickpeas in Spiced Rich Gravy" },
+  { id: 27, time: 208.20, settledTime: 214.50, name: "Mughlai Malai Kofta", price: "₹250", desc: "Golden Koftas in Rich Creamy Mughlai Gravy" },
+  { id: 28, time: 215.10, settledTime: 223.77, name: "Dal Tadka", price: "₹150", desc: "Golden Yellow Dal with Aromatic Ghee Tempering" },
+  { id: 29, time: 224.37, settledTime: 232.97, name: "Butter Roti", price: "₹20", desc: "Fresh Tandoori Roti Brushed with Rich Butter" },
+  { id: 30, time: 233.57, settledTime: 242.23, name: "Stuff Naan", price: "₹50", desc: "Soft Tandoori Naan with Savory Stuffing" },
+  { id: 31, time: 242.83, settledTime: 251.40, name: "Paneer Paratha", price: "₹80", desc: "Golden Stuffed Paratha with Soft Spiced Paneer" }
 ];
 
 let currentFoodItemIndex = 0;
@@ -1116,7 +1116,7 @@ window.jumpToFoodItem = function(index, direction = 1) {
     setTimeout(() => flash.classList.remove('active'), 220);
   }
 
-  // Update video timestamp
+  // Seek to product start and play its reveal animation
   if (video) {
     video.currentTime = item.time;
     video.play().catch(() => {});
@@ -1141,12 +1141,8 @@ window.jumpToFoodItem = function(index, direction = 1) {
   // Update header WhatsApp inquire link with active dish name
   const headerWa = document.getElementById('headerWhatsappBtn');
   if (headerWa) {
-    if (item.id > 0) {
-      const textMsg = encodeURIComponent(`Hi Shama Deluxe, I would like to inquire about ${item.name} (${item.price})`);
-      headerWa.href = `https://wa.me/919759100786?text=${textMsg}`;
-    } else {
-      headerWa.href = `https://wa.me/919759100786?text=Hi%20Shama%20Deluxe%2C%20I%20would%20like%20to%20inquire%20about%20the%20menu`;
-    }
+    const textMsg = encodeURIComponent(`Hi Shama Deluxe, I would like to inquire about ${item.name} (${item.price})`);
+    headerWa.href = `https://wa.me/919759100786?text=${textMsg}`;
   }
 
   // Update arrow states
@@ -1210,12 +1206,28 @@ function initVideoScrollEngine() {
     });
   }
 
-  // Dish-looping watcher
+  // STOP WATCHER: When the animation finishes for this specific product, STOP (PAUSE)!
   video.addEventListener('timeupdate', () => {
     const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
     if (!cur) return;
-    if (video.currentTime >= cur.endTime - 0.12) {
-      video.currentTime = cur.time + 0.35;
+    
+    // When playback reaches or passes the product's settled time, PAUSE immediately!
+    if (!video.paused && video.currentTime >= cur.settledTime) {
+      video.pause();
+      video.currentTime = cur.settledTime;
+    }
+  });
+
+  // Clicking on the video replays the current product's reveal animation and stops again
+  frame.addEventListener('click', (e) => {
+    if (e.target.closest('button') || e.target.closest('a')) return;
+    const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
+    if (!cur) return;
+    if (video.paused) {
+      video.currentTime = cur.time;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
     }
   });
 
