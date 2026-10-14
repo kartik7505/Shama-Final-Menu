@@ -68,12 +68,6 @@
                     <span>QR Code</span>
                 </button>
 
-                <!-- Order Cart Pill -->
-                <button type="button" class="header-cart-btn" onclick="toggleCartDrawer(true)" aria-label="Open your order cart">
-                    <span aria-hidden="true">🛒</span>
-                    <span>Order</span>
-                    <span class="cart-pill-count" id="headerCartCount">0</span>
-                </button>
             </div>
         </div>
     </header>
@@ -222,16 +216,6 @@
                 <!-- Portion Options -->
                 <div id="modalPortionsSection"></div>
 
-                <!-- Modal Action Row -->
-                <div class="modal-actions-row">
-                    <div>
-                        <span style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;display:block;">Selected Price</span>
-                        <span class="modal-total-price" id="modalTotalPrice">₹0</span>
-                    </div>
-                    <button type="button" class="modal-add-btn" onclick="handleAddModalToCart()">
-                        <span>+</span> Add to Order
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -267,100 +251,6 @@
         </div>
     </div>
 
-    <!-- ==========================================================================
-         7. FLOATING ORDER DOCK & CART DRAWER
-         ========================================================================== -->
-    <!-- Floating Dock -->
-    <aside 
-        id="floatingOrderDock" 
-        class="floating-order-dock" 
-        onclick="toggleCartDrawer(true)" 
-        aria-label="View current order summary"
-    >
-        <span class="dock-badge-pill" id="dockBadgeCount">0</span>
-        <div class="dock-text-group">
-            <span class="dock-total-price" id="dockTotalPrice">₹0</span>
-            <span class="dock-meta-text" id="dockCountMeta">0 dishes</span>
-        </div>
-        <span class="dock-action-btn">
-            <span>View Order</span>
-            <span aria-hidden="true">→</span>
-        </span>
-    </aside>
-
-    <!-- Cart Drawer Overlay -->
-    <div 
-        id="cartDrawerOverlay" 
-        class="cart-drawer-overlay" 
-        role="dialog" 
-        aria-modal="true" 
-        aria-hidden="true" 
-        aria-labelledby="cartDrawerHeading"
-        onclick="if(event.target === this) toggleCartDrawer(false)"
-    >
-        <div class="cart-drawer-panel">
-            <div class="modal-drag-handle" aria-hidden="true"></div>
-            <div class="cart-drawer-header">
-                <h3 class="cart-drawer-title" id="cartDrawerHeading">
-                    <span>⚜</span> Your Royal Order
-                </h3>
-                <button type="button" class="cart-drawer-close" onclick="toggleCartDrawer(false)" aria-label="Close cart drawer">✕</button>
-            </div>
-
-            <!-- Items List -->
-            <div class="cart-items-scrollable" id="cartItemsList"></div>
-
-            <!-- Cart Drawer Footer -->
-            <div class="cart-drawer-footer">
-                <!-- Dining Mode Selector -->
-                <div class="dining-mode-tabs" role="group" aria-label="Select dining mode">
-                    <button type="button" class="dining-mode-chip active" data-mode="Dine-In">Dine-In</button>
-                    <button type="button" class="dining-mode-chip" data-mode="Takeaway">Takeaway</button>
-                    <button type="button" class="dining-mode-chip" data-mode="Delivery">Delivery</button>
-                </div>
-
-                <!-- Location / Table Input -->
-                <input 
-                    type="text" 
-                    id="orderLocationInput" 
-                    class="cart-input-field" 
-                    placeholder="Enter Table Number (e.g. Table #4)" 
-                    value="Table #4"
-                    aria-label="Dining location or table number"
-                />
-
-                <!-- Special Cooking Requests -->
-                <input 
-                    type="text" 
-                    id="orderNotesInput" 
-                    class="cart-input-field" 
-                    placeholder="Special requests (e.g. Less spicy, extra onions)" 
-                    aria-label="Special cooking instructions"
-                />
-
-                <!-- Price Summary -->
-                <div class="cart-summary-lines">
-                    <div class="summary-row">
-                        <span>Dishes Subtotal</span>
-                        <span id="cartSubtotal">₹0</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>GST (5%)</span>
-                        <span id="cartGst">₹0</span>
-                    </div>
-                    <div class="summary-row total-row">
-                        <span>Total Payable</span>
-                        <span id="cartTotal">₹0</span>
-                    </div>
-                </div>
-
-                <!-- Send Order via WhatsApp -->
-                <button type="button" class="btn-whatsapp-order" onclick="dispatchWhatsAppOrder()">
-                    <span>💬</span> Send Order via WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- ==========================================================================
          7B. TABLE MENU QR STAND & SCAN MODAL
@@ -402,13 +292,6 @@
         </div>
     </div>
 
-    <!-- ==========================================================================
-         8. TOAST NOTIFICATION
-         ========================================================================== -->
-    <div id="luxuryToastNotice" class="luxury-toast" role="status" aria-live="polite">
-        <span aria-hidden="true">⚜</span>
-        <span id="toastNoticeText">Added to order</span>
-    </div>
 
     <!-- ==========================================================================
          9. FOOTER (LIGHT BEIGE WITH GOLD SEPARATOR)
