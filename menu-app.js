@@ -1046,69 +1046,260 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================================================
-// 8. HERO BACKGROUND VIDEO CONTROLS
+// 8. INTERACTIVE 9:16 FOOD MENU VIDEO SCROLL ANIMATION ENGINE
+// "One left scroll = One food item"
 // ==========================================================================
+
+const VIDEO_FOOD_ITEMS = [
+  { id: 0, time: 0.0, endTime: 7.93, name: "Royal Menu Book", price: "Authentic Mughlai" },
+  { id: 1, time: 7.93, endTime: 13.90, name: "Chicken Be Nazeer", price: "₹120 / ₹240" },
+  { id: 2, time: 13.90, endTime: 20.57, name: "Chicken Kabab Roll", price: "₹100" },
+  { id: 3, time: 20.57, endTime: 26.57, name: "Mutton Seekh Kabab", price: "₹250 / ₹500" },
+  { id: 4, time: 26.57, endTime: 33.70, name: "Shaami Kabab", price: "₹40 / pc" },
+  { id: 5, time: 33.70, endTime: 40.10, name: "Mughlai Chicken Tikka", price: "₹250 / ₹500" },
+  { id: 6, time: 40.10, endTime: 47.23, name: "Chicken Masala Roasted", price: "₹300 / ₹600" },
+  { id: 7, time: 47.23, endTime: 54.53, name: "Chicken Stick", price: "₹70" },
+  { id: 8, time: 54.53, endTime: 65.07, name: "Chicken Lollipop", price: "₹250 / ₹500" },
+  { id: 9, time: 65.07, endTime: 73.67, name: "Paneer Pulao", price: "₹100 / ₹200" },
+  { id: 10, time: 73.67, endTime: 78.90, name: "Changezi Chicken", price: "₹340 / ₹680" },
+  { id: 11, time: 78.90, endTime: 85.97, name: "Chicken Afatoon", price: "₹350 / ₹700" },
+  { id: 12, time: 85.97, endTime: 92.83, name: "Chicken Tikka Masala", price: "₹350 / ₹700" },
+  { id: 13, time: 92.83, endTime: 98.90, name: "Chicken Be Nazeer (Special)", price: "₹300 / ₹600" },
+  { id: 14, time: 98.90, endTime: 106.13, name: "Mutton Stew", price: "₹250 / ₹500" },
+  { id: 15, time: 106.13, endTime: 115.17, name: "Mutton Palak Gosht", price: "₹300 / ₹600" },
+  { id: 16, time: 115.17, endTime: 122.00, name: "Mutton Kaleji", price: "₹250 / ₹500" },
+  { id: 17, time: 122.00, endTime: 130.50, name: "Chilly Paneer", price: "₹250" },
+  { id: 18, time: 130.50, endTime: 136.70, name: "Plain Rice", price: "₹60 / ₹120" },
+  { id: 19, time: 136.70, endTime: 145.80, name: "Shahi Paneer", price: "₹250" },
+  { id: 20, time: 145.80, endTime: 154.93, name: "Matar Paneer", price: "₹250" },
+  { id: 21, time: 154.93, endTime: 164.17, name: "Paneer Lababdar", price: "₹250" },
+  { id: 22, time: 164.17, endTime: 173.40, name: "Mushroom Paneer", price: "₹250" },
+  { id: 23, time: 173.40, endTime: 182.60, name: "Kali Mirch Paneer", price: "₹280" },
+  { id: 24, time: 182.60, endTime: 189.80, name: "Special Dish Handi", price: "Chef's Pride" },
+  { id: 25, time: 189.80, endTime: 199.00, name: "Mushroom Masala", price: "₹250" },
+  { id: 26, time: 199.00, endTime: 208.20, name: "Aloo Palak", price: "₹200" },
+  { id: 27, time: 208.20, endTime: 215.10, name: "Mughlai Open Handi", price: "Royal Delight" },
+  { id: 28, time: 215.10, endTime: 224.37, name: "Dal Ghee", price: "₹200" },
+  { id: 29, time: 224.37, endTime: 233.57, name: "Rumali Roti", price: "₹14" },
+  { id: 30, time: 233.57, endTime: 242.83, name: "Missi Roti", price: "₹30" },
+  { id: 31, time: 242.83, endTime: 261.00, name: "Stuff Paratha", price: "₹70" }
+];
+
+let currentFoodItemIndex = 0;
+let hasUserInteractedWithScroll = false;
+
+window.scrollFoodItem = function(direction) {
+  dismissScrollHint();
+  const nextIdx = currentFoodItemIndex + direction;
+  if (nextIdx < 0 || nextIdx >= VIDEO_FOOD_ITEMS.length) return;
+  window.jumpToFoodItem(nextIdx, direction);
+};
+
+window.jumpToFoodItem = function(index, direction = 1) {
+  if (index < 0 || index >= VIDEO_FOOD_ITEMS.length) return;
+  currentFoodItemIndex = index;
+  dismissScrollHint();
+  
+  const video = document.getElementById('heroBgVideo');
+  const flash = document.getElementById('videoPageTurnFlash');
+  const counter = document.getElementById('dishCounterLabel');
+  const title = document.getElementById('dishTitleLabel');
+  const price = document.getElementById('dishPriceLabel');
+  const fill = document.getElementById('scrubberBarFill');
+  const prevBtn = document.getElementById('videoNavPrevBtn');
+  const nextBtn = document.getElementById('videoNavNextBtn');
+  const item = VIDEO_FOOD_ITEMS[index];
+
+  // Visual page-turn shimmer flash
+  if (flash) {
+    flash.classList.add('active');
+    setTimeout(() => flash.classList.remove('active'), 220);
+  }
+
+  // Update video timestamp
+  if (video) {
+    video.currentTime = item.time;
+    video.play().catch(() => {});
+  }
+
+  // Update HUD text
+  if (counter) counter.textContent = `Item ${index + 1} of ${VIDEO_FOOD_ITEMS.length}`;
+  if (title) title.textContent = item.name;
+  if (price) price.textContent = item.price;
+
+  // Update progress bar
+  if (fill) {
+    const pct = ((index + 1) / VIDEO_FOOD_ITEMS.length) * 100;
+    fill.style.width = `${pct}%`;
+  }
+
+  // Update active dot in scrubber
+  document.querySelectorAll('.scrubber-dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === index);
+  });
+
+  // Update header WhatsApp inquire link with active dish name
+  const headerWa = document.getElementById('headerWhatsappBtn');
+  if (headerWa) {
+    if (item.id > 0) {
+      const textMsg = encodeURIComponent(`Hi Shama Deluxe, I would like to inquire about ${item.name} (${item.price})`);
+      headerWa.href = `https://wa.me/919759100786?text=${textMsg}`;
+    } else {
+      headerWa.href = `https://wa.me/919759100786?text=Hi%20Shama%20Deluxe%2C%20I%20would%20like%20to%20inquire%20about%20the%20menu`;
+    }
+  }
+
+  // Update arrow states
+  if (prevBtn) prevBtn.disabled = index === 0;
+  if (nextBtn) nextBtn.disabled = index === VIDEO_FOOD_ITEMS.length - 1;
+};
+
+function dismissScrollHint() {
+  if (hasUserInteractedWithScroll) return;
+  hasUserInteractedWithScroll = true;
+  const hint = document.getElementById('videoScrollHint');
+  if (hint) {
+    hint.classList.add('hidden');
+    setTimeout(() => {
+      if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
+    }, 600);
+  }
+}
+
+// Sound toggle
 window.toggleHeroVideoSound = function() {
   const video = document.getElementById('heroBgVideo');
   const icon = document.getElementById('heroMuteIcon');
-  const label = document.getElementById('heroMuteLabel');
   if (!video) return;
 
   video.muted = !video.muted;
   if (video.muted) {
     if (icon) icon.textContent = '🔇';
-    if (label) label.textContent = 'Sound Off';
   } else {
     if (icon) icon.textContent = '🔊';
-    if (label) label.textContent = 'Sound On';
     video.play().catch(() => {});
   }
-};
-
-window.toggleHeroVideoPlay = function() {
-  const video = document.getElementById('heroBgVideo');
-  const icon = document.getElementById('heroPlayIcon');
-  const btn = document.getElementById('heroVideoPlayBtn');
-  if (!video) return;
-
-  if (video.paused) {
-    video.play();
-    if (icon) icon.textContent = '⏸️';
-    if (btn) {
-      const textSpan = btn.querySelector('span:last-child');
-      if (textSpan) textSpan.textContent = 'Pause';
-    }
-  } else {
-    video.pause();
-    if (icon) icon.textContent = '▶️';
-    if (btn) {
-      const textSpan = btn.querySelector('span:last-child');
-      if (textSpan) textSpan.textContent = 'Play';
-    }
-  }
-};
-
-window.switchHeroVideo = function(videoSrc, btnEl) {
-  const video = document.getElementById('heroBgVideo');
-  if (!video) return;
-
-  document.querySelectorAll('.v-switch-chip').forEach(c => c.classList.remove('active'));
-  if (btnEl) btnEl.classList.add('active');
-
-  video.style.opacity = '0.25';
-  setTimeout(() => {
-    video.src = videoSrc;
-    video.load();
-    video.play().catch(() => {});
-    video.style.opacity = '1';
-  }, 220);
 };
 
 window.restartHeroVideo = function() {
-  const video = document.getElementById('heroBgVideo');
-  if (!video) return;
-  video.currentTime = 0;
-  video.play().catch(() => {});
+  window.jumpToFoodItem(0);
 };
+
+// Initialize interactive video scroll engine on load
+function initVideoScrollEngine() {
+  const frame = document.getElementById('videoHeroFrame');
+  const video = document.getElementById('heroBgVideo');
+  const dotsRow = document.getElementById('scrubberDotsRow');
+
+  if (!frame || !video) return;
+
+  // Build scrubber dots
+  if (dotsRow) {
+    dotsRow.innerHTML = '';
+    VIDEO_FOOD_ITEMS.forEach((it, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `scrubber-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to ${it.name}`);
+      dot.title = `${idx + 1}. ${it.name} (${it.price})`;
+      dot.onclick = (e) => {
+        e.stopPropagation();
+        window.jumpToFoodItem(idx);
+      };
+      dotsRow.appendChild(dot);
+    });
+  }
+
+  // Dish-looping watcher
+  video.addEventListener('timeupdate', () => {
+    const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
+    if (!cur) return;
+    if (video.currentTime >= cur.endTime - 0.12) {
+      video.currentTime = cur.time + 0.35;
+    }
+  });
+
+  // Auto dismiss hint after 4.5s
+  setTimeout(dismissScrollHint, 4500);
+
+  // Desktop Mouse Wheel Gesture Engine:
+  // "One left scroll = One food item"
+  let wheelLock = false;
+  frame.addEventListener('wheel', (e) => {
+    const absX = Math.abs(e.deltaX);
+    const absY = Math.abs(e.deltaY);
+    const delta = absX > absY ? e.deltaX : e.deltaY;
+
+    // Allow natural page scroll at boundaries
+    if (delta > 12 && currentFoodItemIndex >= VIDEO_FOOD_ITEMS.length - 1) return;
+    if (delta < -12 && currentFoodItemIndex <= 0) return;
+
+    e.preventDefault();
+    if (wheelLock) return;
+
+    if (delta > 14) {
+      // Scroll left / down -> Advance to NEXT food item
+      wheelLock = true;
+      window.scrollFoodItem(1);
+      setTimeout(() => { wheelLock = false; }, 340);
+    } else if (delta < -14) {
+      // Scroll right / up -> Return to PREVIOUS food item
+      wheelLock = true;
+      window.scrollFoodItem(-1);
+      setTimeout(() => { wheelLock = false; }, 340);
+    }
+  }, { passive: false });
+
+  // Mobile / Tablet Touch Swipe Gesture Engine
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  frame.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }
+  }, { passive: true });
+
+  frame.addEventListener('touchend', (e) => {
+    if (e.changedTouches.length === 1) {
+      const diffX = e.changedTouches[0].clientX - touchStartX;
+      const diffY = e.changedTouches[0].clientY - touchStartY;
+      const elapsed = Date.now() - touchStartTime;
+
+      if (Math.abs(diffX) > 30 && Math.abs(diffX) > Math.abs(diffY) * 1.15 && elapsed < 800) {
+        if (diffX < 0) {
+          // Swiped left -> NEXT food item
+          window.scrollFoodItem(1);
+        } else {
+          // Swiped right -> PREVIOUS food item
+          window.scrollFoodItem(-1);
+        }
+      }
+    }
+  }, { passive: true });
+
+  // Keyboard navigation
+  frame.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      window.scrollFoodItem(1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      window.scrollFoodItem(-1);
+    }
+  });
+
+  // Initial setup
+  window.jumpToFoodItem(0);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initVideoScrollEngine);
+} else {
+  initVideoScrollEngine();
+}
 
 

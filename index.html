@@ -46,6 +46,7 @@
 
                 <!-- WhatsApp Menu Inquiry Action -->
                 <a 
+                    id="headerWhatsappBtn"
                     href="https://wa.me/919759100786?text=Hi%20Shama%20Deluxe%2C%20I%20would%20like%20to%20inquire%20about%20the%20menu" 
                     target="_blank" 
                     rel="noopener noreferrer" 
@@ -73,21 +74,20 @@
     <main id="main-content">
 
         <!-- ==========================================================================
-             2. LUXURY VIDEO HERO HEADER (9:16 FORMAT)
+             2. LUXURY VIDEO HERO HEADER (9:16 FORMAT WITH SCROLL ANIMATION)
              ========================================================================== -->
         <section class="video-hero-header" id="videoHeroHeader" aria-label="Restaurant Video Header">
             <!-- Ambient Cinema Backdrop for Desktop -->
             <div class="video-hero-ambient-backdrop" aria-hidden="true" style="background-image: url('images/shama_hero_poster.jpg');"></div>
             <div class="video-hero-ambient-overlay" aria-hidden="true"></div>
 
-            <!-- Centered 9:16 Video Frame -->
-            <div class="video-hero-frame">
+            <!-- Centered 9:16 Video Frame with Interactive Scroll Animation -->
+            <div class="video-hero-frame" id="videoHeroFrame" tabindex="0" role="region" aria-label="Interactive 9:16 Video Menu Scroll">
                 <video 
                     id="heroBgVideo" 
                     class="hero-video-media" 
                     autoplay 
                     muted 
-                    loop 
                     playsinline 
                     preload="auto"
                     poster="images/shama_hero_poster.jpg"
@@ -96,6 +96,45 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-hero-overlay"></div>
+                <div class="video-page-turn-flash" id="videoPageTurnFlash" aria-hidden="true"></div>
+
+                <!-- Top Floating Dish Badge & Counter HUD -->
+                <div class="video-dish-badge-hud" id="videoDishBadgeHud">
+                    <div class="dish-hud-pill">
+                        <span class="hud-crest" aria-hidden="true">⚜</span>
+                        <span id="dishCounterLabel">Item 1 of 32</span>
+                    </div>
+                    <div class="dish-hud-title-chip" id="dishHudTitleChip">
+                        <span id="dishTitleLabel">Chicken Be Nazeer</span>
+                        <span class="dish-hud-sep">•</span>
+                        <span id="dishPriceLabel" class="dish-hud-price">₹120 / ₹240</span>
+                    </div>
+                </div>
+
+                <!-- Subtle Interactive Navigation Arrows (Prev / Next) -->
+                <button type="button" class="video-nav-arrow prev" id="videoNavPrevBtn" onclick="scrollFoodItem(-1)" aria-label="Previous Food Item" title="Previous Food Item (Scroll Right)">
+                    <span aria-hidden="true">‹</span>
+                </button>
+                <button type="button" class="video-nav-arrow next" id="videoNavNextBtn" onclick="scrollFoodItem(1)" aria-label="Next Food Item" title="Next Food Item (Scroll Left)">
+                    <span aria-hidden="true">›</span>
+                </button>
+
+                <!-- Initial Scroll / Swipe Left Hint -->
+                <div class="video-scroll-hint" id="videoScrollHint" aria-hidden="true">
+                    <span class="hint-chevron">‹</span>
+                    <span>Scroll or Swipe Left for Next Food Item</span>
+                    <span class="hint-chevron">›</span>
+                </div>
+
+                <!-- Bottom Dish Progress Scrubber & Dots -->
+                <div class="video-dish-scrubber" id="videoDishScrubber" aria-label="Dishes Timeline">
+                    <div class="scrubber-bar-track">
+                        <div class="scrubber-bar-fill" id="scrubberBarFill"></div>
+                    </div>
+                    <div class="scrubber-dots-row" id="scrubberDotsRow" role="tablist">
+                        <!-- Populated by menu-app.js -->
+                    </div>
+                </div>
 
                 <!-- Floating Sound Control in Corner of 9:16 Video Frame -->
                 <button type="button" id="heroVideoMuteBtn" class="hero-floating-sound-btn" onclick="toggleHeroVideoSound()" aria-label="Toggle Sound" title="Toggle Sound">
