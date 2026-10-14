@@ -11,211 +11,2811 @@
 // ==========================================================================
 
 const CATEGORIES = [
-  { id: 'all', name: 'All Curations', icon: '✨' },
-  { id: 'mughlai', name: 'Mughlai Curries', icon: '🍲' },
-  { id: 'tandoori', name: 'Tandoor & Kebabs', icon: '🍢' },
-  { id: 'breads', name: 'Roti & Breads', icon: '🫓' },
-  { id: 'biryani', name: 'Royal Biryani', icon: '🍚' },
-  { id: 'desserts', name: 'Desserts & Starters', icon: '🍮' }
+  {
+    "id": "all",
+    "name": "All Dishes",
+    "icon": "✨"
+  },
+  {
+    "id": "starters",
+    "name": "Starters",
+    "icon": "🍗"
+  },
+  {
+    "id": "kababs",
+    "name": "Kababs",
+    "icon": "🍢"
+  },
+  {
+    "id": "chicken-gravy",
+    "name": "Chicken Gravy",
+    "icon": "🍲"
+  },
+  {
+    "id": "mutton-gravy",
+    "name": "Mutton Gravy",
+    "icon": "🍖"
+  },
+  {
+    "id": "chinese",
+    "name": "Chinese",
+    "icon": "🥢"
+  },
+  {
+    "id": "paneer",
+    "name": "Paneer Dishes",
+    "icon": "🧀"
+  },
+  {
+    "id": "vegetables",
+    "name": "Vegetables",
+    "icon": "🥗"
+  },
+  {
+    "id": "dal",
+    "name": "Dal",
+    "icon": "🥣"
+  },
+  {
+    "id": "breads",
+    "name": "Roti & Naan",
+    "icon": "🫓"
+  },
+  {
+    "id": "rice",
+    "name": "Rice Specialities",
+    "icon": "🍚"
+  },
+  {
+    "id": "salad-raita",
+    "name": "Salad & Raita",
+    "icon": "🥒"
+  },
+  {
+    "id": "beverages",
+    "name": "Beverages",
+    "icon": "🥤"
+  },
+  {
+    "id": "mocktails",
+    "name": "Mocktails",
+    "icon": "🍹"
+  },
+  {
+    "id": "shakes",
+    "name": "Shakes",
+    "icon": "🧋"
+  },
+  {
+    "id": "sundaes",
+    "name": "Ice Cream Sundaes",
+    "icon": "🍨"
+  },
+  {
+    "id": "sweets",
+    "name": "Sweets",
+    "icon": "🍮"
+  }
 ];
 
 const DISH_CATALOG = [
   {
-    id: "butter-chicken",
-    name: "Shama Butter Chicken Handi",
-    category: "mughlai",
-    diet: "non-veg",
-    badge: "Chef's Pride",
-    spice: 2,
-    portions: [
-      { id: "half", label: "Half Handi", price: 250 },
-      { id: "full", label: "Full Handi", price: 500 }
+    "id": "afghani-chicken",
+    "name": "Afghani Chicken",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Royal Tandoor",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
     ],
-    image: "images/shama_butter_chicken.jpg",
-    video: "videos/butter-chicken.mp4",
-    description: "Succulent boneless chicken pieces slow-simmered in rich velvety tomato-cashew puree with churned butter and roasted fenugreek (kasuri methi).",
-    story: "Crafted since 1998 following our founder's secret spice bouquet. Prepared exclusively in heavy brass handis for an authentic melt-in-mouth royal texture.",
-    pairing: "Pairs best with hot Rumali Roti or Garlic Naan."
+    "image": "images/dish_models_3d/afghani_chicken.jpg",
+    "description": "Tender chicken marinated in rich cashew cream, mild royal spices, and char-grilled to perfection.",
+    "story": "Prepared in traditional charcoal clay tandoor using ancient Mughal-Afghan techniques.",
+    "pairing": "Pairs best with Green Mint Chutney and Rumali Roti."
   },
   {
-    id: "kali-mirch",
-    name: "Kali Mirch Chicken",
-    category: "mughlai",
-    diet: "non-veg",
-    badge: "Signature",
-    spice: 3,
-    portions: [
-      { id: "half", label: "Half Handi", price: 340 },
-      { id: "full", label: "Full Handi", price: 490 }
+    "id": "chicken-tandoori",
+    "name": "Chicken Tandoori",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "House Classic",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 200
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 400
+      }
     ],
-    image: "images/shama_kali_mirch.jpg",
-    video: "videos/butter-chicken.mp4",
-    description: "Tender chicken steeped in freshly stone-ground Malabar black peppercorns, roasted white sesame, and rich cashew cream sauce.",
-    story: "A Mughlai court favorite known for its warming spices and pepper heat balanced seamlessly by velvety dairy cream.",
-    pairing: "Excellent with Butter Naan or steamed long-grain basmati."
+    "image": "images/dish_models_3d/chicken_tandoori.jpg",
+    "description": "Classic bone-in chicken marinated in Kashmiri red chilies, thick curd, mustard oil, and roasted tandoori spices.",
+    "story": "A Shama Deluxe favorite since 1998, smoked over slow red charcoal.",
+    "pairing": "Enjoy with Onion Salad and fresh Butter Naan."
   },
   {
-    id: "malai-tikka",
-    name: "Chicken Malai Tikka",
-    category: "tandoori",
-    diet: "non-veg",
-    badge: "Charcoal Grill",
-    spice: 1,
-    portions: [
-      { id: "half", label: "Half Plate (4 Pcs)", price: 300 },
-      { id: "full", label: "Full Plate (8 Pcs)", price: 600 }
+    "id": "chicken-fry",
+    "name": "Chicken Fry",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Crispy Delight",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 200
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 400
+      }
     ],
-    image: "images/shama_malai_tikka.jpg",
-    video: "videos/malai-tikka.mp4",
-    description: "Mouth-melting chicken thigh cubes marinated overnight in hung curd, green cardamom, processed cheese, and fresh clotted cream.",
-    story: "Skewered on iron rods and charred over blazing sal-wood charcoal in our traditional earthen clay tandoor.",
-    pairing: "Served with mint-coriander dip and pickled lachha onions."
+    "image": "images/dish_models_3d/chicken_fry.jpg",
+    "description": "Golden crisp fried chicken seasoned with zesty house spices and chaat masala.",
+    "story": "Double-fried for a crackling outer crust while keeping the meat juicy and tender.",
+    "pairing": "Complements cold beverages and tangy mint dip."
   },
   {
-    id: "rumali-roti",
-    name: "Shama Rumali Roti",
-    category: "breads",
-    diet: "veg",
-    badge: "Fresh Hand-Tossed",
-    spice: 0,
-    portions: [
-      { id: "standard", label: "Per Piece", price: 14 }
+    "id": "chicken-tikka",
+    "name": "Chicken Tikka",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Clay Oven",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
     ],
-    image: "images/shama_rumali_roti.jpg",
-    video: "videos/roti-naan.mp4",
-    description: "Ultra-thin, paper-soft handkerchief bread tossed rhythmically into the air and baked on an inverted spherical dome kadhai.",
-    story: "Traditional Awadhi artisan technique creating feather-light bread that absorbs thick handi gravies with perfection.",
-    pairing: "The quintessential partner for Butter Chicken and Changezi."
+    "image": "images/dish_models_3d/chicken_tikka.jpg",
+    "description": "Boneless chicken chunks marinated in spiced hung yogurt, skewered and roasted smoky in tandoor.",
+    "story": "Hand-cut supreme chicken cubes infused with ginger-garlic essence.",
+    "pairing": "Pairs wonderfully with Rumali Roti and lemon rings."
   },
   {
-    id: "shama-kheer",
-    name: "Royal Shama Special Kheer",
-    category: "desserts",
-    diet: "veg",
-    badge: "Royal Dessert",
-    spice: 0,
-    portions: [
-      { id: "standard", label: "Per Bowl", price: 30 }
+    "id": "chicken-malai-tikka",
+    "name": "Chicken Malai Tikka",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Melt-In-Mouth",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
     ],
-    image: "images/shama_kheer.jpg",
-    video: "videos/desserts.mp4",
-    description: "Slow-condensed buffalo whole milk and fragrant broken basmati, enriched with Kashmiri saffron, slivered almonds, and green cardamom.",
-    story: "Simmered continuously on low flame for 4 hours until the milk naturally caramelizes into a thick, creamy golden ambrosia.",
-    pairing: "Best enjoyed chilled after a spicy Mughlai feast."
+    "image": "images/dish_models_3d/chicken_malai_tikka.jpg",
+    "description": "Creamy, silky chicken bites marinated in malai, cheese, cardamom, and subtle white spices.",
+    "story": "A velvety delicacy adored by lovers of mild, aromatic Mughlai tandoor flavors.",
+    "pairing": "Best paired with Butter Naan."
   },
   {
-    id: "mughlai-handi",
-    name: "Authentic Mughlai Handi",
-    category: "mughlai",
-    diet: "non-veg",
-    badge: "Royal Heritage",
-    spice: 2,
-    portions: [
-      { id: "half", label: "Half Handi", price: 350 },
-      { id: "full", label: "Full Handi", price: 600 }
+    "id": "chicken-butter-dip",
+    "name": "Chicken Butter Dip",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Rich & Savory",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
     ],
-    image: "images/shama_ceramic_butter_chicken.jpg",
-    video: "videos/mughlai-handi.mp4",
-    description: "Slow-braised chicken with mace, whole cinnamon, caramel brown onions (birista), and thick yogurt gravy finished with desi ghee.",
-    story: "Re-created from ancestral handwritten recipes preserved across generations.",
-    pairing: "Divine with Shahi Butter Naan."
+    "image": "images/dish_models_3d/chicken_butter_dip.jpg",
+    "description": "Succulent charcoal-grilled chicken skewers soaked in a sizzling dip of pure churned melted butter.",
+    "story": "A legendary indulgence showcasing North Indian passion for pure desi makhan.",
+    "pairing": "Superb with fresh Roomali Roti."
   },
   {
-    id: "paneer-tikka-masala",
-    name: "Paneer Tikka Masala",
-    category: "mughlai",
-    diet: "veg",
-    badge: "Vegetarian Special",
-    spice: 2,
-    portions: [
-      { id: "standard", label: "Full Plate", price: 220 }
+    "id": "chicken-malai-roasted",
+    "name": "Chicken Malai Roasted",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Chef's Special",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
     ],
-    image: "images/dish_3_1791103054248.jpg",
-    video: "videos/paneer-tikka.mp4",
-    description: "Farm-fresh malai paneer cubes charred in tandoor, folded into a fragrant onion-tomato bhuna masala with crunchy capsicum.",
-    story: "Marinated with stone-ground ajwain, roasted gram flour, and mustard oil for that authentic rustic Punjabi kick.",
-    pairing: "Pairs wonderfully with Laccha Paratha."
+    "image": "images/dish_models_3d/chicken_masala_roasted.jpg",
+    "description": "Roasted tandoori chicken glazed with aromatic malai masala and slow-fired to golden perfection.",
+    "story": "Combines the smoky roast of tandoor with rich clotted cream glaze.",
+    "pairing": "Delicious with Garlic Naan."
   },
   {
-    id: "dal-makhani",
-    name: "Shama Bukhara Dal Makhani",
-    category: "mughlai",
-    diet: "veg",
-    badge: "Overnight Simmered",
-    spice: 1,
-    portions: [
-      { id: "standard", label: "Full Bowl", price: 140 }
+    "id": "drums-of-heaven",
+    "name": "Drums of Heaven",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Popular",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
     ],
-    image: "images/hero_image_1791102967343.jpg",
-    video: "videos/dal-makhani.mp4",
-    description: "Whole black urad lentils and red kidney beans slow-cooked overnight over glowing charcoal with churned butter and organic cream.",
-    story: "Over 16 hours of slow simmering produces the legendary silky smokiness without artificial additives.",
-    pairing: "A royal match with Butter Naan."
+    "image": "images/dish_models_3d/drums_of_heaven.jpg",
+    "description": "Crisp chicken wingettes tossed in sweet, spicy, and tangy Indo-Chinese garlic sauce.",
+    "story": "An irresistible starter with bold crunch and vibrant oriental glazes.",
+    "pairing": "Great companion to cold drinks and fried rice."
   },
   {
-    id: "dum-biryani",
-    name: "Shama Royal Dum Biryani",
-    category: "biryani",
-    diet: "non-veg",
-    badge: "Awadhi Dum",
-    spice: 2,
-    portions: [
-      { id: "half", label: "Half Deg Plate", price: 130 },
-      { id: "full", label: "Full Deg Plate", price: 240 }
+    "id": "mutton-burrah",
+    "name": "Mutton Burrah",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Royal Delicacy",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
     ],
-    image: "images/dish_2_1791103040843.jpg",
-    video: "videos/dum-biryani.mp4",
-    description: "Aged long-grain basmati layered with succulent marinated chicken, saffron-infused milk, caramelized onions, and sealed with dough for dum.",
-    story: "Steamed gently in sealed degs so the aromatic essence of kewra, star anise, and whole spices penetrates each individual grain.",
-    pairing: "Served alongside spiced burani raita and salan."
+    "image": "images/dish_models_3d/mutton_burrah.jpg",
+    "description": "Tender mutton ribs and chops double-marinated in malt vinegar and royal garam masala, flame-grilled on coal.",
+    "story": "Ancestral Mughlai recipe handed down over generations for authentic smokiness.",
+    "pairing": "Pairs exquisitely with Rumali Roti."
   },
   {
-    id: "butter-garlic-naan",
-    name: "Butter & Garlic Naan",
-    category: "breads",
-    diet: "veg",
-    badge: "Tandoori Bread",
-    spice: 0,
-    portions: [
-      { id: "standard", label: "Per Piece", price: 50 }
+    "id": "chicken-stick",
+    "name": "Chicken Stick",
+    "category": "starters",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Stick",
+        "price": 70
+      }
     ],
-    image: "images/dish_1_1791103007768.jpg",
-    video: "videos/roti-naan.mp4",
-    description: "Refined flour dough clay-baked to blistered golden softness, brushed liberally with pure desi butter and roasted chopped garlic flakes.",
-    story: "Slapped on the glowing interior wall of a 400°C charcoal tandoor for immediate puff and crispiness.",
-    pairing: "Best for scooping rich gravies and handi curries."
+    "image": "images/dish_models_3d/chicken_fry.jpg",
+    "description": "Hand-threaded spiced chicken skewer fried crisp with golden breading.",
+    "story": "Quick bite favorite popular for on-the-go Mughlai snacking.",
+    "pairing": "Serve with spicy chutney."
   },
   {
-    id: "crispy-manchow",
-    name: "Crispy Manchow Soup",
-    category: "desserts",
-    diet: "veg",
-    badge: "Warm Starter",
-    spice: 2,
-    portions: [
-      { id: "standard", label: "Per Bowl", price: 46 }
+    "id": "pota-stick",
+    "name": "Pota Stick",
+    "category": "starters",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Stick",
+        "price": 70
+      }
     ],
-    image: "images/hero_image_1791102967343.jpg",
-    video: "videos/manchow-soup.mp4",
-    description: "Dark, robust Chinese style vegetable broth infused with crushed garlic, shiitake mushrooms, coriander stems, and crunchy noodle topping.",
-    story: "The perfect piping hot appetite starter before a rich royal meal.",
-    pairing: "Enjoyed solo as an evening comfort bowl."
+    "image": "images/dish_models_3d/pota_stick.jpg",
+    "description": "Seasoned and spiced pota skewers flash-fried with aromatic herbs.",
+    "story": "Traditional countryside street starter loved for its distinctive texture and spices.",
+    "pairing": "Goes with raw onion and lime."
   },
   {
-    id: "gulab-jamun",
-    name: "Royal Gulab Jamun (2 Pcs)",
-    category: "desserts",
-    diet: "veg",
-    badge: "Sweet Dish",
-    spice: 0,
-    portions: [
-      { id: "standard", label: "Portion (2 Pcs)", price: 80 }
+    "id": "chicken-roll",
+    "name": "Chicken Roll",
+    "category": "starters",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 70
+      }
     ],
-    image: "images/shama_kheer.jpg",
-    video: "videos/desserts.mp4",
-    description: "Deep-fried melt-in-mouth khoya dumplings immersed in warm sugar syrup delicately scented with rose water and cardamom.",
-    story: "Prepared from pure cow milk mawa with a soft, moist center that dissolves on your palate.",
-    pairing: "Extra delicious when paired with a scoop of rabri or kheer."
+    "image": "images/dish_models_3d/chicken_roll.jpg",
+    "description": "Juicy shredded spiced chicken and crisp onions rolled inside a warm flatbread.",
+    "story": "Street-style Kolkata & Mughlai roll wrapped hot with tangy sauces.",
+    "pairing": "Perfect with fresh mint dip."
+  },
+  {
+    "id": "chicken-lollipop-wings",
+    "name": "Chicken Lollipop & Wings",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Crispy Hit",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_lollipop.jpg",
+    "description": "Frenched chicken winglets tossed in fiery ginger-garlic sauce with crisp outer batter.",
+    "story": "A restaurant best-seller loved by both young and old for its flavor punch.",
+    "pairing": "Enjoy with Schezwan dip."
+  },
+  {
+    "id": "fish-fry",
+    "name": "Fish Fry (only Winter)",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Winter Special",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/fish_fry.jpg",
+    "description": "Seasonal fresh fish marinated with carom seeds (ajwain), lemon, and gram flour, deep fried crispy.",
+    "story": "Special winter harvest freshwater fish prepared during northern cold months.",
+    "pairing": "Tastes heavenly with green chutney."
+  },
+  {
+    "id": "fish-fry-boneless",
+    "name": "Fish Fry Boneless (only Winters)",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Winter Special",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
+    ],
+    "image": "images/dish_models_3d/fish_fry.jpg",
+    "description": "Delicate boneless fish fillets steeped in mustard paste and spices, batter fried to a golden crunch.",
+    "story": "Boneless prime cuts crafted for a hassle-free seasonal seafood experience.",
+    "pairing": "Complements Tartar sauce or spicy mint chutney."
+  },
+  {
+    "id": "mutton-raan-starter",
+    "name": "Mutton Raan* (Order Before 8 hours)",
+    "category": "starters",
+    "diet": "non-veg",
+    "badge": "Order 8 Hrs Prior",
+    "portions": [
+      {
+        "id": "full",
+        "label": "Whole Leg",
+        "price": 1500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_raan.jpg",
+    "description": "Whole leg of tender mutton marinated for 24 hours in saffron, papaya and spices, slow-roasted to fall-off-the-bone tenderness.",
+    "story": "An imperial Mughal banquet showstopper prepared on advance order for royal gatherings.",
+    "pairing": "Best savored with Shama Special Naan and Biryani."
+  },
+  {
+    "id": "chicken-kabab-roll",
+    "name": "Chicken Kabab Roll",
+    "category": "kababs",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 100
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_kabab_roll.jpg",
+    "description": "Tender chicken seekh kabab wrapped in soft paratha with zesty mint chutney and rings of onion.",
+    "story": "Crafted on live tawa for an authentic, smoky handheld roll.",
+    "pairing": "Serve with extra mint sauce."
+  },
+  {
+    "id": "chicken-seekh-kabab",
+    "name": "Chicken Seekh Kabab (4pc)",
+    "category": "kababs",
+    "diet": "non-veg",
+    "badge": "Charcoal Skewer",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "4 Pieces",
+        "price": 160
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_seekh_kabab.jpg",
+    "description": "Finely minced chicken spiced with coriander, cumin, ginger, and green chilies, roasted on long metal skewers.",
+    "story": "Clay tandoor smoked to retain all juices inside the minced meat.",
+    "pairing": "Best with Butter Roti."
+  },
+  {
+    "id": "mutton-kabab-roll",
+    "name": "Mutton Kabab Roll",
+    "category": "kababs",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_kabab_roll.jpg",
+    "description": "Charcoal grilled mutton seekh kabab nestled in warm bread with lemon-spiced sliced onions.",
+    "story": "Rich in flavor with juicy mutton textures in every single bite.",
+    "pairing": "Great on the go."
+  },
+  {
+    "id": "mutton-seekh-kabab",
+    "name": "Mutton Seekh Kabab (4pc)",
+    "category": "kababs",
+    "diet": "non-veg",
+    "badge": "Chef's Signature",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "4 Pieces",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_seekh_kabab.jpg",
+    "description": "Premium minced mutton blended with ancestral Shama potli spices and charred to tender succulence.",
+    "story": "A staple Mughlai recipe that has delighted guests in Haldwani since 1998.",
+    "pairing": "Pairs with Rumali Roti."
+  },
+  {
+    "id": "chicken-malai-kabab",
+    "name": "Chicken Malai Kabab",
+    "category": "kababs",
+    "diet": "non-veg",
+    "badge": "Velvety Mild",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Plate",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_malai_kabab.jpg",
+    "description": "Silken minced chicken patties infused with clotted dairy cream, mild cheese, and fragrant mace.",
+    "story": "Designed for a delicate palate where creaminess and meat harmony take center stage.",
+    "pairing": "Delicious with Garlic Naan."
+  },
+  {
+    "id": "mutton-malai-kabab",
+    "name": "Mutton Malai Kabab",
+    "category": "kababs",
+    "diet": "non-veg",
+    "badge": "Rich & Royal",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Plate",
+        "price": 300
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_malai_kabab.jpg",
+    "description": "Ultra-fine minced mutton whipped with rich malai and saffron, char-grilled with utmost precision.",
+    "story": "Melts softly on the tongue leaving notes of cardamom and ghee.",
+    "pairing": "Enjoy with Shama Spl. Naan."
+  },
+  {
+    "id": "shaami-kabab",
+    "name": "Shaami Kabab",
+    "category": "kababs",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Piece",
+        "price": 40
+      }
+    ],
+    "image": "images/dish_models_3d/shaami_kabab.jpg",
+    "description": "Traditional Awadhi pan-fried patty made with silky minced meat and chana dal simmered with whole spices.",
+    "story": "Slow cooked till fiber-soft and browned on a flat heavy tawa.",
+    "pairing": "Classic tea-time or starter companion."
+  },
+  {
+    "id": "kali-mirch-chicken",
+    "name": "Kali Mirch Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Peppery Signature",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 240
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 480
+      }
+    ],
+    "image": "images/dish_models_3d/kali_mirch_chicken.jpg",
+    "description": "Chicken steeped in freshly crushed Malabar black pepper, cashew paste, and aromatic light gravy.",
+    "story": "A legendary dish famed for bold pepper warmth balanced by thick dairy cream.",
+    "pairing": "Best with Butter Naan or Steamed Rice."
+  },
+  {
+    "id": "butter-chicken",
+    "name": "Butter Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "All-Time Best Seller",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/butter_chicken.jpg",
+    "description": "Tandoori chicken pieces simmered in silky tomato-butter gravy scented with kasuri methi and honey.",
+    "story": "The iconic North Indian masterpiece, perfected over 25+ years in heavy copper handis.",
+    "pairing": "Perfect with hot Garlic Naan or Rumali Roti."
+  },
+  {
+    "id": "changezi-chicken",
+    "name": "Changezi Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Old Delhi Style",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 340
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 680
+      }
+    ],
+    "image": "images/dish_models_3d/changezi_chicken.jpg",
+    "description": "Roast chicken braised in a robust, tangy, and rich gravy of roasted onions, tomatoes, and milk curd.",
+    "story": "Named after historic warrior tradition, loved for its deep crimson hue and intense spice aroma.",
+    "pairing": "Pairs brilliantly with Tandoori Roti."
+  },
+  {
+    "id": "akbari-chicken",
+    "name": "Akbari Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Imperial Recipe",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/akbari_chicken.jpg",
+    "description": "Royal Mughal gravy prepared with almonds, golden fried onions, saffron, and tender chicken morsels.",
+    "story": "Refined court cuisine honoring Akbar the Great's grand feast kitchens.",
+    "pairing": "Enjoy with Shama Spl. Naan."
+  },
+  {
+    "id": "kadahi-chicken",
+    "name": "Kadahi Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Wok Tossed",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/kadahi_chicken.jpg",
+    "description": "Chicken wok-cooked with crunchy bell peppers, whole coriander seeds, dried red chilies, and onion cubes.",
+    "story": "Sizzled in heavy cast iron kadhais to lock in smoky masala flavors.",
+    "pairing": "Superb with Lacha Paratha."
+  },
+  {
+    "id": "chicken-aflatoon",
+    "name": "Chicken Aflatoon",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Spicy Sensation",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_aflatoon.jpg",
+    "description": "Fiery, robust chicken curry cooked with special crushed aromatic spices and thick roasted gravy.",
+    "story": "A house creation designed for connoisseurs of deep, punchy northern flavors.",
+    "pairing": "Pairs with Butter Roti."
+  },
+  {
+    "id": "chicken-badami",
+    "name": "Chicken Badami",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Almond Cream",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_badami.jpg",
+    "description": "Chicken simmered in rich sweet-savory almond puree, brown onions, and aromatic cardamom broth.",
+    "story": "A luxurious nut-rich gravy traditionally reserved for festive gatherings.",
+    "pairing": "Accompanies Plain Pulao or Naan."
+  },
+  {
+    "id": "chicken-korma",
+    "name": "Chicken Korma",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Classic Mughlai",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 150
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 300
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_korma.jpg",
+    "description": "Authentic slow-dum chicken korma with browned onions, whole spices, and fragrant kewra water.",
+    "story": "Traditional Lucknowi and Rampuri style korma prepared with time-honored slow reduction.",
+    "pairing": "Divine with Rumali Roti."
+  },
+  {
+    "id": "chicken-tikka-masala",
+    "name": "Chicken Tikka Masala",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Smoky Curry",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_tikka_masala.jpg",
+    "description": "Smoky char-grilled chicken tikka pieces folded into a spiced onion-tomato masala with fresh coriander.",
+    "story": "The worldwide champion of British-Indian culinary crossover, done the royal way.",
+    "pairing": "Delightful with Garlic Naan."
+  },
+  {
+    "id": "chicken-palak",
+    "name": "Chicken Palak",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Nutritious & Flavorful",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_palak.jpg",
+    "description": "Fresh tender chicken simmered slowly in pureed garden spinach, garlic, and home-ground spices.",
+    "story": "Nutritious and comforting, cooked with generous dollops of pure ghee.",
+    "pairing": "Best paired with Missi Roti."
+  },
+  {
+    "id": "chicken-maharaja",
+    "name": "Chicken Maharaja",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Grand Banquet",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 380
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 760
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_maharaja.jpg",
+    "description": "Extravagant royal curry enriched with dried nuts, saffron, boiled egg, and succulent chicken cuts.",
+    "story": "A feast dish crafted to make any dinner feel like a royal coronation.",
+    "pairing": "Pairs with Stuff Naan."
+  },
+  {
+    "id": "chicken-be-nazeer",
+    "name": "Chicken Be Nazeer",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Incomparable Taste",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 380
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 760
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_be_nazeer.jpg",
+    "description": "True to its name ('Without Equal'), an exquisite chicken dish prepared with rare heritage spices.",
+    "story": "An exclusive chef's creation blending sweet, tangy, and smoky spice layers.",
+    "pairing": "Enjoy with Butter Naan."
+  },
+  {
+    "id": "special-tawa-chicken",
+    "name": "Special Tawa Chicken",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Live Tawa Special",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 350
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 700
+      }
+    ],
+    "image": "images/dish_models_3d/special_tawa_chicken.jpg",
+    "description": "Juicy chicken roasted live on a heavy concave tawa with crushed green chilies, tomatoes, and ginger juliennes.",
+    "story": "Cooked at high heat to concentrate natural flavors into a semi-dry, clinging masala.",
+    "pairing": "Best with Rumali Roti."
+  },
+  {
+    "id": "murg-musallam",
+    "name": "Murg Musallam* (order Before 8 Hours)",
+    "category": "chicken-gravy",
+    "diet": "non-veg",
+    "badge": "Order 8 Hrs Prior",
+    "portions": [
+      {
+        "id": "full",
+        "label": "Whole Chicken",
+        "price": 1400
+      }
+    ],
+    "image": "images/dish_models_3d/murg_musallam.jpg",
+    "description": "Whole chicken stuffed with spiced boiled eggs and minced meat, slow-simmered in royal saffron-almond gravy.",
+    "story": "Crown jewel of medieval Awadhi royal banquets, cooked on slow 'dum' over embers.",
+    "pairing": "Serves an entire family with Biryani and Naans."
+  },
+  {
+    "id": "mutton-stew",
+    "name": "Mutton Stew",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Whole Spices",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_stew.jpg",
+    "description": "Tender goat meat slow braised with whole black pepper, cloves, dried red chilies, and sweet sliced onions.",
+    "story": "Cooked without ground powders to let whole whole-spice botanicals perfume the meat naturally.",
+    "pairing": "Outstanding with hot Rumali Roti."
+  },
+  {
+    "id": "mutton-korma",
+    "name": "Mutton Korma",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Heritage Royal",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_korma.jpg",
+    "description": "Slow-simmered mutton pieces in aromatic brown onion gravy with yogurt, mace, and green cardamom.",
+    "story": "Our flagship mutton curry, prepared since 1998 in heavy traditional handis.",
+    "pairing": "Heavenly with Butter Naan or Khamiri Roti."
+  },
+  {
+    "id": "mutton-keema",
+    "name": "Mutton Keema",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Minced Richness",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_keema.jpg",
+    "description": "Hand-minced mutton simmered with onions, green peas, garlic, and robust Mughlai masalas.",
+    "story": "A comforting northern classic cooked till the oil separates and glistens.",
+    "pairing": "Delicious with Tandoori Roti or Pav."
+  },
+  {
+    "id": "mutton-palak-gosht",
+    "name": "Mutton Palak Gosht",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Classic Combination",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 300
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 600
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_palak_gosht.jpg",
+    "description": "Tender mutton chunks slow-cooked with fresh puréed spinach, garlic, ginger, and aromatic desi ghee.",
+    "story": "A nutritious, time-honored winter preparation that warms the soul.",
+    "pairing": "Best paired with Missi Roti or Rice."
+  },
+  {
+    "id": "mutton-rara",
+    "name": "Mutton Rara",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Double Meat Treat",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 320
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 640
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_rara.jpg",
+    "description": "Tender bone-in mutton pieces cooked in a rich, spicy gravy made with seasoned minced mutton (keema).",
+    "story": "Famous Punjabi-Mughlai marriage offering two distinct mutton textures in every spoonful.",
+    "pairing": "Goes wonderfully with Garlic Naan."
+  },
+  {
+    "id": "mutton-kadai",
+    "name": "Mutton Kadai",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Wok Cooked",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 320
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 640
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_kadai.jpg",
+    "description": "Mutton cooked with crushed coriander seeds, capsicum, tomatoes, and fiery red chili flakes in an iron wok.",
+    "story": "Tossed over raging flames to produce a thick, coating masala.",
+    "pairing": "Pairs with Lacha Paratha."
+  },
+  {
+    "id": "mutton-kaleji",
+    "name": "Mutton Kaleji",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Delicacy",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_kaleji.jpg",
+    "description": "Tender mutton liver pieces sautéed with roasted spices, green chilies, and onion-tomato gravy.",
+    "story": "Flash-cooked at high heat so the liver remains buttery soft and tender.",
+    "pairing": "Best with hot Rumali Roti."
+  },
+  {
+    "id": "mutton-keema-kaleji",
+    "name": "Mutton Keema Kaleji",
+    "category": "mutton-gravy",
+    "diet": "non-veg",
+    "badge": "Gourmet Specialty",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_keema_kaleji.jpg",
+    "description": "A harmonious combination of minced mutton and succulent liver cubes braised with ground spices.",
+    "story": "A beloved Old Delhi delicacy made famous by royal bazaar street stalls.",
+    "pairing": "Enjoy with Tandoori Butter Roti."
+  },
+  {
+    "id": "chilly-paneer",
+    "name": "Chilly Paneer",
+    "category": "chinese",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/chilly_paneer.jpg",
+    "description": "Crispy fried cottage cheese cubes tossed with bell peppers, onions, soy sauce, and green chilies.",
+    "story": "A vibrant Indo-Chinese classic made with fresh dairy paneer.",
+    "pairing": "Great with Veg Fried Rice."
+  },
+  {
+    "id": "veg-fried-rice",
+    "name": "Veg Fried Rice",
+    "category": "chinese",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/veg_fried_rice.jpg",
+    "description": "Wok-tossed long grain basmati rice with finely chopped carrots, beans, spring onions, and oriental spices.",
+    "story": "Prepared on high fire with smoky wok hei flavor.",
+    "pairing": "Pairs with Chilly Paneer or Manchurian."
+  },
+  {
+    "id": "chilly-chicken",
+    "name": "Chilly Chicken",
+    "category": "chinese",
+    "diet": "non-veg",
+    "badge": "Crowd Favorite",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 250
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 500
+      }
+    ],
+    "image": "images/dish_models_3d/chilly_chicken.jpg",
+    "description": "Golden fried chicken chunks tossed in dark soy sauce, hot green chilies, garlic, and crisp bell peppers.",
+    "story": "The quintessential Indian-Chinese fusion staple with an irresistible umami kick.",
+    "pairing": "Best with Chicken Fried Rice."
+  },
+  {
+    "id": "chicken-fried-rice",
+    "name": "Chicken Fried Rice",
+    "category": "chinese",
+    "diet": "non-veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_fried_rice.jpg",
+    "description": "Fragrant basmati rice wok-tossed with egg, shredded chicken pieces, and scallions in light seasoning.",
+    "story": "A balanced, satisfying meal with aromatic grains and tender chicken.",
+    "pairing": "Accompanies Chilly Chicken."
+  },
+  {
+    "id": "shahi-paneer",
+    "name": "Shahi Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Mughlai Royalty",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/shahi_paneer.jpg",
+    "description": "Soft cottage cheese cubes cooked in a velvety tomato, cashew, and cream gravy with gentle spices.",
+    "story": "A regal vegetarian centerpiece beloved across North Indian homes.",
+    "pairing": "Superb with Butter Naan."
+  },
+  {
+    "id": "kadhai-paneer",
+    "name": "Kadhai Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Spiced Wok",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/kadhai_paneer.jpg",
+    "description": "Cottage cheese wok-tossed with freshly pounded kadhai masala, capsicum, and thick onion gravy.",
+    "story": "Packed with crunchy bell peppers and aromatic roasted coriander seeds.",
+    "pairing": "Pairs with Lacha Paratha."
+  },
+  {
+    "id": "handi-paneer",
+    "name": "Handi Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Clay Cooked",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/handi_paneer.jpg",
+    "description": "Fresh paneer slow-cooked in a sealed earthen handi with rich onion-tomato sauce and royal herbs.",
+    "story": "The earthen pot imparts an authentic rustic aroma to the rich dairy gravy.",
+    "pairing": "Best with Rumali Roti."
+  },
+  {
+    "id": "matar-paneer",
+    "name": "Matar Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/matar_paneer.jpg",
+    "description": "Tender green peas and soft paneer cubes cooked in a homestyle spiced tomato-onion curry.",
+    "story": "Timeless North Indian comfort food cooked with warmth and simple spices.",
+    "pairing": "Great with Tandoori Roti or Zeera Rice."
+  },
+  {
+    "id": "palak-paneer",
+    "name": "Palak Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/palak_paneer.jpg",
+    "description": "Fresh cottage cheese bathed in vibrant green spinach purée tempered with garlic, ginger, and cumin.",
+    "story": "Nutritious and delicious, finished with a hint of fresh dairy cream.",
+    "pairing": "Pairs with Missi Roti."
+  },
+  {
+    "id": "khoya-paneer",
+    "name": "Khoya Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Royal Richness",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/khoya_paneer.jpg",
+    "description": "Soft paneer in a luxurious gravy made with reduced mawa (khoya), cashew cream, and cardamom.",
+    "story": "A celebratory Awadhi wedding feast creation with subtle sweetness and unmatched richness.",
+    "pairing": "Delicious with Shama Spl. Naan."
+  },
+  {
+    "id": "paneer-lababdar",
+    "name": "Paneer Lababdar",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Creamy Texture",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_lababdar.jpg",
+    "description": "Paneer cubes and grated paneer folded into a luscious tomato-onion gravy seasoned with kasuri methi.",
+    "story": "The double texture of grated and cubed paneer gives it a signature rich mouthfeel.",
+    "pairing": "Pairs with Garlic Naan."
+  },
+  {
+    "id": "paneer-bhujia",
+    "name": "Paneer Bhujia",
+    "category": "paneer",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_bhujia.jpg",
+    "description": "Freshly crumbled cottage cheese tossed on tawa with onions, green chilies, tomatoes, and cumin.",
+    "story": "Quick, savory, and homestyle scrambled paneer cooked in pure desi ghee.",
+    "pairing": "Enjoy with hot Butter Roti."
+  },
+  {
+    "id": "shama-spl-stuff-paneer",
+    "name": "Shama Spl. Stuff Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "House Specialty",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/shama_spl_stuff_paneer.jpg",
+    "description": "Handcrafted paneer sandwiches stuffed with spiced nuts and khoya, simmered in a royal saffron sauce.",
+    "story": "Our chef's signature vegetarian masterpiece developed exclusively for Shama Deluxe.",
+    "pairing": "Best paired with Butter Naan."
+  },
+  {
+    "id": "mushroom-paneer",
+    "name": "Mushroom Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/mushroom_paneer.jpg",
+    "description": "Fresh button mushrooms and soft paneer cooked together in an aromatic spiced gravy.",
+    "story": "Combines earthy mushrooms with tender dairy paneer for deep savory flavor.",
+    "pairing": "Pairs with Lacha Paratha."
+  },
+  {
+    "id": "paneer-tikka-dry",
+    "name": "Paneer Tikka Dry",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Tandoori Grill",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 300
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_tikka_dry.jpg",
+    "description": "Chunky paneer cubes skewered with bell peppers and onions, marinated in tandoori masala and charred smoky.",
+    "story": "The indisputable king of vegetarian tandoori starters.",
+    "pairing": "Serve with Green Chutney and Onion rings."
+  },
+  {
+    "id": "paneer-tikka-masala",
+    "name": "Paneer Tikka Masala",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Smoky Gravy",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 280
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_tikka_masala.jpg",
+    "description": "Charcoal grilled paneer tikka cubes bathed in a flavorful, spiced onion-tomato butter gravy.",
+    "story": "Smoky edges of grilled paneer infused with velvety rich gravy.",
+    "pairing": "Superb with Garlic Naan."
+  },
+  {
+    "id": "kali-mirch-paneer",
+    "name": "Kali Mirch Paneer",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Black Pepper",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 280
+      }
+    ],
+    "image": "images/dish_models_3d/kali_mirch_paneer.jpg",
+    "description": "Cottage cheese pieces in a velvety white cashew-cream sauce seasoned with freshly cracked black peppercorns.",
+    "story": "An elegant, aromatic curry where black pepper gives a tingling aromatic kick without chili fire.",
+    "pairing": "Pairs with Butter Roti."
+  },
+  {
+    "id": "paneer-butter-masala",
+    "name": "Paneer Butter Masala",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Popular Classic",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_butter_masala.jpg",
+    "description": "Paneer cubes bathed in a mild, buttery, sweet and creamy tomato gravy with fenugreek leaves.",
+    "story": "A beloved staple throughout India with silky texture and gentle warmth.",
+    "pairing": "Delightful with Butter Naan."
+  },
+  {
+    "id": "paneer-angara",
+    "name": "Paneer Angara",
+    "category": "paneer",
+    "diet": "veg",
+    "badge": "Smoky Charcoal",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 280
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_angara.jpg",
+    "description": "Smoky, spicy paneer curry infused with live coal smoke (dhungar) and coarse red spices.",
+    "story": "Prepared with traditional smoke-infusion to give an authentic campfire aroma.",
+    "pairing": "Best with Tandoori Roti."
+  },
+  {
+    "id": "mix-vegetable",
+    "name": "Mix Vegetable",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/mix_vegetable.jpg",
+    "description": "Medley of seasonal cauliflower, carrots, beans, peas, and potatoes cooked in fragrant masala.",
+    "story": "Homestyle vegetable curry packed with color, nutrition, and vibrant spices.",
+    "pairing": "Enjoy with hot Tandoori Roti."
+  },
+  {
+    "id": "aloo-gobhi",
+    "name": "Aloo Gobhi",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 180
+      }
+    ],
+    "image": "images/dish_models_3d/aloo_gobhi.jpg",
+    "description": "Golden potatoes and cauliflower florets sautéed with ginger, turmeric, and roasted cumin.",
+    "story": "The quintessential North Indian home favorite cooked till fork-tender.",
+    "pairing": "Pairs with Butter Roti."
+  },
+  {
+    "id": "navrattan-korma",
+    "name": "Navrattan Korma",
+    "category": "vegetables",
+    "diet": "veg",
+    "badge": "Nine Jewels",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/navrattan_korma.jpg",
+    "description": "Nine vegetable gems and dry fruits simmered in a mildly sweet, rich cashew and cream gravy.",
+    "story": "An imperial Mughal creation representing Emperor Akbar's nine royal courtiers (Navratnas).",
+    "pairing": "Delicious with Butter Naan."
+  },
+  {
+    "id": "mushroom-masala",
+    "name": "Mushroom Masala",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/mushroom_masala.jpg",
+    "description": "Plump button mushrooms cooked in a semi-dry onion, tomato, and ground garam masala gravy.",
+    "story": "Earthy mushrooms absorb the deep flavors of slow-roasted spices.",
+    "pairing": "Superb with Lacha Paratha."
+  },
+  {
+    "id": "matar-mushroom",
+    "name": "Matar Mushroom",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/matar_mushroom.jpg",
+    "description": "Green peas and fresh mushrooms in a hearty spiced gravy finished with coriander and ginger.",
+    "story": "A classic North Indian pairing offering sweet pea burst and savory mushroom bite.",
+    "pairing": "Great with Plain Naan."
+  },
+  {
+    "id": "aloo-matar",
+    "name": "Aloo Matar",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/aloo_matar.jpg",
+    "description": "Tender potatoes and sweet green peas simmered in a spiced cumin and tomato curry broth.",
+    "story": "Comfort food that evokes warm memories of home kitchens across Uttarakhand.",
+    "pairing": "Best with Tandoori Roti."
+  },
+  {
+    "id": "aloo-palak",
+    "name": "Aloo Palak",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/aloo_palak.jpg",
+    "description": "Cubed potatoes gently braised in a pureed fresh spinach gravy with roasted garlic cloves.",
+    "story": "Nutritious and wholesome, rich in iron and aromatic desi spices.",
+    "pairing": "Pairs with Missi Roti."
+  },
+  {
+    "id": "aloo-zeera",
+    "name": "Aloo Zeera",
+    "category": "vegetables",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 180
+      }
+    ],
+    "image": "images/dish_models_3d/aloo_zeera.jpg",
+    "description": "Baby potatoes sautéed with toasted cumin seeds, fresh coriander, turmeric, and dry mango powder.",
+    "story": "Crisp outer crust with soft potato core, bursting with cumin aroma.",
+    "pairing": "Ideal side with Dal Tadka and Roti."
+  },
+  {
+    "id": "chana-masala",
+    "name": "Chana Masala",
+    "category": "vegetables",
+    "diet": "veg",
+    "badge": "Peshawari Spiced",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 150
+      }
+    ],
+    "image": "images/dish_models_3d/chana_masala.jpg",
+    "description": "Chickpeas simmered in an aromatic dark tea-spice broth with pomegranate seeds and ginger juliennes.",
+    "story": "Authentic Punjabi style chole with deep flavor, tangy notes, and rich masala gravy.",
+    "pairing": "Pairs with Stuff Naan or Rice."
+  },
+  {
+    "id": "malai-kofta",
+    "name": "Malai Kofta",
+    "category": "vegetables",
+    "diet": "veg",
+    "badge": "Mughlai Classic",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/malai_kofta.jpg",
+    "description": "Crispy fried dumplings of paneer and khoya stuffed with raisins, served in a rich cashew-cream sauce.",
+    "story": "Royalty on a platter: the koftas dissolve instantly on the tongue.",
+    "pairing": "Pairs exquisitely with Butter Naan."
+  },
+  {
+    "id": "dal-ghee",
+    "name": "Dal Ghee",
+    "category": "dal",
+    "diet": "veg",
+    "badge": "Pure Ghee Tadka",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/dal_ghee.jpg",
+    "description": "Yellow lentils tempered generously with sizzling pure desi cow ghee, cumin, garlic, and red chilies.",
+    "story": "Simple, nourishing, and rich with the unmistakable aroma of hot clarified butter.",
+    "pairing": "Divine with Plain Rice and Papad."
+  },
+  {
+    "id": "dal-makhni",
+    "name": "Dal Makhni",
+    "category": "dal",
+    "diet": "veg",
+    "badge": "Overnight Dum",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 150
+      }
+    ],
+    "image": "images/dish_models_3d/dal_makhni.jpg",
+    "description": "Whole black urad lentils and kidney beans slow-simmered overnight over charcoal with butter and cream.",
+    "story": "Slow cooked for 12+ hours to achieve an incomparably creamy, velvety texture.",
+    "pairing": "Best paired with Garlic Naan or Jeera Rice."
+  },
+  {
+    "id": "dal-fry",
+    "name": "Dal Fry",
+    "category": "dal",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/dal_fry.jpg",
+    "description": "Golden toor dal fried with onions, tomatoes, green chilies, and fresh coriander leaves.",
+    "story": "Dhaba style comforting yellow dal with punchy tadka flavors.",
+    "pairing": "Perfect with Tandoori Roti."
+  },
+  {
+    "id": "dal-tadka",
+    "name": "Dal Tadka",
+    "category": "dal",
+    "diet": "veg",
+    "badge": "Aromatic Tempering",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 150
+      }
+    ],
+    "image": "images/dish_models_3d/dal_tadka.jpg",
+    "description": "Creamy yellow dal topped with an aromatic sizzle of roasted garlic, cumin, and Kashmiri dry red chilies.",
+    "story": "Tempered right before serving so the crackling spices release maximum aroma.",
+    "pairing": "Complements Zeera Rice and Butter Roti."
+  },
+  {
+    "id": "rumali-roti",
+    "name": "Rumali Roti",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "Handkerchief Thin",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 14
+      }
+    ],
+    "image": "images/dish_models_3d/rumali_roti.jpg",
+    "description": "Ultra-thin, soft, and handkerchief-like flatbread tossed in the air and baked on an inverted heated dome.",
+    "story": "Mughal court specialty crafted by master bakers with dexterous aerial hand tosses.",
+    "pairing": "The quintessential bread for Korma, Kebabs, and Handi gravies."
+  },
+  {
+    "id": "tandoori-roti",
+    "name": "Tandoori Roti",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 12
+      }
+    ],
+    "image": "images/dish_models_3d/tandoori_roti.jpg",
+    "description": "Wholesome whole wheat flatbread baked crisp inside the clay tandoor oven.",
+    "story": "Earthy, wholesome, and baked fresh against hot clay walls.",
+    "pairing": "Goes with any curry."
+  },
+  {
+    "id": "butter-roti",
+    "name": "Butter Roti",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 20
+      }
+    ],
+    "image": "images/dish_models_3d/butter_roti.jpg",
+    "description": "Freshly baked clay oven whole-wheat roti brushed generously with pure butter.",
+    "story": "Soft, flaky, and rich with molten butter gloss.",
+    "pairing": "Pairs with Dal Makhni and gravies."
+  },
+  {
+    "id": "missi-roti",
+    "name": "Missi Roti",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 30
+      }
+    ],
+    "image": "images/dish_models_3d/missi_roti.jpg",
+    "description": "Gram flour (besan) and wheat bread spiced with ajwain, onions, and kasuri methi, roasted in tandoor.",
+    "story": "Traditional Rajasthani-Punjabi flatbread known for its nutty flavor and wholesome crunch.",
+    "pairing": "Superb with Palak dishes and Dal Ghee."
+  },
+  {
+    "id": "butter-naan",
+    "name": "Butter Naan",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "Popular Favorite",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 35
+      }
+    ],
+    "image": "images/dish_models_3d/butter_naan.jpg",
+    "description": "Pillowy soft leavened refined flour bread baked in tandoor and slathered with melted butter.",
+    "story": "Light, stretchy, and baked to golden blistering in charcoal heat.",
+    "pairing": "Ideal partner for Butter Chicken and Shahi Paneer."
+  },
+  {
+    "id": "stuff-naan",
+    "name": "Stuff Naan",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 50
+      }
+    ],
+    "image": "images/dish_models_3d/stuff_naan.jpg",
+    "description": "Naan stuffed with a savory filling of spiced mashed potatoes, onions, and herbs.",
+    "story": "Hearty and flavorful enough to enjoy on its own or with raita.",
+    "pairing": "Enjoy with Chana Masala."
+  },
+  {
+    "id": "plain-naan",
+    "name": "Plain Naan",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 30
+      }
+    ],
+    "image": "images/dish_models_3d/plain_naan.jpg",
+    "description": "Classic soft tandoori naan baked without butter for a lighter bite.",
+    "story": "Golden blistered on the outside, fluffy and tender within.",
+    "pairing": "Great with rich curries."
+  },
+  {
+    "id": "shama-spl-naan",
+    "name": "Shama Spl. Naan",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "House Special",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 70
+      }
+    ],
+    "image": "images/dish_models_3d/shama_spl_naan.jpg",
+    "description": "Gourmet naan stuffed with cottage cheese, dry fruits, and aromatic herbs, glazed with butter.",
+    "story": "A lavish celebration bread made to elevate your dining experience.",
+    "pairing": "Pairs with Akbari Chicken or Navrattan Korma."
+  },
+  {
+    "id": "lacha-paratha",
+    "name": "Lacha Paratha",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "Multi-Layered",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 30
+      }
+    ],
+    "image": "images/dish_models_3d/lacha_paratha.jpg",
+    "description": "Multi-layered spiraled whole wheat bread cooked in tandoor with crispy, flaky rings.",
+    "story": "Folded and rolled repeatedly to create distinct buttery layers.",
+    "pairing": "Superb with Kadhai dishes."
+  },
+  {
+    "id": "stuff-paratha",
+    "name": "Stuff Paratha",
+    "category": "breads",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 70
+      }
+    ],
+    "image": "images/dish_models_3d/stuff_paratha.jpg",
+    "description": "Crispy tandoori paratha loaded with spiced seasonal vegetable stuffing.",
+    "story": "Wholesome, filling, and packed with traditional herbs.",
+    "pairing": "Serve with curd or pickle."
+  },
+  {
+    "id": "garlic-naan",
+    "name": "Garlic Naan",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "Aromatic Hit",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 50
+      }
+    ],
+    "image": "images/dish_models_3d/garlic_naan.jpg",
+    "description": "Soft naan topped with minced fresh garlic, coriander leaves, and brushed with hot butter.",
+    "story": "The fragrant roasted garlic aroma wafts as soon as it exits the tandoor.",
+    "pairing": "The ultimate pairing for Butter Chicken & Dal Makhni."
+  },
+  {
+    "id": "paneer-paratha",
+    "name": "Paneer Paratha",
+    "category": "breads",
+    "diet": "veg",
+    "badge": "Stuffed Cottage Cheese",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 80
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_paratha.jpg",
+    "description": "Golden tandoori paratha stuffed generously with seasoned grated cottage cheese and green chilies.",
+    "story": "A royal breakfast and dinner bread beloved for its luscious paneer interior.",
+    "pairing": "Tastes great with Mix Raita."
+  },
+  {
+    "id": "green-salad",
+    "name": "Green Salad",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 30
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Crisp sliced cucumbers, red onions, tomatoes, and carrots served with fresh lemon wedges.",
+    "story": "Fresh garden produce sliced fresh to cleanse the palate between rich bites.",
+    "pairing": "Essential companion to biryanis and kebabs."
+  },
+  {
+    "id": "boondi-raita",
+    "name": "Boondi Raita",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 90
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Whipped chilled curd blended with crispy chickpea flour boondi pearls, roasted cumin, and black salt.",
+    "story": "Cooling and refreshing, providing the perfect counterpoint to spicy gravies.",
+    "pairing": "Pairs with Biryani and Pulao."
+  },
+  {
+    "id": "mix-raita",
+    "name": "Mix Raita",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 100
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Chilled yogurt mixed with finely diced onions, cucumbers, tomatoes, and roasted spices.",
+    "story": "Crisp vegetable crunch combined with smooth, creamy yogurt.",
+    "pairing": "Complements rich mutton curries."
+  },
+  {
+    "id": "fruit-cocktail-raita",
+    "name": "Fruit Cocktail Raita",
+    "category": "salad-raita",
+    "diet": "veg",
+    "badge": "Sweet & Tangy",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Creamy sweetened yogurt infused with diced seasonal fruits, pineapple, and pomegranate seeds.",
+    "story": "A royal banquet side that doubles up as a delightful palate refresher.",
+    "pairing": "Great with spicy tandoori starters."
+  },
+  {
+    "id": "pineapple-raita",
+    "name": "Pine Apple Raita",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Succulent pineapple tidbits folded in chilled sweet and mildly spiced curd.",
+    "story": "Tropical sweetness meets traditional probiotic yogurt.",
+    "pairing": "Pairs with Royal Biryani."
+  },
+  {
+    "id": "plain-curd",
+    "name": "Plain Curd",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 60
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Freshly set, wholesome thick dairy yogurt served chilled.",
+    "story": "Natural probiotic nourishment to complete your meal.",
+    "pairing": "Pairs with stuffed parathas."
+  },
+  {
+    "id": "papad-fry",
+    "name": "Papad Fry",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 25
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Crisp golden deep-fried spiced urad dal papad.",
+    "story": "Delivers that essential crunch to every Indian dining spread.",
+    "pairing": "Great with Dal Chawal."
+  },
+  {
+    "id": "papad-dry",
+    "name": "Papad Dry",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 15
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Lightly fire-roasted dry papad with smoky blisters and no oil.",
+    "story": "Guilt-free crunch roasted directly over live coals.",
+    "pairing": "Goes with any meal."
+  },
+  {
+    "id": "masala-papad",
+    "name": "Masala Papad",
+    "category": "salad-raita",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Pc",
+        "price": 50
+      }
+    ],
+    "image": "images/dish_models_3d/masala_papad.jpg",
+    "description": "Crispy roasted papad loaded with tangy diced onions, tomatoes, green chilies, chaat masala, and fresh coriander.",
+    "story": "The ultimate restaurant appetizer before your meal arrives.",
+    "pairing": "Pairs with cold drinks and mocktails."
+  },
+  {
+    "id": "veg-biryani",
+    "name": "Veg. Biryani",
+    "category": "rice",
+    "diet": "veg",
+    "badge": "Dum Cooked",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 100
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/veg_biryani.jpg",
+    "description": "Fragrant basmati rice layered with seasonal vegetables, fried onions, mint, saffron, and slow dum cooked in handi.",
+    "story": "A fragrant vegetarian royal delicacy sealed with dough to trap the aromatics.",
+    "pairing": "Best savored with Boondi Raita."
+  },
+  {
+    "id": "chicken-biryani",
+    "name": "Chicken Biryani",
+    "category": "rice",
+    "diet": "non-veg",
+    "badge": "Signature Royal",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 120
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 240
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_biryani.jpg",
+    "description": "Aged long-grain basmati rice and marinated chicken slow cooked with saffron, whole spices, and caramelized onions.",
+    "story": "Our most celebrated royal rice recipe since 1998, infused with natural rose and kewra essence.",
+    "pairing": "Served with spiced gravy (salan) and chilled raita."
+  },
+  {
+    "id": "mutton-biryani",
+    "name": "Mutton Biryani",
+    "category": "rice",
+    "diet": "non-veg",
+    "badge": "Awadhi Heritage",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 180
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 360
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_biryani.jpg",
+    "description": "Tender goat meat layered with saffron basmati rice, mint leaves, and desi ghee, sealed and dum-cooked.",
+    "story": "The crown jewel of Awadhi cuisine, simmered until meat falls off the bone.",
+    "pairing": "Incredible with Green Salad and Raita."
+  },
+  {
+    "id": "paneer-pulao",
+    "name": "Paneer Pulao",
+    "category": "rice",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 100
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 200
+      }
+    ],
+    "image": "images/dish_models_3d/paneer_pulao.jpg",
+    "description": "Aromatic basmati rice cooked with golden fried paneer cubes, whole spices, and green peas.",
+    "story": "Light, fragrant, and gentle on the palate.",
+    "pairing": "Enjoy with Dal Makhni."
+  },
+  {
+    "id": "zeera-rice",
+    "name": "Zeera Rice",
+    "category": "rice",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 60
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/zeera_rice.jpg",
+    "description": "Fluffy steamed long-grain basmati rice tempered with crackling roasted cumin seeds and desi ghee.",
+    "story": "A fragrant classic that pairs effortlessly with all North Indian curries.",
+    "pairing": "Perfect with Dal Tadka and gravies."
+  },
+  {
+    "id": "plain-rice",
+    "name": "Plain Rice",
+    "category": "rice",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 50
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 100
+      }
+    ],
+    "image": "images/dish_models_3d/plain_rice.jpg",
+    "description": "Steamed fluffy long-grain basmati rice, tender and separate grains.",
+    "story": "Pure basmati grains cooked to airy perfection.",
+    "pairing": "Accompanies all gravies."
+  },
+  {
+    "id": "plain-pulao",
+    "name": "Plain Pulao",
+    "category": "rice",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "half",
+        "label": "Half",
+        "price": 60
+      },
+      {
+        "id": "full",
+        "label": "Full",
+        "price": 120
+      }
+    ],
+    "image": "images/dish_models_3d/plain_pulao.jpg",
+    "description": "Basmati rice mildly scented with whole cloves, bay leaves, and cardamom.",
+    "story": "Traditional light pulao cooked with royal aromatics.",
+    "pairing": "Pairs with Chicken Korma."
+  },
+  {
+    "id": "chicken-raan-biryani",
+    "name": "Chicken Raan Biryani",
+    "category": "rice",
+    "diet": "non-veg",
+    "badge": "Specialty",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 250
+      }
+    ],
+    "image": "images/dish_models_3d/chicken_biryani.jpg",
+    "description": "Succulent whole chicken leg cut prepared with fragrant biryani spices and layered saffron rice.",
+    "story": "A rich feast designed for dedicated chicken biryani aficionados.",
+    "pairing": "Enjoy with chilled raita."
+  },
+  {
+    "id": "raan-biryani",
+    "name": "Raan Biryani* (order Before 8 Hours)",
+    "category": "rice",
+    "diet": "non-veg",
+    "badge": "Order 8 Hrs Prior",
+    "portions": [
+      {
+        "id": "full",
+        "label": "Royal Platter",
+        "price": 1800
+      }
+    ],
+    "image": "images/dish_models_3d/mutton_biryani.jpg",
+    "description": "Whole spiced mutton raan roasted slow and bedded over an enormous mound of imperial dum biryani rice.",
+    "story": "A monumental centerpiece created for family celebrations and royal gatherings.",
+    "pairing": "Feeds a grand banquet table."
+  },
+  {
+    "id": "mint-mojito",
+    "name": "Mint Mojito",
+    "category": "mocktails",
+    "diet": "veg",
+    "badge": "Refreshing",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 99
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Fresh garden mint muddled with lime chunks, sugar syrup, and fizzy sparkling soda over crushed ice.",
+    "story": "The ultimate thirst quencher and palate reviver.",
+    "pairing": "Superb alongside spicy tandoori starters."
+  },
+  {
+    "id": "blue-sky",
+    "name": "Blue Sky",
+    "category": "mocktails",
+    "diet": "veg",
+    "badge": "Vibrant",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 99
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Blue curacao syrup shaken with lemon juice, sprite, and chilled crushed ice.",
+    "story": "A dazzling azure mocktail with citrus notes.",
+    "pairing": "Great with Chicken Tikka."
+  },
+  {
+    "id": "midnight-beauty",
+    "name": "Midnight Beauty",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 99
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Deep berry and blackcurrant syrup blended with lime and carbonated soda.",
+    "story": "Mysterious dark hues with rich sweet-tart berry bursts.",
+    "pairing": "Enjoy before your meal."
+  },
+  {
+    "id": "lichi-lemonade",
+    "name": "Lichi Lemonade",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 99
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Sweet exotic litchi nectar paired with freshly squeezed lemon and fizz.",
+    "story": "Fruity, fragrant, and gentle on the palate.",
+    "pairing": "Complements spicy Chinese starters."
+  },
+  {
+    "id": "orange-mojito",
+    "name": "Orange Mojito",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 150
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Fresh orange segments muddled with mint leaves, citrus syrup, and soda.",
+    "story": "Packed with vitamin C and refreshing summer energy.",
+    "pairing": "Pairs with Kebabs."
+  },
+  {
+    "id": "pina-colada",
+    "name": "Pina Colada",
+    "category": "mocktails",
+    "diet": "veg",
+    "badge": "Tropical",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 125
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Creamy blend of rich coconut milk, pineapple juice, and crushed ice.",
+    "story": "Classic tropical mocktail offering smooth, creamy dessert-like bliss.",
+    "pairing": "Great after rich curries."
+  },
+  {
+    "id": "masala-lemonade",
+    "name": "Masala Lemonade",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 125
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Zesty lemon drink spiced with roasted cumin, black salt, and chaat spices.",
+    "story": "Desi street lemonade crafted to aid digestion after rich feasts.",
+    "pairing": "Best companion to Mutton gravies."
+  },
+  {
+    "id": "watermelon-mojito",
+    "name": "Watermelon Mojito",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 125
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Sweet watermelon syrup muddled with mint, lemon, and chilled soda.",
+    "story": "Hydrating, sweet, and bursting with watermelon flavor.",
+    "pairing": "Pairs with Chicken Fry."
+  },
+  {
+    "id": "masala-coke",
+    "name": "Masala Coke",
+    "category": "mocktails",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 50
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Chilled cola charged with fresh lime juice, black salt, and roasted cumin.",
+    "story": "An Indian street-side favorite that turns ordinary soda into an irresistible digestive treat.",
+    "pairing": "Classic pair with Biryani."
+  },
+  {
+    "id": "mojito-tower",
+    "name": "Mojito Tower (serve For 5)",
+    "category": "mocktails",
+    "diet": "veg",
+    "badge": "Serves 5",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Tower (Serves 5)",
+        "price": 499
+      }
+    ],
+    "image": "images/dish_models_3d/mint_mojito.jpg",
+    "description": "Giant party table tower filled with sparkling mint mojito, ice, and lime slices for the entire group.",
+    "story": "Perfect centerpiece for family celebrations and gathering tables.",
+    "pairing": "Shared by the whole table."
+  },
+  {
+    "id": "vanilla-shake",
+    "name": "Vanilla Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Creamy whole milk blended with pure Madagascar vanilla extract and sweet cream.",
+    "story": "Simple, timeless, and soothingly sweet.",
+    "pairing": "Add extra ice cream scoop for ₹30."
+  },
+  {
+    "id": "strawberry-shake",
+    "name": "Strawberry Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Chilled milk blended with sweet strawberry puree and velvety dairy ice cream.",
+    "story": "Vibrant pink indulgence loved by all ages.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "butter-scotch-shake",
+    "name": "Butter Scotch Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Rich shake with crunchy butterscotch praline and golden caramel swirl.",
+    "story": "Buttery crunch meets thick chilled shake.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "blue-berry-shake",
+    "name": "Blue Berry Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Sweet and tangy wild blueberry pulp whipped with chilled creamy milk.",
+    "story": "Exotic berry delight with a rich purple hue.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "banana-mango-shake",
+    "name": "Banana/Mango Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Tropical blend of sweet ripe mangoes and nourishing bananas with cold milk.",
+    "story": "A thick, energy-packed fruit shake rich in natural sweetness.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "oreo-shake",
+    "name": "Oreo Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "badge": "Best Seller",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Crushed chocolate Oreo cookies blended with rich milk and chocolate sauce.",
+    "story": "Thick, crunchy, and chocolatey in every single sip.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "kitkat-shake",
+    "name": "Kitkat Shake",
+    "category": "shakes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Crispy KitKat wafer chocolate fingers crushed into a thick chocolate milkshake.",
+    "story": "Crisp wafer crunch mixed with velvety chocolate cream.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "cold-coffee",
+    "name": "Cold Coffee",
+    "category": "shakes",
+    "diet": "veg",
+    "badge": "Cafe Favorite",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/oreo_shake.jpg",
+    "description": "Strong roasted Arabica coffee whipped with chilled milk and chocolate drizzle.",
+    "story": "The quintessential energizing creamy coffee shake.",
+    "pairing": "Add ice cream scoop for ₹30."
+  },
+  {
+    "id": "assorted-cold-drink",
+    "name": "Assorted Cold Drink",
+    "category": "beverages",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 35
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Choice of chilled bottled carbonated soft drinks served fresh.",
+    "story": "Classic dining accompaniment.",
+    "pairing": "Goes with everything."
+  },
+  {
+    "id": "fresh-lime-soda",
+    "name": "Fresh Lime Soda",
+    "category": "beverages",
+    "diet": "veg",
+    "badge": "All-Time Refresher",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Sweet / Salted / Mix",
+        "price": 45
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Freshly squeezed lemon juice topped with sparkling carbonated soda, served sweet, salted, or mixed.",
+    "story": "The classic restaurant refresher that pairs seamlessly with North Indian cuisine.",
+    "pairing": "Essential companion to spicy kebabs and curries."
+  },
+  {
+    "id": "fresh-lime-water",
+    "name": "Fresh Lime Water",
+    "category": "beverages",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 35
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Chilled fresh lime juice with purified water, choice of sweet or salt.",
+    "story": "Light, healthy, and hydrating citrus refresher.",
+    "pairing": "Enjoy throughout the meal."
+  },
+  {
+    "id": "lassi-sweet-salted",
+    "name": "Lassi Sweet or Salted",
+    "category": "beverages",
+    "diet": "veg",
+    "badge": "Thick & Frothy",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Tall Glass",
+        "price": 60
+      }
+    ],
+    "image": "images/dish_models_3d/punjabi_lassi.jpg",
+    "description": "Traditional Punjabi yogurt churned thick and frothy, served sweet or lightly salted with roasted cumin.",
+    "story": "Hand-churned in wooden mathanis to yield thick clotted froth.",
+    "pairing": "Divine with spicy Mughlai handis."
+  },
+  {
+    "id": "fresh-juice",
+    "name": "Fresh Juice",
+    "category": "beverages",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Fresh Glass",
+        "price": 99
+      }
+    ],
+    "image": "images/dish_models_3d/fresh_lime_soda.jpg",
+    "description": "Freshly pressed seasonal fruit juice served pure without artificial preservatives.",
+    "story": "Pure vitamins and vitality straight from the season's fruit basket.",
+    "pairing": "Refreshing start or finish."
+  },
+  {
+    "id": "hawaiian-fantasy",
+    "name": "Hawaiian Fantasy",
+    "category": "sundaes",
+    "diet": "veg",
+    "badge": "Grand Sundae",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Grand Bowl",
+        "price": 350
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Tropical sundae with assorted ice creams, fruit cocktail, pineapple glaze, nuts, and whipped cream.",
+    "story": "An extravagant multi-scoop creation designed to celebrate special occasions.",
+    "pairing": "Perfect group dessert."
+  },
+  {
+    "id": "hot-chocolate-fudge",
+    "name": "Hot Chocolate Fudge",
+    "category": "sundaes",
+    "diet": "veg",
+    "badge": "Signature Sundae",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Bowl",
+        "price": 169
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Creamy vanilla ice cream scoops smothered in hot, rich molten chocolate fudge and roasted peanuts.",
+    "story": "The iconic hot-meets-cold dessert combination with deep cocoa luxury.",
+    "pairing": "Sweet ending to any dinner."
+  },
+  {
+    "id": "americano-banana-split",
+    "name": "Americano Banana Split",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Classic Split",
+        "price": 225
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Fresh split banana nestled with vanilla, strawberry, and chocolate scoops, dressed in sauces and cherries.",
+    "story": "A vintage American diner classic perfected with gourmet ice creams.",
+    "pairing": "Feeds two comfortably."
+  },
+  {
+    "id": "tooti-frooti",
+    "name": "Tooti-frooti",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "price": 199
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Colorful sundae loaded with glazed candied fruits, fruity syrups, and rich dairy ice cream.",
+    "story": "Nostalgic sweet fruit gems bursting with retro flavor.",
+    "pairing": "Delightful for dessert lovers."
+  },
+  {
+    "id": "kesar-pista",
+    "name": "Kesar Pista",
+    "category": "sundaes",
+    "diet": "veg",
+    "badge": "Royal Saffron",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Scoop",
+        "price": 100
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Pure Kashmiri saffron-infused ice cream loaded with crunchy Iranian pistachios.",
+    "story": "Traditional royal dessert aroma carrying the scent of saffron fields.",
+    "pairing": "Follows Mughlai banquets effortlessly."
+  },
+  {
+    "id": "butter-scotch",
+    "name": "Butter Scotch",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Scoop",
+        "price": 80
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Golden butterscotch ice cream studded with crunchy roasted caramel praline bits.",
+    "story": "Sweet, crunchy, and buttery classic.",
+    "pairing": "Light after-dinner treat."
+  },
+  {
+    "id": "vanilla",
+    "name": "Vanilla",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Scoop",
+        "price": 80
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Smooth, velvety ice cream crafted with real fragrant vanilla beans.",
+    "story": "The pure standard of ice cream excellence.",
+    "pairing": "Pairs with Hot Gulab Jamun."
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Scoop",
+        "price": 80
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Chilled fruity strawberry ice cream made with sweet berry puree.",
+    "story": "Sweet, fragrant, and refreshingly cold.",
+    "pairing": "Enjoy anytime."
+  },
+  {
+    "id": "mango-ice-cream",
+    "name": "Mango Ice-cream",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Scoop",
+        "price": 80
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Rich Alphonso mango ice cream carrying the glorious sunshine taste of the king of fruits.",
+    "story": "Captures natural mango pulp in creamy frozen perfection.",
+    "pairing": "Summer dining favorite."
+  },
+  {
+    "id": "sundae-ice-cream",
+    "name": "Sundae Ice-cream",
+    "category": "sundaes",
+    "diet": "veg",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Standard Bowl",
+        "price": 149
+      }
+    ],
+    "image": "images/dish_models_3d/mango_ice_cream.jpg",
+    "description": "Assorted ice cream scoops topped with mixed berry syrup, chocolate drizzle, and nuts.",
+    "story": "A balanced sundae bowl offering a bit of every favorite flavor.",
+    "pairing": "Great finish to your meal."
+  },
+  {
+    "id": "shama-special-kheer",
+    "name": "Shama Special Kheer",
+    "category": "sweets",
+    "diet": "veg",
+    "badge": "Heritage Dessert",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "Earthen Bowl",
+        "price": 30
+      }
+    ],
+    "image": "images/dish_models_3d/shama_special_kheer.jpg",
+    "description": "Slow-simmered basmati rice pudding cooked with full-cream milk, saffron, cardamom, and sliced almonds in earthen bowls.",
+    "story": "Prepared every morning since 1998, chilled in earthen pottery to absorb subtle clay aroma.",
+    "pairing": "The quintessential Mughlai dining climax."
+  },
+  {
+    "id": "gulab-jamun",
+    "name": "Gulab Jamun (only Winters)",
+    "category": "sweets",
+    "diet": "veg",
+    "badge": "Winter Special",
+    "portions": [
+      {
+        "id": "standard",
+        "label": "1 Piece",
+        "price": 25
+      }
+    ],
+    "image": "images/dish_models_3d/gulab_jamun.jpg",
+    "description": "Golden khoya dumplings fried in pure ghee and soaked in warm cardamom-rose sugar syrup.",
+    "story": "Prepared hot exclusively during winter months to provide soothing sweet warmth.",
+    "pairing": "Sensational with a scoop of Vanilla Ice Cream."
   }
 ];
 
