@@ -642,6 +642,46 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 }
 
+/* Replay Dish Animation Button */
+.video-replay-badge-btn {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 1.1rem;
+  z-index: 12;
+  background: rgba(18, 12, 8, 0.78);
+  border: 1px solid rgba(181, 138, 69, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FAF4E8;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.38rem 0.85rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: all 0.28s ease;
+}
+
+.video-replay-badge-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.video-replay-badge-btn:hover {
+  background: var(--gold-accent, #B58A45);
+  border-color: #D4AF37;
+  color: #0C0805;
+  transform: translateY(-2px);
+}
+
 /* Bottom Progress Scrubber & Timeline */
 .video-dish-scrubber {
   position: absolute;

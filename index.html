@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- Premium Light Cream, Soft Gold & Warm Brown Theme Stylesheet -->
-    <link rel="stylesheet" href="menu-styles.css">
+    <link rel="stylesheet" href="menu-styles.css?v=8">
 </head>
 <body>
 
@@ -86,7 +86,6 @@
                 <video 
                     id="heroBgVideo" 
                     class="hero-video-media" 
-                    autoplay 
                     muted 
                     playsinline 
                     preload="auto"
@@ -105,7 +104,7 @@
                         <span id="dishCounterLabel">Item 1 of 32</span>
                     </div>
                     <div class="dish-hud-title-chip" id="dishHudTitleChip">
-                        <span id="dishTitleLabel">Chicken Be Nazeer</span>
+                        <span id="dishTitleLabel">Chicken Biryani</span>
                         <span class="dish-hud-sep">•</span>
                         <span id="dishPriceLabel" class="dish-hud-price">₹120 / ₹240</span>
                     </div>
@@ -125,6 +124,12 @@
                     <span>Scroll or Swipe Left for Next Food Item</span>
                     <span class="hint-chevron">›</span>
                 </div>
+
+                <!-- Replay Dish Animation Button (Shown when product animation has stopped) -->
+                <button type="button" id="videoReplayBtn" class="video-replay-badge-btn" onclick="replayCurrentFoodItem()" aria-label="Replay Dish Animation" title="Replay food reveal animation">
+                    <span aria-hidden="true">↺</span>
+                    <span>Replay</span>
+                </button>
 
                 <!-- Bottom Dish Progress Scrubber & Dots -->
                 <div class="video-dish-scrubber" id="videoDishScrubber" aria-label="Dishes Timeline">
@@ -264,6 +269,6 @@
     </footer>
 
     <!-- Menu Application Script -->
-    <script src="menu-app.js"></script>
+    <script src="menu-app.js?v=8"></script>
 </body>
 </html>

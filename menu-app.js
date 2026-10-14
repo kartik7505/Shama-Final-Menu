@@ -1087,6 +1087,40 @@ const VIDEO_FOOD_ITEMS = [
 
 let currentFoodItemIndex = 0;
 let hasUserInteractedWithScroll = false;
+let monitorAnimFrameId = null;
+
+// Replay badge helper
+function showReplayBadge(visible) {
+  const btn = document.getElementById('videoReplayBtn');
+  if (btn) {
+    btn.classList.toggle('visible', !!visible);
+  }
+}
+
+// High-precision playback monitor:
+// Runs every 16ms (60fps) to ensure the animation pauses EXACTLY when the product settles
+function monitorFoodItemPlayback() {
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return;
+
+  const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
+  if (!cur) return;
+
+  // The moment playback hits or passes the product's settled time, PAUSE!
+  if (!video.paused && video.currentTime >= cur.settledTime) {
+    video.pause();
+    showReplayBadge(true);
+    monitorAnimFrameId = null;
+    return;
+  }
+
+  // Continue checking while video is playing
+  if (!video.paused) {
+    monitorAnimFrameId = requestAnimationFrame(monitorFoodItemPlayback);
+  } else {
+    monitorAnimFrameId = null;
+  }
+}
 
 window.scrollFoodItem = function(direction) {
   dismissScrollHint();
@@ -1099,6 +1133,12 @@ window.jumpToFoodItem = function(index, direction = 1) {
   if (index < 0 || index >= VIDEO_FOOD_ITEMS.length) return;
   currentFoodItemIndex = index;
   dismissScrollHint();
+  showReplayBadge(false);
+
+  if (monitorAnimFrameId) {
+    cancelAnimationFrame(monitorAnimFrameId);
+    monitorAnimFrameId = null;
+  }
   
   const video = document.getElementById('heroBgVideo');
   const flash = document.getElementById('videoPageTurnFlash');
@@ -1114,12 +1154,6 @@ window.jumpToFoodItem = function(index, direction = 1) {
   if (flash) {
     flash.classList.add('active');
     setTimeout(() => flash.classList.remove('active'), 220);
-  }
-
-  // Seek to product start and play its reveal animation
-  if (video) {
-    video.currentTime = item.time;
-    video.play().catch(() => {});
   }
 
   // Update HUD text
@@ -1148,6 +1182,44 @@ window.jumpToFoodItem = function(index, direction = 1) {
   // Update arrow states
   if (prevBtn) prevBtn.disabled = index === 0;
   if (nextBtn) nextBtn.disabled = index === VIDEO_FOOD_ITEMS.length - 1;
+
+  // Seek to product start and play until it settles
+  if (video) {
+    video.currentTime = item.time;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // Start 60fps monitor loop to pause as soon as animation settles
+        monitorAnimFrameId = requestAnimationFrame(monitorFoodItemPlayback);
+      }).catch(() => {
+        // Autoplay blocked by browser policy: pause at settled frame
+        video.currentTime = item.settledTime;
+        video.pause();
+        showReplayBadge(true);
+      });
+    }
+  }
+};
+
+window.replayCurrentFoodItem = function() {
+  const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
+  if (!cur) return;
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return;
+
+  showReplayBadge(false);
+  if (monitorAnimFrameId) {
+    cancelAnimationFrame(monitorAnimFrameId);
+    monitorAnimFrameId = null;
+  }
+
+  video.currentTime = cur.time;
+  const p = video.play();
+  if (p !== undefined) {
+    p.then(() => {
+      monitorAnimFrameId = requestAnimationFrame(monitorFoodItemPlayback);
+    }).catch(() => {});
+  }
 };
 
 function dismissScrollHint() {
@@ -1173,7 +1245,6 @@ window.toggleHeroVideoSound = function() {
     if (icon) icon.textContent = '🔇';
   } else {
     if (icon) icon.textContent = '🔊';
-    video.play().catch(() => {});
   }
 };
 
@@ -1206,28 +1277,13 @@ function initVideoScrollEngine() {
     });
   }
 
-  // STOP WATCHER: When the animation finishes for this specific product, STOP (PAUSE)!
+  // Backup timeupdate listener (ensures pause even if rAF is backgrounded)
   video.addEventListener('timeupdate', () => {
     const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
     if (!cur) return;
-    
-    // When playback reaches or passes the product's settled time, PAUSE immediately!
     if (!video.paused && video.currentTime >= cur.settledTime) {
       video.pause();
-      video.currentTime = cur.settledTime;
-    }
-  });
-
-  // Clicking on the video replays the current product's reveal animation and stops again
-  frame.addEventListener('click', (e) => {
-    if (e.target.closest('button') || e.target.closest('a')) return;
-    const cur = VIDEO_FOOD_ITEMS[currentFoodItemIndex];
-    if (!cur) return;
-    if (video.paused) {
-      video.currentTime = cur.time;
-      video.play().catch(() => {});
-    } else {
-      video.pause();
+      showReplayBadge(true);
     }
   });
 
@@ -1253,12 +1309,12 @@ function initVideoScrollEngine() {
       // Scroll left / down -> Advance to NEXT food item
       wheelLock = true;
       window.scrollFoodItem(1);
-      setTimeout(() => { wheelLock = false; }, 340);
+      setTimeout(() => { wheelLock = false; }, 360);
     } else if (delta < -14) {
       // Scroll right / up -> Return to PREVIOUS food item
       wheelLock = true;
       window.scrollFoodItem(-1);
-      setTimeout(() => { wheelLock = false; }, 340);
+      setTimeout(() => { wheelLock = false; }, 360);
     }
   }, { passive: false });
 
@@ -1304,7 +1360,7 @@ function initVideoScrollEngine() {
     }
   });
 
-  // Initial setup
+  // Start at item 0 (Chicken Biryani), play animation and stop when settled
   window.jumpToFoodItem(0);
 }
 
