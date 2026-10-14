@@ -245,7 +245,7 @@ const DISH_CATALOG = [
   },
   {
     "id": "chicken-malai-roasted",
-    "name": "Chicken Malai Roasted",
+    "name": "Chicken Mala Roasted",
     "category": "starters",
     "diet": "non-veg",
     "badge": "Chef's Special",
