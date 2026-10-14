@@ -418,19 +418,14 @@ const DISH_CATALOG = [
   },
   {
     "id": "fish-fry-boneless",
-    "name": "Fish Fry Boneless (only Winters)",
+    "name": "Fish Fry Boneless (only Winter)",
     "category": "starters",
     "diet": "non-veg",
     "badge": "Winter Special",
     "portions": [
       {
-        "id": "half",
-        "label": "Half",
-        "price": 300
-      },
-      {
-        "id": "full",
-        "label": "Full",
+        "id": "per-kg",
+        "label": "Per Kg",
         "price": 600
       }
     ],
