@@ -3347,8 +3347,6 @@ window.openDishModal = function(dishId) {
   const heroImg = document.getElementById('modalHeroImg');
   const heroVideo = document.getElementById('modalHeroVideo');
   const videoOverlayBar = document.getElementById('modalVideoOverlayBar');
-  const soundBtn = document.getElementById('modalVideoSoundBtn');
-  const soundIcon = document.getElementById('modalVideoSoundIcon');
   const titleEl = document.getElementById('modalTitle');
   const tagsRow = document.getElementById('modalTagsRow');
   const descEl = document.getElementById('modalDesc');
@@ -3378,12 +3376,6 @@ window.openDishModal = function(dishId) {
     }
     if (videoOverlayBar) {
       videoOverlayBar.style.display = 'flex';
-    }
-    if (soundBtn) {
-      soundBtn.classList.remove('sound-active');
-    }
-    if (soundIcon) {
-      soundIcon.innerHTML = '🔇 Unmute';
     }
   } else {
     if (heroVideo) {
@@ -3527,22 +3519,6 @@ window.closeDishModal = function() {
   currentModalPortion = null;
 };
 
-window.toggleModalVideoAudio = function(e) {
-  if (e) e.stopPropagation();
-  const heroVideo = document.getElementById('modalHeroVideo');
-  const soundIcon = document.getElementById('modalVideoSoundIcon');
-  const soundBtn = document.getElementById('modalVideoSoundBtn');
-  if (!heroVideo) return;
-
-  heroVideo.muted = !heroVideo.muted;
-  if (heroVideo.muted) {
-    if (soundIcon) soundIcon.innerHTML = '🔇 Unmute';
-    if (soundBtn) soundBtn.classList.remove('sound-active');
-  } else {
-    if (soundIcon) soundIcon.innerHTML = '🔊 Sound On';
-    if (soundBtn) soundBtn.classList.add('sound-active');
-  }
-};
 
 window.toggleModalVideoPlay = function() {
   const heroVideo = document.getElementById('modalHeroVideo');
