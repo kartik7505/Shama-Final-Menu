@@ -3283,13 +3283,6 @@ function createDishCardElement(dish) {
           >
             🔍
           </button>
-          <button 
-            type="button" 
-            class="btn-add-order" 
-            onclick="handleAddCardToCart('${dish.id}')"
-          >
-            <span>+</span> Add
-          </button>
         </div>
       </div>
     </div>
