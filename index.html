@@ -184,15 +184,25 @@
                     playsinline 
                     webkit-playsinline
                     muted 
-                    loop 
                     preload="auto"
                     onclick="toggleModalVideoPlay()"
                     style="display: none;"
                 ></video>
                 <div class="modal-video-overlay-bar" id="modalVideoOverlayBar" style="display: none;">
-                    <div class="modal-video-status-badge">
+                    <div class="modal-video-status-badge" id="modalVideoStatusBadge">
                         <span class="pulse-dot"></span> In Motion
                     </div>
+                    <button 
+                        type="button" 
+                        class="modal-video-replay-btn" 
+                        id="modalVideoReplayBtn" 
+                        onclick="replayModalHeroVideo(event)"
+                        aria-label="Replay video"
+                        title="Replay video"
+                    >
+                        <span class="replay-icon" aria-hidden="true">↺</span>
+                        <span class="replay-label">Replay</span>
+                    </button>
                 </div>
             </div>
 
@@ -247,6 +257,18 @@
                 >
                     Your browser does not support the video tag.
                 </video>
+                <button 
+                    type="button" 
+                    class="modal-video-replay-btn food-reveal-replay" 
+                    id="foodRevealReplayBtn" 
+                    onclick="replayFoodRevealVideo(event)"
+                    aria-label="Replay video"
+                    title="Replay video"
+                    style="display: none;"
+                >
+                    <span class="replay-icon" aria-hidden="true">↺</span>
+                    <span class="replay-label">Replay</span>
+                </button>
             </div>
         </div>
     </div>

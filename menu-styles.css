@@ -2006,7 +2006,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   100% { transform: scale(0.95); opacity: 0.8; }
 }
 
-.modal-sound-toggle-btn {
+/* Replay Button on Right Lower Side */
+.modal-video-replay-btn {
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
@@ -2018,24 +2019,76 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.5);
   color: #fffdfa;
-  font-size: 0.76rem;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.78rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.modal-sound-toggle-btn:hover {
-  background: rgba(181, 138, 69, 0.95);
-  border-color: #d4af37;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(181, 138, 69, 0.4);
+.modal-video-replay-btn .replay-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.35s ease;
 }
 
-.modal-sound-toggle-btn.sound-active {
-  background: rgba(181, 138, 69, 0.95);
-  color: #ffffff;
-  border-color: #f7e7ce;
+.modal-video-replay-btn:hover {
+  background: var(--gold-accent, #B58A45);
+  border-color: #D4AF37;
+  color: #FFFFFF;
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(181, 138, 69, 0.45);
+}
+
+.modal-video-replay-btn:hover .replay-icon {
+  transform: rotate(-180deg);
+}
+
+.modal-video-replay-btn:active {
+  transform: scale(0.96);
+}
+
+/* Highlighted state when video reaches the end */
+.modal-video-replay-btn.ended {
+  background: linear-gradient(135deg, #B58A45 0%, #D4AF37 100%);
+  color: #1a120b;
+  font-weight: 700;
+  border-color: #FFF2D6;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.65), 0 4px 14px rgba(0, 0, 0, 0.4);
+  animation: replayPulseGlow 1.8s infinite;
+}
+
+.modal-video-replay-btn.ended .replay-icon {
+  font-weight: 800;
+}
+
+@keyframes replayPulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 12px rgba(212, 175, 55, 0.5); }
+  50% { transform: scale(1.06); box-shadow: 0 0 22px rgba(212, 175, 55, 0.85); }
+  100% { transform: scale(1); box-shadow: 0 0 12px rgba(212, 175, 55, 0.5); }
+}
+
+/* Completed badge state */
+.modal-video-status-badge.completed .pulse-dot {
+  background-color: #D4AF37;
+  box-shadow: 0 0 6px #D4AF37;
+  animation: none;
+}
+
+/* Replay button for fullscreen food reveal modal */
+.video-frame-box {
+  position: relative;
+}
+
+.modal-video-replay-btn.food-reveal-replay {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
 }
 
 .modal-content-body {

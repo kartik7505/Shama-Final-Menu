@@ -3353,8 +3353,20 @@ window.openDishModal = function(dishId) {
     if (heroVideo) {
       heroVideo.style.display = 'block';
       heroVideo.src = encodeURI(dish.video);
+      heroVideo.loop = false;
+      heroVideo.removeAttribute('loop');
       heroVideo.muted = true;
       heroVideo.currentTime = 0;
+      
+      const replayBtn = document.getElementById('modalVideoReplayBtn');
+      if (replayBtn) replayBtn.classList.remove('ended');
+      
+      const badge = document.getElementById('modalVideoStatusBadge');
+      if (badge) {
+        badge.classList.remove('completed');
+        badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
+      }
+
       const playPromise = heroVideo.play();
       if (playPromise !== undefined) {
         playPromise.catch(err => {
@@ -3487,6 +3499,8 @@ window.closeDishModal = function() {
   const overlay = document.getElementById('dishModalOverlay');
   const heroVideo = document.getElementById('modalHeroVideo');
   const videoOverlayBar = document.getElementById('modalVideoOverlayBar');
+  const replayBtn = document.getElementById('modalVideoReplayBtn');
+  const badge = document.getElementById('modalVideoStatusBadge');
   
   if (heroVideo) {
     heroVideo.pause();
@@ -3496,6 +3510,12 @@ window.closeDishModal = function() {
   }
   if (videoOverlayBar) {
     videoOverlayBar.style.display = 'none';
+  }
+  if (replayBtn) {
+    replayBtn.classList.remove('ended');
+  }
+  if (badge) {
+    badge.classList.remove('completed');
   }
 
   if (overlay) {
@@ -3508,14 +3528,63 @@ window.closeDishModal = function() {
 };
 
 
+window.replayModalHeroVideo = function(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+  const heroVideo = document.getElementById('modalHeroVideo');
+  const replayBtn = document.getElementById('modalVideoReplayBtn');
+  const badge = document.getElementById('modalVideoStatusBadge');
+  
+  if (!heroVideo) return;
+  
+  heroVideo.loop = false;
+  heroVideo.removeAttribute('loop');
+  heroVideo.currentTime = 0;
+  
+  if (replayBtn) replayBtn.classList.remove('ended');
+  if (badge) {
+    badge.classList.remove('completed');
+    badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
+  }
+  
+  heroVideo.play().catch(err => {
+    console.log('Video play error on replay:', err);
+  });
+};
+
 window.toggleModalVideoPlay = function() {
   const heroVideo = document.getElementById('modalHeroVideo');
   if (!heroVideo) return;
+  
+  if (heroVideo.ended) {
+    window.replayModalHeroVideo();
+    return;
+  }
+  
   if (heroVideo.paused) {
     heroVideo.play().catch(() => {});
   } else {
     heroVideo.pause();
   }
+};
+
+window.replayFoodRevealVideo = function(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+  const player = document.getElementById('foodRevealVideoPlayer');
+  const replayBtn = document.getElementById('foodRevealReplayBtn');
+  if (!player) return;
+  player.loop = false;
+  player.currentTime = 0;
+  if (replayBtn) {
+    replayBtn.classList.remove('ended');
+    replayBtn.style.display = 'none';
+  }
+  player.play().catch(() => {});
 };
 
 window.handleAddModalToCart = function() {
@@ -3532,10 +3601,18 @@ window.openFoodRevealVideo = function(dishId) {
   const videoOverlay = document.getElementById('videoModalOverlay');
   const videoTitle = document.getElementById('videoModalTitle');
   const videoEl = document.getElementById('foodRevealVideoPlayer');
+  const replayBtn = document.getElementById('foodRevealReplayBtn');
   
   if (videoTitle) videoTitle.innerText = `${dish.name} • Food Reveal`;
   
+  if (replayBtn) {
+    replayBtn.style.display = 'none';
+    replayBtn.classList.remove('ended');
+  }
+
   if (videoEl) {
+    videoEl.loop = false;
+    videoEl.removeAttribute('loop');
     videoEl.src = encodeURI(dish.video);
     videoEl.load();
   }
@@ -3814,6 +3891,60 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategorySliderControls();
   renderMenu();
   updateCartUI();
+
+  // Modal Hero Video - Stop after 1 play and enable right lower replay button
+  const heroVideo = document.getElementById('modalHeroVideo');
+  if (heroVideo) {
+    heroVideo.loop = false;
+    heroVideo.removeAttribute('loop');
+    
+    heroVideo.addEventListener('ended', () => {
+      heroVideo.pause();
+      const replayBtn = document.getElementById('modalVideoReplayBtn');
+      if (replayBtn) replayBtn.classList.add('ended');
+      
+      const badge = document.getElementById('modalVideoStatusBadge');
+      if (badge) {
+        badge.classList.add('completed');
+        badge.innerHTML = '<span class="pulse-dot"></span> Replay Available';
+      }
+    });
+
+    heroVideo.addEventListener('play', () => {
+      const replayBtn = document.getElementById('modalVideoReplayBtn');
+      if (replayBtn && !heroVideo.ended) replayBtn.classList.remove('ended');
+      
+      const badge = document.getElementById('modalVideoStatusBadge');
+      if (badge && !heroVideo.ended) {
+        badge.classList.remove('completed');
+        badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
+      }
+    });
+  }
+
+  // Food Reveal Video Player - Stop after 1 play and enable replay button
+  const foodPlayer = document.getElementById('foodRevealVideoPlayer');
+  if (foodPlayer) {
+    foodPlayer.loop = false;
+    foodPlayer.removeAttribute('loop');
+    
+    foodPlayer.addEventListener('ended', () => {
+      foodPlayer.pause();
+      const replayBtn = document.getElementById('foodRevealReplayBtn');
+      if (replayBtn) {
+        replayBtn.style.display = 'inline-flex';
+        replayBtn.classList.add('ended');
+      }
+    });
+
+    foodPlayer.addEventListener('play', () => {
+      const replayBtn = document.getElementById('foodRevealReplayBtn');
+      if (replayBtn && !foodPlayer.ended) {
+        replayBtn.classList.remove('ended');
+        replayBtn.style.display = 'none';
+      }
+    });
+  }
   
   // Search Input
   const searchInput = document.getElementById('dishSearchInput');
