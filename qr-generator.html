@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shama Deluxe – QR Code Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a1a;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    h1 {
+      color: #C9A84C;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #aaa;
+      text-align: center;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .url-badge {
+      background: #2a2a2a;
+      border: 1px solid #C9A84C55;
+      color: #C9A84C;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      color: #C9A84C;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Plain QR */
+    .plain-qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    #qr-plain {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px #C9A84C33;
+    }
+    #qr-plain canvas, #qr-plain img { display: block; }
+
+    /* Poster */
+    .poster-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #poster {
+      width: 500px;
+      background: #F5F0E8;
+      border: 3px solid #8B6914;
+      padding: 28px 30px 24px;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+    }
+
+    #poster::before,
+    #poster::after {
+      content: '';
+      position: absolute;
+      width: 22px; height: 22px;
+      border-color: #8B6914;
+      border-style: solid;
+    }
+    #poster::before { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+    #poster::after  { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+    .poster-corner-tr,
+    .poster-corner-bl {
+      position: absolute;
+      width: 22px; height: 22px;
+      border-color: #8B6914;
+      border-style: solid;
+    }
+    .poster-corner-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+    .poster-corner-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+
+    .poster-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .poster-dots span {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border: 1.5px solid #8B6914;
+    }
+
+    .poster-brand {
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .poster-brand h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #1a1008;
+      letter-spacing: 4px;
+      line-height: 1.1;
+    }
+    .poster-brand .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #8B6914;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .poster-brand .estd {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      color: #555;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .poster-divider {
+      border: none;
+      border-top: 1.5px solid #8B6914;
+      margin: 10px 0;
+      opacity: 0.5;
+    }
+
+    .poster-scan-label {
+      background: #1a1008;
+      color: #F5F0E8;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .poster-qr-box {
+      background: #fff;
+      border: 2.5px solid #8B6914;
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    #qr-poster { display: flex; justify-content: center; }
+    #qr-poster canvas, #qr-poster img { display: block; }
+
+    .poster-scan-hint {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .poster-scan-hint .hint-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a1008;
+      margin-bottom: 3px;
+    }
+    .poster-scan-hint .hint-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+    .poster-footer {
+      text-align: center;
+      margin-top: 6px;
+    }
+    .poster-footer .cuisine {
+      font-family: 'Cormorant Garamond', serif;
+      color: #8B6914;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .poster-footer .contact {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1a1008;
+      margin-bottom: 4px;
+    }
+    .poster-footer .address {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.67rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .poster-footer .services {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1a1008;
+      letter-spacing: 1px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background: linear-gradient(135deg, #C9A84C, #8B6914);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn.outline {
+      background: transparent;
+      border: 2px solid #C9A84C;
+      color: #C9A84C;
+    }
+
+    @media print {
+      body { background: white; padding: 0; gap: 0; }
+      .plain-qr-wrap, .section-title, h1, .subtitle, .url-badge, .btn-row { display: none !important; }
+      .poster-wrap { margin: 0 auto; }
+      #poster { border: 3px solid #8B6914; }
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>Shama Deluxe — QR Codes</h1>
+    <p class="subtitle">Both QR codes point to your live menu</p>
+    <div class="url-badge">https://shamadeluxemenu.vercel.app/</div>
+  </div>
+
+  <!-- QR 1: Plain -->
+  <div class="plain-qr-wrap">
+    <div class="section-title">① Plain QR Code</div>
+    <div id="qr-plain"></div>
+    <div class="btn-row">
+      <button class="btn" onclick="downloadPlain()">⬇ Download Plain QR</button>
+    </div>
+  </div>
+
+  <!-- QR 2: Branded Poster -->
+  <div class="poster-wrap">
+    <div class="section-title">② Branded Poster QR</div>
+    <div id="poster">
+      <div class="poster-corner-tr"></div>
+      <div class="poster-corner-bl"></div>
+
+      <div class="poster-dots">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="poster-brand">
+        <h2>SHAMA DELUXE</h2>
+        <div class="tagline">Restaurant &amp; Caterers</div>
+        <div class="estd">ESTD. 1998 &nbsp;•&nbsp; HALDWANI</div>
+      </div>
+
+      <hr class="poster-divider"/>
+
+      <div class="poster-scan-label">SCAN TO VIEW ON YOUR PHONE</div>
+
+      <div class="poster-qr-box">
+        <div id="qr-poster"></div>
+      </div>
+
+      <div class="poster-scan-hint">
+        <div class="hint-main">Point your Phone Camera to Scan</div>
+        <div class="hint-sub">No App Download Required &nbsp;•&nbsp; Instant Access</div>
+      </div>
+
+      <hr class="poster-divider"/>
+
+      <div class="poster-footer">
+        <div class="cuisine">Authentic Mughlai &amp; Charcoal Tandoori</div>
+        <div class="contact">Direct Call / WhatsApp: +91 97591 00786</div>
+        <div class="address">Bareilly - Nainital Rd, Near Navin Mandi, Haldwani, UK</div>
+        <div class="services">Dine-In &nbsp;•&nbsp; Takeaway &nbsp;•&nbsp; Outdoor Catering</div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" onclick="downloadPoster()">⬇ Download Poster QR</button>
+      <button class="btn outline" onclick="window.print()">🖨 Print Poster</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    const MENU_URL = 'https://shamadeluxemenu.vercel.app/';
+
+    // Plain QR — 300x300
+    new QRCode(document.getElementById('qr-plain'), {
+      text: MENU_URL,
+      width: 300,
+      height: 300,
+      colorDark: '#1a1008',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // Poster QR — 220x220
+    new QRCode(document.getElementById('qr-poster'), {
+      text: MENU_URL,
+      width: 220,
+      height: 220,
+      colorDark: '#1a1008',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    function downloadPlain() {
+      const canvas = document.querySelector('#qr-plain canvas');
+      if (!canvas) { alert('QR not ready yet, please wait a moment.'); return; }
+      const link = document.createElement('a');
+      link.download = 'Shama-Deluxe-QR-Plain.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function downloadPoster() {
+      html2canvas(document.getElementById('poster'), {
+        scale: 3,
+        backgroundColor: '#F5F0E8',
+        useCORS: true
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'Shama-Deluxe-QR-Poster.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>

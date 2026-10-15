@@ -6,6 +6,14 @@
  * and integrates food reveal video player with accessible modal interactions.
  */
 
+// Production Safe Error Boundaries
+window.addEventListener('error', function(event) {
+  console.warn('[Shama Production Trap] Handled UI Exception:', event.message);
+});
+window.addEventListener('unhandledrejection', function(event) {
+  console.warn('[Shama Production Trap] Handled Promise Rejection:', event.reason);
+});
+
 // ==========================================================================
 // 1. AUTHENTIC MENU DATA CATALOG
 // ==========================================================================
@@ -3250,14 +3258,18 @@ function createDishCardElement(dish) {
     </div>
   `;
   
+  const webpSrc = dish.image ? dish.image.replace(/\.png$/i, '.webp') : '';
+  const fallbackPngSrc = dish.image || '';
+
   card.innerHTML = `
     <div class="dish-card-visual" onclick="openDishModal('${dish.id}')">
       <img 
-        src="${encodeURI(dish.image)}" 
+        src="${encodeURI(webpSrc)}" 
         alt="${dish.name}" 
         class="dish-card-img" 
         loading="lazy"
-        onerror="this.onerror=null; this.src='${PLACEHOLDER_SVG}';"
+        decoding="async"
+        onerror="if(!this.dataset.triedPng){ this.dataset.triedPng='1'; this.src='${encodeURI(fallbackPngSrc)}'; } else { this.onerror=null; this.src='${PLACEHOLDER_SVG}'; }"
       />
       <div class="card-top-badges">
         <span class="diet-icon-box ${dish.diet}" title="${dish.diet === 'veg' ? 'Vegetarian' : 'Non-Vegetarian'}"></span>
@@ -3408,8 +3420,18 @@ window.openDishModal = function(dishId) {
     }
     if (heroImg) {
       heroImg.style.display = 'block';
-      heroImg.src = dish.image;
-      heroImg.onerror = function() { heroImg.src = PLACEHOLDER_SVG; };
+      const modalWebpSrc = dish.image ? dish.image.replace(/\.png$/i, '.webp') : '';
+      heroImg.src = encodeURI(modalWebpSrc);
+      delete heroImg.dataset.triedPng;
+      heroImg.onerror = function() {
+        if (!heroImg.dataset.triedPng) {
+          heroImg.dataset.triedPng = '1';
+          heroImg.src = encodeURI(dish.image);
+        } else {
+          heroImg.onerror = null;
+          heroImg.src = PLACEHOLDER_SVG;
+        }
+      };
     }
   }
 

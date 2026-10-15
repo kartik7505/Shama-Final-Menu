@@ -1484,6 +1484,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   overflow: hidden;
   position: relative;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 420px;
 }
 
 .dish-card:hover {
@@ -2013,9 +2015,9 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 9px 20px;
-  min-height: 44px;
-  min-width: 115px;
+  padding: 10px 22px;
+  min-height: 46px;
+  min-width: 124px;
   border-radius: 999px;
   background: #140E0A !important;
   border: 1.5px solid rgba(212, 175, 55, 0.85) !important;
@@ -2025,12 +2027,24 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   font-weight: 700;
   letter-spacing: 0.03em;
   cursor: pointer;
-  margin-bottom: 36px; /* Elevated to perfectly mask the Gemini logo */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.75), 0 0 16px rgba(20, 14, 10, 0.95);
+  margin-bottom: 58px; /* Elevated to sit directly centered over the Gemini watermark */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.85), 0 0 20px rgba(20, 14, 10, 0.95);
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
   -webkit-user-select: none;
   z-index: 10;
+  position: relative;
+}
+
+/* Watermark eclipse aura: guarantees 100% masking of the 4-pointed sparkle icon */
+.modal-video-replay-btn::before {
+  content: '';
+  position: absolute;
+  inset: -10px -14px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(20, 14, 10, 0.98) 55%, rgba(20, 14, 10, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .modal-video-replay-btn .replay-icon {
@@ -2090,7 +2104,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 .modal-video-replay-btn.food-reveal-replay {
   position: absolute;
-  bottom: 48px;
+  bottom: 64px;
   right: 16px;
   margin-bottom: 0;
   z-index: 10;
