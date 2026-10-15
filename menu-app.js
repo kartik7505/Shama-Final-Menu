@@ -265,7 +265,7 @@ const DISH_CATALOG = [
     "description": "Roasted tandoori chicken glazed with aromatic malai masala and slow-fired to golden perfection.",
     "story": "Combines the smoky roast of tandoor with rich clotted cream glaze.",
     "pairing": "Delicious with Garlic Naan.",
-    "video": "seperate videos/chicken masala roasted.mp4"
+    "video": "seperate videos/chicken mala roasted.mp4"
   },
   {
     "id": "drums-of-heaven",
