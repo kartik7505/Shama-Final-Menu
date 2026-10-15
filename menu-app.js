@@ -3358,8 +3358,14 @@ window.openDishModal = function(dishId) {
       heroVideo.muted = true;
       heroVideo.currentTime = 0;
       
+      heroVideo._hasEnded = false;
+      heroVideo._lastTime = 0;
+      
       const replayBtn = document.getElementById('modalVideoReplayBtn');
-      if (replayBtn) replayBtn.classList.remove('ended');
+      if (replayBtn) {
+        replayBtn.classList.remove('ended');
+        replayBtn.style.display = 'inline-flex';
+      }
       
       const badge = document.getElementById('modalVideoStatusBadge');
       if (badge) {
@@ -3528,6 +3534,49 @@ window.closeDishModal = function() {
 };
 
 
+window.handleModalHeroVideoEnded = function() {
+  const heroVideo = document.getElementById('modalHeroVideo');
+  if (!heroVideo) return;
+  
+  heroVideo._hasEnded = true;
+  heroVideo.pause();
+  heroVideo.loop = false;
+  heroVideo.removeAttribute('loop');
+  
+  const replayBtn = document.getElementById('modalVideoReplayBtn');
+  if (replayBtn) {
+    replayBtn.classList.add('ended');
+    replayBtn.style.display = 'inline-flex';
+  }
+  
+  const badge = document.getElementById('modalVideoStatusBadge');
+  if (badge) {
+    badge.classList.add('completed');
+    badge.innerHTML = '<span class="pulse-dot"></span> Replay Available';
+  }
+};
+
+window.handleModalHeroVideoTimeUpdate = function(videoEl) {
+  if (!videoEl || videoEl._hasEnded) return;
+  
+  // Guard 1: When reaching end of video duration (within 0.12s of end), freeze immediately
+  if (videoEl.duration > 0 && videoEl.currentTime >= (videoEl.duration - 0.12)) {
+    videoEl.pause();
+    window.handleModalHeroVideoEnded();
+    return;
+  }
+  
+  // Guard 2: Detect unauthorized browser loop (jump back from >0.4s to start)
+  if (typeof videoEl._lastTime === 'number' && videoEl._lastTime > 0.4 && videoEl.currentTime < (videoEl._lastTime - 0.2)) {
+    videoEl.pause();
+    videoEl.currentTime = videoEl.duration ? Math.max(0, videoEl.duration - 0.05) : videoEl._lastTime;
+    window.handleModalHeroVideoEnded();
+    return;
+  }
+  
+  videoEl._lastTime = videoEl.currentTime;
+};
+
 window.replayModalHeroVideo = function(e) {
   if (e) {
     e.stopPropagation();
@@ -3539,11 +3588,16 @@ window.replayModalHeroVideo = function(e) {
   
   if (!heroVideo) return;
   
+  heroVideo._hasEnded = false;
+  heroVideo._lastTime = 0;
   heroVideo.loop = false;
   heroVideo.removeAttribute('loop');
   heroVideo.currentTime = 0;
   
-  if (replayBtn) replayBtn.classList.remove('ended');
+  if (replayBtn) {
+    replayBtn.classList.remove('ended');
+    replayBtn.style.display = 'inline-flex';
+  }
   if (badge) {
     badge.classList.remove('completed');
     badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
@@ -3558,7 +3612,7 @@ window.toggleModalVideoPlay = function() {
   const heroVideo = document.getElementById('modalHeroVideo');
   if (!heroVideo) return;
   
-  if (heroVideo.ended) {
+  if (heroVideo._hasEnded || heroVideo.ended) {
     window.replayModalHeroVideo();
     return;
   }
@@ -3899,23 +3953,19 @@ document.addEventListener('DOMContentLoaded', () => {
     heroVideo.removeAttribute('loop');
     
     heroVideo.addEventListener('ended', () => {
-      heroVideo.pause();
-      const replayBtn = document.getElementById('modalVideoReplayBtn');
-      if (replayBtn) replayBtn.classList.add('ended');
-      
-      const badge = document.getElementById('modalVideoStatusBadge');
-      if (badge) {
-        badge.classList.add('completed');
-        badge.innerHTML = '<span class="pulse-dot"></span> Replay Available';
-      }
+      window.handleModalHeroVideoEnded();
+    });
+
+    heroVideo.addEventListener('timeupdate', () => {
+      window.handleModalHeroVideoTimeUpdate(heroVideo);
     });
 
     heroVideo.addEventListener('play', () => {
       const replayBtn = document.getElementById('modalVideoReplayBtn');
-      if (replayBtn && !heroVideo.ended) replayBtn.classList.remove('ended');
+      if (replayBtn && !heroVideo._hasEnded) replayBtn.classList.remove('ended');
       
       const badge = document.getElementById('modalVideoStatusBadge');
-      if (badge && !heroVideo.ended) {
+      if (badge && !heroVideo._hasEnded) {
         badge.classList.remove('completed');
         badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
       }
