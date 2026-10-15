@@ -401,14 +401,9 @@ const DISH_CATALOG = [
     "badge": "Winter Special",
     "portions": [
       {
-        "id": "half",
-        "label": "Half",
-        "price": 250
-      },
-      {
-        "id": "full",
-        "label": "Full",
-        "price": 500
+        "id": "seasonal",
+        "label": "",
+        "price": null
       }
     ],
     "image": "Shama-Deluxe-Menu-Images/Starters/Fish Fry.png",
@@ -3201,9 +3196,11 @@ function createDishCardElement(dish) {
   card.dataset.dishId = dish.id;
   
   const hasMultiplePortions = dish.portions && dish.portions.length > 1;
-  const initialPortion = dish.portions[0];
+  const initialPortion = (dish.portions && dish.portions.length > 0) ? dish.portions[0] : { id: 'standard', label: '', price: null };
+  const hasPrice = initialPortion && initialPortion.price !== null && initialPortion.price !== undefined && initialPortion.price !== '';
+  
   card.dataset.selectedPortionId = initialPortion.id;
-  card.dataset.selectedPrice = initialPortion.price;
+  card.dataset.selectedPrice = hasPrice ? initialPortion.price : '';
   
   // Spice representation
   let spiceDisplay = '';
@@ -3220,21 +3217,38 @@ function createDishCardElement(dish) {
   // Portion selector HTML
   let portionControls = '';
   if (hasMultiplePortions) {
-    const buttons = dish.portions.map((p, idx) => `
-      <button 
-        type="button" 
-        class="portion-btn ${idx === 0 ? 'active' : ''}" 
-        data-portion-id="${p.id}" 
-        data-price="${p.price}"
-        onclick="handleCardPortionSelect('${dish.id}', '${p.id}', ${p.price}, this)"
-      >
-        ${p.label} (₹${p.price})
-      </button>
-    `).join('');
+    const buttons = dish.portions.map((p, idx) => {
+      const pHasPrice = p.price !== null && p.price !== undefined && p.price !== '';
+      return `
+        <button 
+          type="button" 
+          class="portion-btn ${idx === 0 ? 'active' : ''}" 
+          data-portion-id="${p.id}" 
+          data-price="${pHasPrice ? p.price : ''}"
+          onclick="handleCardPortionSelect('${dish.id}', '${p.id}', ${pHasPrice ? p.price : "''"}, this)"
+        >
+          ${p.label}${pHasPrice ? ` (₹${p.price})` : ''}
+        </button>
+      `;
+    }).join('');
     portionControls = `<div class="portion-selector-row">${buttons}</div>`;
+  } else if (initialPortion && initialPortion.label) {
+    portionControls = `<div class="single-portion-label">${initialPortion.label}</div>`;
   } else {
-    portionControls = `<div class="single-portion-label">${dish.portions[0].label}</div>`;
+    portionControls = '';
   }
+  
+  const priceDisplayHtml = hasPrice ? `
+    <div class="dish-price-wrap">
+      <span class="price-meta-label">${hasMultiplePortions ? 'Starting from' : 'Price'}</span>
+      <span class="dish-price-amount" id="card-price-${dish.id}">₹${initialPortion.price}</span>
+    </div>
+  ` : `
+    <div class="dish-price-wrap">
+      <span class="price-meta-label"></span>
+      <span class="dish-price-amount" id="card-price-${dish.id}"></span>
+    </div>
+  `;
   
   card.innerHTML = `
     <div class="dish-card-visual" onclick="openDishModal('${dish.id}')">
@@ -3263,10 +3277,7 @@ function createDishCardElement(dish) {
       ${portionControls}
       
       <div class="dish-card-footer">
-        <div class="dish-price-wrap">
-          <span class="price-meta-label">${hasMultiplePortions ? 'Starting from' : 'Price'}</span>
-          <span class="dish-price-amount" id="card-price-${dish.id}">₹${initialPortion.price}</span>
-        </div>
+        ${priceDisplayHtml}
         
         <div class="dish-card-actions">
           <button 
@@ -3299,7 +3310,9 @@ window.handleCardPortionSelect = function(dishId, portionId, price, btn) {
   card.dataset.selectedPrice = price;
   
   const priceEl = document.getElementById(`card-price-${dishId}`);
-  if (priceEl) priceEl.innerText = `₹${price}`;
+  if (priceEl) {
+    priceEl.innerText = (price !== null && price !== undefined && price !== '') ? `₹${price}` : '';
+  }
 };
 
 // Add to Cart from Card
@@ -3452,31 +3465,42 @@ window.openDishModal = function(dishId) {
         <div class="modal-portion-box">
           <div class="modal-portion-title">Select Portion:</div>
           <div class="modal-portion-options">
-            ${dish.portions.map((p, idx) => `
-              <button 
-                type="button" 
-                class="modal-portion-btn ${idx === 0 ? 'active' : ''}" 
-                data-portion-id="${p.id}"
-                onclick="handleModalPortionSelect('${p.id}')"
-              >
-                <span class="modal-portion-name">${p.label}</span>
-                <span class="modal-portion-price">₹${p.price}</span>
-              </button>
-            `).join('')}
+            ${dish.portions.map((p, idx) => {
+              const pHasPrice = p.price !== null && p.price !== undefined && p.price !== '';
+              return `
+                <button 
+                  type="button" 
+                  class="modal-portion-btn ${idx === 0 ? 'active' : ''}" 
+                  data-portion-id="${p.id}"
+                  onclick="handleModalPortionSelect('${p.id}')"
+                >
+                  <span class="modal-portion-name">${p.label}</span>
+                  <span class="modal-portion-price">${pHasPrice ? `₹${p.price}` : ''}</span>
+                </button>
+              `;
+            }).join('')}
           </div>
         </div>
       `;
+    } else if (dish.portions && dish.portions.length === 1) {
+      const p = dish.portions[0];
+      const pHasPrice = p.price !== null && p.price !== undefined && p.price !== '';
+      if (p.label || pHasPrice) {
+        portionSection.innerHTML = `
+          <div class="modal-portion-box">
+            <div class="modal-portion-title">Portion:</div>
+            <div style="font-size:0.9rem;color:var(--text-body);">${p.label || ''}${pHasPrice ? ` — <strong>₹${p.price}</strong>` : ''}</div>
+          </div>
+        `;
+      } else {
+        portionSection.innerHTML = '';
+      }
     } else {
-      portionSection.innerHTML = `
-        <div class="modal-portion-box">
-          <div class="modal-portion-title">Portion:</div>
-          <div style="font-size:0.9rem;color:var(--text-body);">${dish.portions[0].label} — <strong>₹${dish.portions[0].price}</strong></div>
-        </div>
-      `;
+      portionSection.innerHTML = '';
     }
   }
   
-  if (totalPriceEl) totalPriceEl.innerText = `₹${currentModalPortion.price}`;
+  if (totalPriceEl) totalPriceEl.innerText = (currentModalPortion && currentModalPortion.price !== null && currentModalPortion.price !== undefined && currentModalPortion.price !== '') ? `₹${currentModalPortion.price}` : '';
   
   if (overlay) {
     overlay.classList.add('active');
