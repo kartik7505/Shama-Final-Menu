@@ -1966,7 +1966,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   left: 12px;
   right: 12px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   pointer-events: none;
   z-index: 6;
@@ -2006,26 +2006,27 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   100% { transform: scale(0.95); opacity: 0.8; }
 }
 
-/* Replay Button on Right Lower Side */
+/* Replay Button on Right Lower Side (Positioned directly over the Gemini watermark) */
 .modal-video-replay-btn {
   pointer-events: auto !important;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  padding: 7px 16px;
+  gap: 8px;
+  padding: 9px 20px;
+  min-height: 44px;
+  min-width: 115px;
   border-radius: 999px;
-  background: rgba(22, 17, 13, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(212, 175, 55, 0.65);
-  color: #FFFFFF;
+  background: #140E0A !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.85) !important;
+  color: #FFFFFF !important;
   font-family: var(--font-body, 'Outfit', sans-serif);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  margin-bottom: 36px; /* Elevated to perfectly mask the Gemini logo */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.75), 0 0 16px rgba(20, 14, 10, 0.95);
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
   -webkit-user-select: none;
@@ -2089,8 +2090,9 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 .modal-video-replay-btn.food-reveal-replay {
   position: absolute;
-  bottom: 16px;
+  bottom: 48px;
   right: 16px;
+  margin-bottom: 0;
   z-index: 10;
 }
 
