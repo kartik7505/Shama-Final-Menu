@@ -1,3 +1,7 @@
 .vercel
 videos/*raw_backup*
 *raw_backup*
+node_modules/
+package.json
+package-lock.json
+generate-qr.js
