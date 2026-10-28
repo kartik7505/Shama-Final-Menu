@@ -1,6 +1,8 @@
 .vercel
 videos/*raw_backup*
 *raw_backup*
+seperate videos_backup/
+*.py
 node_modules/
 package.json
 package-lock.json

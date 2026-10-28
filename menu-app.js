@@ -3198,6 +3198,56 @@ function renderMenu() {
   }
 }
 
+// ==========================================================================
+// HIGH-SPEED VIDEO PRELOADING & SMART WARM-UP ENGINE
+// ==========================================================================
+const preloadedVideosSet = new Set();
+window.preloadDishVideo = function(videoUrl) {
+  if (!videoUrl || preloadedVideosSet.has(videoUrl)) return;
+  preloadedVideosSet.add(videoUrl);
+
+  const cleanUrl = encodeURI(videoUrl);
+
+  // 1. Link prefetch hint
+  try {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'video';
+    link.href = cleanUrl;
+    document.head.appendChild(link);
+  } catch (e) {}
+
+  // 2. Initial chunk warm-up into HTTP disk/memory cache
+  if (typeof fetch === 'function') {
+    try {
+      fetch(cleanUrl, {
+        method: 'GET',
+        headers: { Range: 'bytes=0-262143' }
+      }).catch(() => {});
+    } catch (e) {}
+  }
+};
+
+let idleVideoObserver = null;
+if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+  idleVideoObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const dishId = entry.target.dataset.dishId;
+        const dish = DISH_CATALOG.find(d => d.id === dishId);
+        if (dish && dish.video) {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => window.preloadDishVideo(dish.video), { timeout: 2500 });
+          } else {
+            setTimeout(() => window.preloadDishVideo(dish.video), 400);
+          }
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '120px 0px' });
+}
+
 function createDishCardElement(dish) {
   const card = document.createElement('article');
   card.className = 'dish-card';
@@ -3306,6 +3356,17 @@ function createDishCardElement(dish) {
     </div>
   `;
   
+  if (dish.video) {
+    const triggerPreload = () => {
+      window.preloadDishVideo(dish.video);
+    };
+    card.addEventListener('pointerenter', triggerPreload, { passive: true, once: true });
+    card.addEventListener('touchstart', triggerPreload, { passive: true, once: true });
+    if (idleVideoObserver) {
+      idleVideoObserver.observe(card);
+    }
+  }
+
   return card;
 }
 
@@ -3369,15 +3430,41 @@ window.openDishModal = function(dishId) {
   const portionSection = document.getElementById('modalPortionsSection');
   const totalPriceEl = document.getElementById('modalTotalPrice');
   
-  // Media Visual: Video vs Image
+  // Media Visual: Video vs Image (Ultra-smooth 0ms instant display + faststart stream)
   if (dish.video) {
+    const modalWebpSrc = dish.image ? dish.image.replace(/\.png$/i, '.webp') : '';
+    const modalFallbackPng = dish.image || '';
+
+    // 1. Keep dish image visible IMMEDIATELY so there is ZERO black screen delay
     if (heroImg) {
-      heroImg.style.display = 'none';
-      heroImg.src = encodeURI(dish.image);
+      heroImg.style.display = 'block';
+      heroImg.src = encodeURI(modalWebpSrc);
+      delete heroImg.dataset.triedPng;
+      heroImg.onerror = function() {
+        if (!heroImg.dataset.triedPng) {
+          heroImg.dataset.triedPng = '1';
+          heroImg.src = encodeURI(modalFallbackPng);
+        } else {
+          heroImg.onerror = null;
+          heroImg.src = PLACEHOLDER_SVG;
+        }
+      };
     }
+    
     if (heroVideo) {
       heroVideo.style.display = 'block';
-      heroVideo.src = encodeURI(dish.video);
+      heroVideo.classList.remove('is-playing');
+      heroVideo.poster = encodeURI(modalWebpSrc || modalFallbackPng);
+      heroVideo.preload = 'auto';
+      
+      const targetSrc = encodeURI(dish.video);
+      const isSameSrc = (heroVideo.dataset.currentSrc === targetSrc);
+      
+      if (!isSameSrc) {
+        heroVideo.dataset.currentSrc = targetSrc;
+        heroVideo.src = targetSrc;
+      }
+      
       heroVideo.loop = false;
       heroVideo.removeAttribute('loop');
       heroVideo.muted = true;
@@ -3395,8 +3482,24 @@ window.openDishModal = function(dishId) {
       const badge = document.getElementById('modalVideoStatusBadge');
       if (badge) {
         badge.classList.remove('completed');
-        badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
+        badge.classList.add('buffering');
+        badge.innerHTML = '<span class="pulse-dot"></span> Loading...';
       }
+
+      heroVideo.onplaying = function() {
+        heroVideo.classList.add('is-playing');
+        if (badge && !heroVideo._hasEnded) {
+          badge.classList.remove('buffering', 'completed');
+          badge.innerHTML = '<span class="pulse-dot"></span> In Motion';
+        }
+      };
+
+      heroVideo.onwaiting = function() {
+        if (badge && !heroVideo._hasEnded) {
+          badge.classList.add('buffering');
+          badge.innerHTML = '<span class="pulse-dot"></span> Buffering...';
+        }
+      };
 
       const playPromise = heroVideo.play();
       if (playPromise !== undefined) {
@@ -3411,7 +3514,9 @@ window.openDishModal = function(dishId) {
   } else {
     if (heroVideo) {
       heroVideo.pause();
+      heroVideo.classList.remove('is-playing');
       heroVideo.removeAttribute('src');
+      heroVideo.removeAttribute('data-current-src');
       heroVideo.load();
       heroVideo.style.display = 'none';
     }
@@ -3556,8 +3661,8 @@ window.closeDishModal = function() {
   
   if (heroVideo) {
     heroVideo.pause();
-    heroVideo.removeAttribute('src');
-    heroVideo.load();
+    heroVideo.classList.remove('is-playing');
+    heroVideo.currentTime = 0;
     heroVideo.style.display = 'none';
   }
   if (videoOverlayBar) {
@@ -3567,7 +3672,7 @@ window.closeDishModal = function() {
     replayBtn.classList.remove('ended');
   }
   if (badge) {
-    badge.classList.remove('completed');
+    badge.classList.remove('completed', 'buffering');
   }
 
   if (overlay) {

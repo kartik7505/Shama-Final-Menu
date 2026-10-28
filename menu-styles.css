@@ -1945,21 +1945,36 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 }
 
 .modal-media-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
+  z-index: 1;
 }
 
 .modal-media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
-  background-color: #12100e;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity;
+}
+
+.modal-media-video.is-playing {
+  opacity: 1;
 }
 
 .modal-video-overlay-bar {
@@ -1991,6 +2006,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   text-transform: uppercase;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
+  transition: all 0.25s ease;
 }
 
 .modal-video-status-badge .pulse-dot {
@@ -2000,6 +2016,18 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   background-color: #22c55e;
   box-shadow: 0 0 8px #22c55e;
   animation: modalPulseDot 1.8s infinite;
+}
+
+.modal-video-status-badge.buffering .pulse-dot {
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: modalPulseDot 0.8s infinite;
+}
+
+.modal-video-status-badge.completed .pulse-dot {
+  background-color: #d4af37;
+  box-shadow: 0 0 8px #d4af37;
+  animation: none;
 }
 
 @keyframes modalPulseDot {
